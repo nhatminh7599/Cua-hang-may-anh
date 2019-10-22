@@ -1,0 +1,9 @@
+C:\Users\Tieu Thanh\AppData\Local\Temporary Projects\GiaoDien\bin\Debug\GiaoDien.exe
+C:\Users\Tieu Thanh\AppData\Local\Temporary Projects\GiaoDien\bin\Debug\GiaoDien.pdb
+C:\Users\Tieu Thanh\AppData\Local\Temporary Projects\GiaoDien\obj\x86\Debug\GiaoDien.Form1.resources
+C:\Users\Tieu Thanh\AppData\Local\Temporary Projects\GiaoDien\obj\x86\Debug\GiaoDien.Properties.Resources.resources
+C:\Users\Tieu Thanh\AppData\Local\Temporary Projects\GiaoDien\obj\x86\Debug\GiaoDien.csproj.GenerateResource.Cache
+C:\Users\Tieu Thanh\AppData\Local\Temporary Projects\GiaoDien\obj\x86\Debug\GiaoDien.exe
+C:\Users\Tieu Thanh\AppData\Local\Temporary Projects\GiaoDien\obj\x86\Debug\GiaoDien.pdb
+C:\Users\Tieu Thanh\Documents\Visual Studio 2010\Projects\GiaoDien\GiaoDien\obj\x86\Debug\GiaoDien.exe
+C:\Users\Tieu Thanh\Documents\Visual Studio 2010\Projects\GiaoDien\GiaoDien\obj\x86\Debug\GiaoDien.pdb
