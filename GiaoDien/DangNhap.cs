@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace GiaoDien
 {
@@ -14,6 +15,38 @@ namespace GiaoDien
         public DangNhap()
         {
             InitializeComponent();
+        }
+        
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            if (KiemTra.KTTenDangNhap(txtTenTK.Text)) // KT tên tài khoản
+            {
+                if (KiemTra.KTMatKhau(txtTenTK.Text, txtTenMK.Text)) // KT mật khẩu
+                {
+                    //code xử lý sau khi đăng nhập
+                    this.Close();
+                }
+                else MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Lỗi đăng nhập", MessageBoxButtons.OK); // sai mật khẩu hoặc tài khoản
+            }
+            else MessageBox.Show("Tài khoản không tồn tại!", "Lỗi", MessageBoxButtons.OK); // sai tài khoản
+        }
+
+        private void btdangki_Click(object sender, EventArgs e)
+        {
+            Form f = new DangKy();
+            this.Close();
+            f.Show();
+        }
+
+        private void DangNhap_Load(object sender, EventArgs e)
+        {
+            btnDangNhap.Enabled = false;
+        }
+
+        private void txtTenTK_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTenTK.Text.Length >= 5)
+                btnDangNhap.Enabled = true;
         }
     }
 }

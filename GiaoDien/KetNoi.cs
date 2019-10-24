@@ -10,16 +10,12 @@ using System.Data.OleDb;
 
 namespace GiaoDien
 {
-    public partial class DangKy : Form
+    public class KetNoi
     {
-        public DangKy()
-        {
-            InitializeComponent();
-        }
         OleDbConnection strcon = new OleDbConnection();
         public void Open_DataAccess()
         {
-            string s = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + "CuaHangMayAnh.mdb";
+            string s = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + @"\CuaHangMayAnh.mdb";
             strcon.ConnectionString = s;
             strcon.Open();
         }
@@ -27,20 +23,15 @@ namespace GiaoDien
         {
             strcon.Close();
         }
-        public DataSet Load_Data()
+        public DataSet Load_Data(string Select, string TenBang)
         {
-
             DataSet dsHienThi = new DataSet();
-            string s = "select * from KhachHang";
+            string s = Select;
             Open_DataAccess();
-            OleDbDataAdapter daShowData = new OleDbDataAdapter(s, strcon);
-            daShowData.Fill(dsHienThi, "DL_MatHang");
+            OleDbDataAdapter daShowData = new OleDbDataAdapter(Select, strcon);
+            daShowData.Fill(dsHienThi, TenBang);
             Close_Connect();
             return dsHienThi;
-
-        }
-        private void DangKy_Load(object sender, EventArgs e)
-        {
         }
     }
 }

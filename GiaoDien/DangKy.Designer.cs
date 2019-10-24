@@ -128,6 +128,7 @@
             this.Controls.Add(this.labelTK);
             this.Name = "DangKy";
             this.Text = "DangKi";
+            this.Load += new System.EventHandler(this.DangKy_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

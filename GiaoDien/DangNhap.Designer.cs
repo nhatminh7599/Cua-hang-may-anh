@@ -30,9 +30,9 @@
         {
             this.labelTK = new System.Windows.Forms.Label();
             this.z = new System.Windows.Forms.Label();
-            this.textBoxTENTK = new System.Windows.Forms.TextBox();
-            this.textBoxMK = new System.Windows.Forms.TextBox();
-            this.btdangnhap = new System.Windows.Forms.Button();
+            this.txtTenTK = new System.Windows.Forms.TextBox();
+            this.txtTenMK = new System.Windows.Forms.TextBox();
+            this.btnDangNhap = new System.Windows.Forms.Button();
             this.btdangki = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -54,28 +54,30 @@
             this.z.TabIndex = 1;
             this.z.Text = "Mật khẩu";
             // 
-            // textBoxTENTK
+            // txtTenTK
             // 
-            this.textBoxTENTK.Location = new System.Drawing.Point(144, 44);
-            this.textBoxTENTK.Name = "textBoxTENTK";
-            this.textBoxTENTK.Size = new System.Drawing.Size(172, 22);
-            this.textBoxTENTK.TabIndex = 2;
+            this.txtTenTK.Location = new System.Drawing.Point(144, 44);
+            this.txtTenTK.Name = "txtTenTK";
+            this.txtTenTK.Size = new System.Drawing.Size(172, 22);
+            this.txtTenTK.TabIndex = 2;
+            this.txtTenTK.TextChanged += new System.EventHandler(this.txtTenTK_TextChanged);
             // 
-            // textBoxMK
+            // txtTenMK
             // 
-            this.textBoxMK.Location = new System.Drawing.Point(144, 77);
-            this.textBoxMK.Name = "textBoxMK";
-            this.textBoxMK.Size = new System.Drawing.Size(172, 22);
-            this.textBoxMK.TabIndex = 3;
+            this.txtTenMK.Location = new System.Drawing.Point(144, 77);
+            this.txtTenMK.Name = "txtTenMK";
+            this.txtTenMK.Size = new System.Drawing.Size(172, 22);
+            this.txtTenMK.TabIndex = 3;
             // 
-            // btdangnhap
+            // btnDangNhap
             // 
-            this.btdangnhap.Location = new System.Drawing.Point(48, 118);
-            this.btdangnhap.Name = "btdangnhap";
-            this.btdangnhap.Size = new System.Drawing.Size(102, 37);
-            this.btdangnhap.TabIndex = 4;
-            this.btdangnhap.Text = "Đăng nhập";
-            this.btdangnhap.UseVisualStyleBackColor = true;
+            this.btnDangNhap.Location = new System.Drawing.Point(48, 118);
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.Size = new System.Drawing.Size(102, 37);
+            this.btnDangNhap.TabIndex = 4;
+            this.btnDangNhap.Text = "Đăng nhập";
+            this.btnDangNhap.UseVisualStyleBackColor = true;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // btdangki
             // 
@@ -85,20 +87,24 @@
             this.btdangki.TabIndex = 5;
             this.btdangki.Text = "Đăng ký";
             this.btdangki.UseVisualStyleBackColor = true;
+            this.btdangki.Click += new System.EventHandler(this.btdangki_Click);
             // 
             // DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 167);
+            this.ClientSize = new System.Drawing.Size(359, 181);
             this.Controls.Add(this.btdangki);
-            this.Controls.Add(this.btdangnhap);
-            this.Controls.Add(this.textBoxMK);
-            this.Controls.Add(this.textBoxTENTK);
+            this.Controls.Add(this.btnDangNhap);
+            this.Controls.Add(this.txtTenMK);
+            this.Controls.Add(this.txtTenTK);
             this.Controls.Add(this.z);
             this.Controls.Add(this.labelTK);
             this.Name = "DangNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DangNhap";
+            this.TopMost = true;
+            this.Load += new System.EventHandler(this.DangNhap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,9 +114,9 @@
 
         private System.Windows.Forms.Label labelTK;
         private System.Windows.Forms.Label z;
-        private System.Windows.Forms.TextBox textBoxTENTK;
-        private System.Windows.Forms.TextBox textBoxMK;
-        private System.Windows.Forms.Button btdangnhap;
+        private System.Windows.Forms.TextBox txtTenTK;
+        private System.Windows.Forms.TextBox txtTenMK;
+        private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.Button btdangki;
     }
 }

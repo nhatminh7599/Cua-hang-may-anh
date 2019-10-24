@@ -38,12 +38,29 @@
             this.picboxmayanh = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.lbdangnhap = new System.Windows.Forms.Label();
+            this.lbDangNhap = new System.Windows.Forms.Label();
             Á = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picboxphukien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxfilm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxmayanh)).BeginInit();
             this.SuspendLayout();
+            // 
+            // Á
+            // 
+            Á.AllowDrop = true;
+            Á.BackColor = System.Drawing.Color.Khaki;
+            Á.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            Á.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            Á.ForeColor = System.Drawing.Color.Red;
+            Á.Image = global::GiaoDien.Properties.Resources.istockphoto_470355658_1024x1024;
+            Á.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            Á.Location = new System.Drawing.Point(-2, -1);
+            Á.Name = "Á";
+            Á.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            Á.Size = new System.Drawing.Size(1012, 68);
+            Á.TabIndex = 0;
+            Á.Text = "THÍCH THÌ MUA KHÔNG THÍCH THÌ MUA\r\n\r\n\r\n";
+            Á.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -57,7 +74,7 @@
             // lbphukien
             // 
             this.lbphukien.BackColor = System.Drawing.Color.Peru;
-            this.lbphukien.Font = new System.Drawing.Font("UTM American Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbphukien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbphukien.Location = new System.Drawing.Point(545, 67);
             this.lbphukien.Name = "lbphukien";
             this.lbphukien.Padding = new System.Windows.Forms.Padding(70, 0, 0, 0);
@@ -69,7 +86,7 @@
             // lbfilm
             // 
             this.lbfilm.BackColor = System.Drawing.Color.Peru;
-            this.lbfilm.Font = new System.Drawing.Font("UTM American Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbfilm.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbfilm.Location = new System.Drawing.Point(271, 67);
             this.lbfilm.Name = "lbfilm";
             this.lbfilm.Padding = new System.Windows.Forms.Padding(70, 0, 0, 0);
@@ -81,7 +98,7 @@
             // lbmayanh
             // 
             this.lbmayanh.BackColor = System.Drawing.Color.Peru;
-            this.lbmayanh.Font = new System.Drawing.Font("UTM American Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbmayanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbmayanh.Location = new System.Drawing.Point(-3, 67);
             this.lbmayanh.Name = "lbmayanh";
             this.lbmayanh.Padding = new System.Windows.Forms.Padding(70, 0, 0, 0);
@@ -123,23 +140,6 @@
             this.picboxmayanh.TabIndex = 27;
             this.picboxmayanh.TabStop = false;
             // 
-            // Á
-            // 
-            Á.AllowDrop = true;
-            Á.BackColor = System.Drawing.Color.Khaki;
-            Á.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            Á.Font = new System.Drawing.Font("iCielBC Cubano Normal", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            Á.ForeColor = System.Drawing.Color.Red;
-            Á.Image = global::GiaoDien.Properties.Resources.istockphoto_470355658_1024x1024;
-            Á.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            Á.Location = new System.Drawing.Point(-2, -1);
-            Á.Name = "Á";
-            Á.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            Á.Size = new System.Drawing.Size(1012, 68);
-            Á.TabIndex = 0;
-            Á.Text = "THÍCH THÌ MUA KHÔNG THÍCH THÌ MUA\r\n\r\n\r\n";
-            Á.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(325, 203);
@@ -155,21 +155,22 @@
             this.label3.TabIndex = 34;
             this.label3.Text = "label3";
             // 
-            // lbdangnhap
+            // lbDangNhap
             // 
-            this.lbdangnhap.BackColor = System.Drawing.Color.Peru;
-            this.lbdangnhap.Font = new System.Drawing.Font("UTM American Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbdangnhap.Location = new System.Drawing.Point(815, 67);
-            this.lbdangnhap.Name = "lbdangnhap";
-            this.lbdangnhap.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
-            this.lbdangnhap.Size = new System.Drawing.Size(195, 85);
-            this.lbdangnhap.TabIndex = 32;
-            this.lbdangnhap.Text = "ĐĂNG NHẬP";
-            this.lbdangnhap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbDangNhap.BackColor = System.Drawing.Color.Peru;
+            this.lbDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDangNhap.Location = new System.Drawing.Point(815, 67);
+            this.lbDangNhap.Name = "lbDangNhap";
+            this.lbDangNhap.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.lbDangNhap.Size = new System.Drawing.Size(195, 85);
+            this.lbDangNhap.TabIndex = 32;
+            this.lbDangNhap.Text = "ĐĂNG NHẬP";
+            this.lbDangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbDangNhap.Click += new System.EventHandler(this.lbdangnhap_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(1007, 643);
@@ -177,17 +178,16 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(Á);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.lbdangnhap);
+            this.Controls.Add(this.lbDangNhap);
             this.Controls.Add(this.picboxphukien);
             this.Controls.Add(this.lbphukien);
             this.Controls.Add(this.picboxfilm);
             this.Controls.Add(this.lbfilm);
             this.Controls.Add(this.picboxmayanh);
             this.Controls.Add(this.lbmayanh);
-            this.Font = new System.Drawing.Font("Viva", 8.25F);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.Name = "Form1";
             this.Text = "Mua hàng vô đây nè";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picboxphukien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxfilm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxmayanh)).EndInit();
@@ -206,7 +206,7 @@
         private System.Windows.Forms.Label lbmayanh;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbdangnhap;
+        private System.Windows.Forms.Label lbDangNhap;
     }
 }
 
