@@ -19,9 +19,9 @@ namespace GiaoDien
         
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            if (KiemTra.KTTenDangNhap(txtTenTK.Text)) // KT tên tài khoản
+            if (ThaoTac.KTTenDangNhap(txtTenTK.Text)) // KT tên tài khoản
             {
-                if (KiemTra.KTMatKhau(txtTenTK.Text, txtTenMK.Text)) // KT mật khẩu
+                if (ThaoTac.KTMatKhau(txtTenTK.Text, txtTenMK.Text)) // KT mật khẩu
                 {
                     //code xử lý sau khi đăng nhập
                     this.Close();

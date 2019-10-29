@@ -10,7 +10,7 @@ using System.Data.OleDb;
 
 namespace GiaoDien
 {
-    public class KiemTra
+    public class ThaoTac
     {
         public static KetNoi con = new KetNoi();
         public static bool KTTenDangNhap(string TenDangNhap)
@@ -18,7 +18,7 @@ namespace GiaoDien
             try
             {
                 DataSet ds = new DataSet();
-                string Select = "SELECT * From KhachHang Where KhachHang.TenDangNhap = \"" + TenDangNhap + "\"";
+                string Select = "SELECT TenDangNhap From KhachHang Where KhachHang.TenDangNhap = \"" + TenDangNhap + "\"";
                 ds = con.Load_Data(Select, "KhachHang");
                 string s = ds.Tables[0].Rows[0].ItemArray[0].ToString();
                 if (TenDangNhap == s)
@@ -47,5 +47,9 @@ namespace GiaoDien
                 return false;
             }
         }
+        //public static bool ThemKhachHang(string TenDangNhap, string MatKhau)
+        //{ 
+            
+        //}
     }
 }
