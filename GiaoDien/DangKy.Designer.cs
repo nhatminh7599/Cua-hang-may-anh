@@ -45,6 +45,7 @@
             // 
             // btDK
             // 
+            this.btDK.Enabled = false;
             this.btDK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btDK.Location = new System.Drawing.Point(147, 366);
             this.btDK.Name = "btDK";
@@ -61,6 +62,7 @@
             this.txtMK.Name = "txtMK";
             this.txtMK.Size = new System.Drawing.Size(172, 30);
             this.txtMK.TabIndex = 9;
+            this.txtMK.TextChanged += new System.EventHandler(this.txtMK_TextChanged);
             // 
             // txtTK
             // 
@@ -69,6 +71,7 @@
             this.txtTK.Name = "txtTK";
             this.txtTK.Size = new System.Drawing.Size(172, 30);
             this.txtTK.TabIndex = 8;
+            this.txtTK.TextChanged += new System.EventHandler(this.txtTK_TextChanged);
             // 
             // z
             // 
@@ -166,7 +169,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 453);
+            this.ClientSize = new System.Drawing.Size(451, 439);
             this.Controls.Add(this.txtTen);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtEmail);
@@ -181,6 +184,7 @@
             this.Controls.Add(this.z);
             this.Controls.Add(this.labelTK);
             this.Name = "DangKy";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DangKi";
             this.TopMost = true;
             this.ResumeLayout(false);

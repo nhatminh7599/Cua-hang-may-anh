@@ -34,8 +34,7 @@ namespace GiaoDien
         private void btdangki_Click(object sender, EventArgs e)
         {
             Form f = new DangKy();
-            this.Close();
-            f.Show();
+            f.ShowDialog();
         }
 
         private void DangNhap_Load(object sender, EventArgs e)

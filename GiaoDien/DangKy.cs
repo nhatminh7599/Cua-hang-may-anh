@@ -26,10 +26,28 @@ namespace GiaoDien
             else
             {
                 if (ThaoTac.ThemKhachHang(txtTK.Text, txtMK.Text, txtTen.Text, txtDiaChi.Text, txtSDT.Text, txtEmail.Text))
-                    MessageBox.Show("true", "true");
-                else MessageBox.Show("false", "false");
+                {
+                    MessageBox.Show("Thông báo", "Đăng ký thành công");
+                    this.Close();
+                    Form f = new DangNhap();
+                    f.Show();
+                }
+                else MessageBox.Show("Thông báo", "Đăng ký thất bại");
             }
         }
 
+        private void txtMK_TextChanged(object sender, EventArgs e)
+        {
+            if (txtMK.Text.Length > 5 && txtTK.Text.Length > 5)
+                btDK.Enabled = true;
+            else btDK.Enabled = false;
+        }
+
+        private void txtTK_TextChanged(object sender, EventArgs e)
+        {
+            if (txtMK.Text.Length > 5 && txtTK.Text.Length > 5)
+                btDK.Enabled = true;
+            else btDK.Enabled = false;
+        }
     }
 }
