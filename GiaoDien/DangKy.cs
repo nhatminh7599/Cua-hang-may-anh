@@ -25,7 +25,9 @@ namespace GiaoDien
             }
             else
             {
-
+                if (ThaoTac.ThemKhachHang(txtTK.Text, txtMK.Text, txtTen.Text, txtDiaChi.Text, txtSDT.Text, txtEmail.Text))
+                    MessageBox.Show("true", "true");
+                else MessageBox.Show("false", "false");
             }
         }
 

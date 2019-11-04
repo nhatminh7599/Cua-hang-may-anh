@@ -47,9 +47,26 @@ namespace GiaoDien
                 return false;
             }
         }
-        //public static bool ThemKhachHang(string TenDangNhap, string MatKhau)
-        //{ 
-            
-        //}
+        public static bool ThemKhachHang(string TenDangNhap, string MatKhau, string HoTen, string DiaChi, string SDT, string Email)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                string danhsachcot = "TenDangNhap, MatKhau, DiaChi, HoTen, SDT, Email";
+                string danhsachthamso = ("\"" + TenDangNhap + "\"" + ", " +
+                                         "\"" + MatKhau + "\"" + ", " +
+                                         "\"" + HoTen + "\"" + ", " +
+                                         "\"" + DiaChi + "\"" + ", " +
+                                         "\"" + SDT + "\"" + ", " +
+                                         "\"" + Email + "\"");
+                string Select = "insert into KhachHang " + "(" + danhsachcot + ") values(" + danhsachthamso + ")";
+                ds = con.Load_Data(Select, "KhachHang");
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }
