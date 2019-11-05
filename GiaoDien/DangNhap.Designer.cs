@@ -68,6 +68,7 @@
             this.txtTenMK.Name = "txtTenMK";
             this.txtTenMK.Size = new System.Drawing.Size(172, 22);
             this.txtTenMK.TabIndex = 3;
+            this.txtTenMK.TextChanged += new System.EventHandler(this.txtTenMK_TextChanged);
             // 
             // btnDangNhap
             // 

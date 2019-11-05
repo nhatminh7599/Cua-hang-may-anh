@@ -16,14 +16,14 @@ namespace GiaoDien
         {
             InitializeComponent();
         }
-        
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             if (ThaoTac.KTTenDangNhap(txtTenTK.Text)) // KT tên tài khoản
             {
                 if (ThaoTac.KTMatKhau(txtTenTK.Text, txtTenMK.Text)) // KT mật khẩu
                 {
-                    //code xử lý sau khi đăng nhập
+                    Form1.tenTaiKhoan = txtTenTK.Text;
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
                 else MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Lỗi đăng nhập", MessageBoxButtons.OK); // sai mật khẩu hoặc tài khoản
@@ -44,7 +44,13 @@ namespace GiaoDien
 
         private void txtTenTK_TextChanged(object sender, EventArgs e)
         {
-            if (txtTenTK.Text.Length >= 5)
+            if (txtTenTK.Text.Length > 5 && txtTenMK.Text.Length > 5)
+                btnDangNhap.Enabled = true;
+        }
+
+        private void txtTenMK_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTenTK.Text.Length > 5 && txtTenMK.Text.Length > 5)
                 btnDangNhap.Enabled = true;
         }
     }

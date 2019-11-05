@@ -29,15 +29,12 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Label Á;
-            this.label5 = new System.Windows.Forms.Label();
             this.lbphukien = new System.Windows.Forms.Label();
             this.lbfilm = new System.Windows.Forms.Label();
             this.lbmayanh = new System.Windows.Forms.Label();
             this.picboxphukien = new System.Windows.Forms.PictureBox();
             this.picboxfilm = new System.Windows.Forms.PictureBox();
             this.picboxmayanh = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.lbDangNhap = new System.Windows.Forms.Label();
             Á = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picboxphukien)).BeginInit();
@@ -61,15 +58,6 @@
             Á.TabIndex = 0;
             Á.Text = "THÍCH THÌ MUA KHÔNG THÍCH THÌ MUA\r\n\r\n\r\n";
             Á.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(15, 312);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 0);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "label5";
             // 
             // lbphukien
             // 
@@ -140,21 +128,6 @@
             this.picboxmayanh.TabIndex = 27;
             this.picboxmayanh.TabStop = false;
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(325, 203);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(684, 434);
-            this.panel1.TabIndex = 33;
-            // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(329, 160);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(187, 32);
-            this.label3.TabIndex = 34;
-            this.label3.Text = "label3";
-            // 
             // lbDangNhap
             // 
             this.lbDangNhap.BackColor = System.Drawing.Color.Peru;
@@ -173,11 +146,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
-            this.ClientSize = new System.Drawing.Size(1007, 643);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(1007, 407);
             this.Controls.Add(Á);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.lbDangNhap);
             this.Controls.Add(this.picboxphukien);
             this.Controls.Add(this.lbphukien);
@@ -197,15 +167,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox picboxmayanh;
         private System.Windows.Forms.PictureBox picboxfilm;
         private System.Windows.Forms.PictureBox picboxphukien;
         private System.Windows.Forms.Label lbphukien;
         private System.Windows.Forms.Label lbfilm;
         private System.Windows.Forms.Label lbmayanh;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbDangNhap;
     }
 }
