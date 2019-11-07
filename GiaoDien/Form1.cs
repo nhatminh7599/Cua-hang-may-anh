@@ -22,5 +22,12 @@ namespace GiaoDien
             moi.ShowDialog();
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form f = new Danhsachsanpham();
+            f.Show();
+        }
+
     }
 }

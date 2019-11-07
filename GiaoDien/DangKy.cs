@@ -49,5 +49,10 @@ namespace GiaoDien
                 btDK.Enabled = true;
             else btDK.Enabled = false;
         }
+
+        private void DangKy_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
