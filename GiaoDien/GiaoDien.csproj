@@ -82,6 +82,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="KetNoi.cs" />
+    <Compile Include="KhachHang.cs" />
     <Compile Include="ThaoTac.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
