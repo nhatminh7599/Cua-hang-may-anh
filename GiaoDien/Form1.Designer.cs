@@ -36,6 +36,7 @@
             this.picboxfilm = new System.Windows.Forms.PictureBox();
             this.picboxmayanh = new System.Windows.Forms.PictureBox();
             this.lbDangNhap = new System.Windows.Forms.Label();
+            this.lbName = new System.Windows.Forms.Label();
             Á = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picboxphukien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxfilm)).BeginInit();
@@ -141,13 +142,26 @@
             this.lbDangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbDangNhap.Click += new System.EventHandler(this.lbdangnhap_Click);
             // 
+            // lbName
+            // 
+            this.lbName.BackColor = System.Drawing.Color.Peru;
+            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.Location = new System.Drawing.Point(815, 67);
+            this.lbName.Name = "lbName";
+            this.lbName.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
+            this.lbName.Size = new System.Drawing.Size(195, 85);
+            this.lbName.TabIndex = 32;
+            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbName.Visible = false;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(1007, 407);
             this.Controls.Add(Á);
+            this.Controls.Add(this.lbName);
             this.Controls.Add(this.lbDangNhap);
             this.Controls.Add(this.picboxphukien);
             this.Controls.Add(this.lbphukien);
@@ -175,6 +189,7 @@
         private System.Windows.Forms.Label lbfilm;
         private System.Windows.Forms.Label lbmayanh;
         private System.Windows.Forms.Label lbDangNhap;
+        private System.Windows.Forms.Label lbName;
     }
 }
 

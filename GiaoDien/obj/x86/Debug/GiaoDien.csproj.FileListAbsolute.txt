@@ -34,3 +34,6 @@ C:\Users\Thach\Desktop\Cua-hang-may-anh\GiaoDien\obj\x86\Debug\GiaoDien.csproj.G
 C:\Users\Thach\Desktop\Cua-hang-may-anh\GiaoDien\obj\x86\Debug\GiaoDien.Danhsachsanpham.resources
 C:\Users\Thach\Desktop\Cua-hang-may-anh\GiaoDien\bin\Debug\GiaoDien.exe.config
 C:\Users\Thach\Desktop\Cua-hang-may-anh\GiaoDien\bin\Debug\CuaHangMayAnh.mdb
+C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien\bin\Debug\GiaoDien.exe.config
+C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien\bin\Debug\CuaHangMayAnh.mdb
+C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien\obj\x86\Debug\GiaoDien.Danhsachsanpham.resources

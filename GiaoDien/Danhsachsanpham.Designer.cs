@@ -35,11 +35,6 @@
             System.Windows.Forms.Label tenSPLabel;
             System.Windows.Forms.Label maSPLabel;
             this.dtvsp = new System.Windows.Forms.DataGridView();
-            this.maSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.giaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moTaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dsSPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cuaHangMayAnhDataSet = new GiaoDien.CuaHangMayAnhDataSet();
             this.dsSPTableAdapter = new GiaoDien.CuaHangMayAnhDataSetTableAdapters.DsSPTableAdapter();
@@ -55,6 +50,11 @@
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.txtTenSP = new System.Windows.Forms.TextBox();
             this.txtMaSP = new System.Windows.Forms.TextBox();
+            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             moTaLabel = new System.Windows.Forms.Label();
             giaLabel = new System.Windows.Forms.Label();
             soLuongLabel = new System.Windows.Forms.Label();
@@ -68,45 +68,50 @@
             // moTaLabel
             // 
             moTaLabel.AutoSize = true;
-            moTaLabel.Location = new System.Drawing.Point(21, 177);
+            moTaLabel.Location = new System.Drawing.Point(28, 218);
+            moTaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             moTaLabel.Name = "moTaLabel";
-            moTaLabel.Size = new System.Drawing.Size(41, 13);
+            moTaLabel.Size = new System.Drawing.Size(52, 17);
             moTaLabel.TabIndex = 23;
             moTaLabel.Text = "Mo Ta:";
             // 
             // giaLabel
             // 
             giaLabel.AutoSize = true;
-            giaLabel.Location = new System.Drawing.Point(36, 146);
+            giaLabel.Location = new System.Drawing.Point(48, 180);
+            giaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             giaLabel.Name = "giaLabel";
-            giaLabel.Size = new System.Drawing.Size(26, 13);
+            giaLabel.Size = new System.Drawing.Size(34, 17);
             giaLabel.TabIndex = 21;
             giaLabel.Text = "Gia:";
             // 
             // soLuongLabel
             // 
             soLuongLabel.AutoSize = true;
-            soLuongLabel.Location = new System.Drawing.Point(11, 98);
+            soLuongLabel.Location = new System.Drawing.Point(15, 121);
+            soLuongLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             soLuongLabel.Name = "soLuongLabel";
-            soLuongLabel.Size = new System.Drawing.Size(56, 13);
+            soLuongLabel.Size = new System.Drawing.Size(73, 17);
             soLuongLabel.TabIndex = 19;
             soLuongLabel.Text = "So Luong:";
             // 
             // tenSPLabel
             // 
             tenSPLabel.AutoSize = true;
-            tenSPLabel.Location = new System.Drawing.Point(21, 66);
+            tenSPLabel.Location = new System.Drawing.Point(28, 81);
+            tenSPLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             tenSPLabel.Name = "tenSPLabel";
-            tenSPLabel.Size = new System.Drawing.Size(46, 13);
+            tenSPLabel.Size = new System.Drawing.Size(59, 17);
             tenSPLabel.TabIndex = 17;
             tenSPLabel.Text = "Ten SP:";
             // 
             // maSPLabel
             // 
             maSPLabel.AutoSize = true;
-            maSPLabel.Location = new System.Drawing.Point(21, 26);
+            maSPLabel.Location = new System.Drawing.Point(28, 32);
+            maSPLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             maSPLabel.Name = "maSPLabel";
-            maSPLabel.Size = new System.Drawing.Size(42, 13);
+            maSPLabel.Size = new System.Drawing.Size(53, 17);
             maSPLabel.TabIndex = 15;
             maSPLabel.Text = "Ma SP:";
             // 
@@ -115,47 +120,18 @@
             this.dtvsp.AutoGenerateColumns = false;
             this.dtvsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtvsp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.maSPDataGridViewTextBoxColumn,
-            this.tenSPDataGridViewTextBoxColumn,
-            this.soLuongDataGridViewTextBoxColumn,
-            this.giaDataGridViewTextBoxColumn,
-            this.moTaDataGridViewTextBoxColumn});
+            this.MaSP,
+            this.TenSP,
+            this.SoLuong,
+            this.Gia,
+            this.MoTa});
             this.dtvsp.DataSource = this.dsSPBindingSource;
-            this.dtvsp.Location = new System.Drawing.Point(12, 229);
+            this.dtvsp.Location = new System.Drawing.Point(16, 282);
+            this.dtvsp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtvsp.Name = "dtvsp";
-            this.dtvsp.Size = new System.Drawing.Size(551, 179);
+            this.dtvsp.Size = new System.Drawing.Size(735, 220);
             this.dtvsp.TabIndex = 0;
             this.dtvsp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvsp_CellClick);
-            // 
-            // maSPDataGridViewTextBoxColumn
-            // 
-            this.maSPDataGridViewTextBoxColumn.DataPropertyName = "MaSP";
-            this.maSPDataGridViewTextBoxColumn.HeaderText = "MaSP";
-            this.maSPDataGridViewTextBoxColumn.Name = "maSPDataGridViewTextBoxColumn";
-            // 
-            // tenSPDataGridViewTextBoxColumn
-            // 
-            this.tenSPDataGridViewTextBoxColumn.DataPropertyName = "TenSP";
-            this.tenSPDataGridViewTextBoxColumn.HeaderText = "TenSP";
-            this.tenSPDataGridViewTextBoxColumn.Name = "tenSPDataGridViewTextBoxColumn";
-            // 
-            // soLuongDataGridViewTextBoxColumn
-            // 
-            this.soLuongDataGridViewTextBoxColumn.DataPropertyName = "SoLuong";
-            this.soLuongDataGridViewTextBoxColumn.HeaderText = "SoLuong";
-            this.soLuongDataGridViewTextBoxColumn.Name = "soLuongDataGridViewTextBoxColumn";
-            // 
-            // giaDataGridViewTextBoxColumn
-            // 
-            this.giaDataGridViewTextBoxColumn.DataPropertyName = "Gia";
-            this.giaDataGridViewTextBoxColumn.HeaderText = "Gia";
-            this.giaDataGridViewTextBoxColumn.Name = "giaDataGridViewTextBoxColumn";
-            // 
-            // moTaDataGridViewTextBoxColumn
-            // 
-            this.moTaDataGridViewTextBoxColumn.DataPropertyName = "MoTa";
-            this.moTaDataGridViewTextBoxColumn.HeaderText = "MoTa";
-            this.moTaDataGridViewTextBoxColumn.Name = "moTaDataGridViewTextBoxColumn";
             // 
             // dsSPBindingSource
             // 
@@ -179,9 +155,10 @@
             // 
             // btXoa
             // 
-            this.btXoa.Location = new System.Drawing.Point(266, 140);
+            this.btXoa.Location = new System.Drawing.Point(355, 172);
+            this.btXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btXoa.Name = "btXoa";
-            this.btXoa.Size = new System.Drawing.Size(83, 39);
+            this.btXoa.Size = new System.Drawing.Size(111, 48);
             this.btXoa.TabIndex = 11;
             this.btXoa.Text = "Xóa";
             this.btXoa.UseVisualStyleBackColor = true;
@@ -189,9 +166,10 @@
             // 
             // btThem
             // 
-            this.btThem.Location = new System.Drawing.Point(266, 33);
+            this.btThem.Location = new System.Drawing.Point(355, 41);
+            this.btThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(83, 39);
+            this.btThem.Size = new System.Drawing.Size(111, 48);
             this.btThem.TabIndex = 11;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;
@@ -199,9 +177,10 @@
             // 
             // btSua
             // 
-            this.btSua.Location = new System.Drawing.Point(266, 88);
+            this.btSua.Location = new System.Drawing.Point(355, 108);
+            this.btSua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btSua.Name = "btSua";
-            this.btSua.Size = new System.Drawing.Size(83, 39);
+            this.btSua.Size = new System.Drawing.Size(111, 48);
             this.btSua.TabIndex = 11;
             this.btSua.Text = "Sửa";
             this.btSua.UseVisualStyleBackColor = true;
@@ -211,25 +190,28 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(407, 45);
+            this.label1.Location = new System.Drawing.Point(543, 55);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 16);
+            this.label1.Size = new System.Drawing.Size(141, 20);
             this.label1.TabIndex = 12;
             this.label1.Text = "Nhập mã cần tìm:";
             // 
             // txtTim
             // 
-            this.txtTim.Location = new System.Drawing.Point(377, 76);
+            this.txtTim.Location = new System.Drawing.Point(503, 94);
+            this.txtTim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTim.Multiline = true;
             this.txtTim.Name = "txtTim";
-            this.txtTim.Size = new System.Drawing.Size(170, 57);
+            this.txtTim.Size = new System.Drawing.Size(225, 69);
             this.txtTim.TabIndex = 13;
             // 
             // btTim
             // 
-            this.btTim.Location = new System.Drawing.Point(421, 140);
+            this.btTim.Location = new System.Drawing.Point(561, 172);
+            this.btTim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btTim.Name = "btTim";
-            this.btTim.Size = new System.Drawing.Size(88, 42);
+            this.btTim.Size = new System.Drawing.Size(117, 52);
             this.btTim.TabIndex = 14;
             this.btTim.Text = "Tìm kiếm";
             this.btTim.UseVisualStyleBackColor = true;
@@ -237,53 +219,88 @@
             // txtMoTa
             // 
             this.txtMoTa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsSPBindingSource, "MoTa", true));
-            this.txtMoTa.Location = new System.Drawing.Point(68, 174);
+            this.txtMoTa.Location = new System.Drawing.Point(91, 214);
+            this.txtMoTa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMoTa.Multiline = true;
             this.txtMoTa.Name = "txtMoTa";
-            this.txtMoTa.Size = new System.Drawing.Size(167, 32);
+            this.txtMoTa.Size = new System.Drawing.Size(221, 38);
             this.txtMoTa.TabIndex = 24;
             // 
             // txtGia
             // 
             this.txtGia.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsSPBindingSource, "Gia", true));
-            this.txtGia.Location = new System.Drawing.Point(68, 133);
+            this.txtGia.Location = new System.Drawing.Point(91, 164);
+            this.txtGia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtGia.Multiline = true;
             this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(167, 35);
+            this.txtGia.Size = new System.Drawing.Size(221, 42);
             this.txtGia.TabIndex = 22;
             // 
             // txtSoLuong
             // 
             this.txtSoLuong.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsSPBindingSource, "SoLuong", true));
-            this.txtSoLuong.Location = new System.Drawing.Point(68, 95);
+            this.txtSoLuong.Location = new System.Drawing.Point(91, 117);
+            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSoLuong.Multiline = true;
             this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(167, 32);
+            this.txtSoLuong.Size = new System.Drawing.Size(221, 38);
             this.txtSoLuong.TabIndex = 20;
             // 
             // txtTenSP
             // 
             this.txtTenSP.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsSPBindingSource, "TenSP", true));
-            this.txtTenSP.Location = new System.Drawing.Point(68, 54);
+            this.txtTenSP.Location = new System.Drawing.Point(91, 66);
+            this.txtTenSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTenSP.Multiline = true;
             this.txtTenSP.Name = "txtTenSP";
-            this.txtTenSP.Size = new System.Drawing.Size(167, 35);
+            this.txtTenSP.Size = new System.Drawing.Size(221, 42);
             this.txtTenSP.TabIndex = 18;
             // 
             // txtMaSP
             // 
             this.txtMaSP.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsSPBindingSource, "MaSP", true));
-            this.txtMaSP.Location = new System.Drawing.Point(68, 14);
+            this.txtMaSP.Location = new System.Drawing.Point(91, 17);
+            this.txtMaSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMaSP.Multiline = true;
             this.txtMaSP.Name = "txtMaSP";
-            this.txtMaSP.Size = new System.Drawing.Size(167, 34);
+            this.txtMaSP.Size = new System.Drawing.Size(221, 41);
             this.txtMaSP.TabIndex = 16;
+            // 
+            // MaSP
+            // 
+            this.MaSP.DataPropertyName = "MaSP";
+            this.MaSP.HeaderText = "MaSP";
+            this.MaSP.Name = "MaSP";
+            // 
+            // TenSP
+            // 
+            this.TenSP.DataPropertyName = "TenSP";
+            this.TenSP.HeaderText = "TenSP";
+            this.TenSP.Name = "TenSP";
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "SoLuong";
+            this.SoLuong.Name = "SoLuong";
+            // 
+            // Gia
+            // 
+            this.Gia.DataPropertyName = "Gia";
+            this.Gia.HeaderText = "Gia";
+            this.Gia.Name = "Gia";
+            // 
+            // MoTa
+            // 
+            this.MoTa.DataPropertyName = "MoTa";
+            this.MoTa.HeaderText = "MoTa";
+            this.MoTa.Name = "MoTa";
             // 
             // Danhsachsanpham
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(587, 420);
+            this.ClientSize = new System.Drawing.Size(783, 517);
             this.Controls.Add(moTaLabel);
             this.Controls.Add(this.txtMoTa);
             this.Controls.Add(giaLabel);
@@ -301,6 +318,7 @@
             this.Controls.Add(this.btThem);
             this.Controls.Add(this.btXoa);
             this.Controls.Add(this.dtvsp);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Danhsachsanpham";
             this.Text = "Danhsachsanpham";
             this.TopMost = true;
@@ -319,11 +337,6 @@
         private CuaHangMayAnhDataSet cuaHangMayAnhDataSet;
         private System.Windows.Forms.BindingSource dsSPBindingSource;
         private CuaHangMayAnhDataSetTableAdapters.DsSPTableAdapter dsSPTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maSPDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenSPDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soLuongDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn giaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn moTaDataGridViewTextBoxColumn;
         private CuaHangMayAnhDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.Button btThem;
@@ -336,5 +349,10 @@
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.TextBox txtTenSP;
         private System.Windows.Forms.TextBox txtMaSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MoTa;
     }
 }

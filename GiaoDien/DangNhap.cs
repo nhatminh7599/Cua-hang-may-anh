@@ -18,7 +18,7 @@ namespace GiaoDien
         }
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            if (ThaoTac.KTTenDangNhap(txtTenTK.Text)) // KT tên tài khoản
+            if (ThaoTac.KTTonTai("KhachHang", "TenDangNhap", txtTenTK.Text)) // KT tên tài khoản
             {
                 if (ThaoTac.KTMatKhau(txtTenTK.Text, txtTenMK.Text)) // KT mật khẩu
                 {

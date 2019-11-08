@@ -19,20 +19,18 @@ namespace GiaoDien
 
         private void btDK_Click(object sender, EventArgs e)
         {
-            if (ThaoTac.KTTenDangNhap(txtTK.Text))
+            if (ThaoTac.KTTonTai("KhachHang", "TenDangNhap", txtTK.Text))
             {
                 MessageBox.Show("Tài khoản đã tồn tại.", "Lỗi!", MessageBoxButtons.OK);
             }
             else
             {
-                if (ThaoTac.ThemKhachHang(txtTK.Text, txtMK.Text, txtTen.Text, txtDiaChi.Text, txtSDT.Text, txtEmail.Text))
+                if (ThaoTac.ThemKhachHang(txtTK.Text, txtMK.Text, txtDiaChi.Text, txtTen.Text, txtSDT.Text, txtEmail.Text))
                 {
-                    MessageBox.Show("Thông báo", "Đăng ký thành công");
+                    MessageBox.Show("Đăng ký thành công", "Thông báo");
                     this.Close();
-                    Form f = new DangNhap();
-                    f.Show();
                 }
-                else MessageBox.Show("Thông báo", "Đăng ký thất bại");
+                else MessageBox.Show("Đăng ký thất bại", "Thông báo");
             }
         }
 
@@ -48,11 +46,6 @@ namespace GiaoDien
             if (txtMK.Text.Length > 5 && txtTK.Text.Length > 5)
                 btDK.Enabled = true;
             else btDK.Enabled = false;
-        }
-
-        private void DangKy_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
