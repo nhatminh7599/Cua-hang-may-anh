@@ -27,7 +27,10 @@ namespace GiaoDien
             {
                 DataSet ds = new DataSet();
                 string Select = "SELECT " + TenCot + " From " + TenBang + " k Where k." + TenCot + " = \"" + GiaTri + "\"";
-                ds = con.Load_Data(Select);
+                con.Open_DataAccess();
+                con.adaShowData = new OleDbDataAdapter(Select, con.con);
+                con.adaShowData.Fill(ds);
+                con.Close_Connect();
                 int s = ds.Tables[0].Rows.Count;
                 if (s > 0)
                     return true;
@@ -50,7 +53,7 @@ namespace GiaoDien
             {
                 DataSet ds = new DataSet();
                 string Select = "SELECT MatKhau From KhachHang Where KhachHang.TenDangNhap = \"" + TenDangNhap + "\"";
-                ds = con.Load_Data(Select);
+                ds = con.Load_Data(Select, "KhachHang");
                 string s = ds.Tables[0].Rows[0].ItemArray[0].ToString();
                 if (MatKhau == s)
                     return true;
@@ -87,7 +90,7 @@ namespace GiaoDien
                                          "\"" + SDT + "\"" + ", " +
                                          "\"" + Email + "\"");
                 string Select = "insert into KhachHang " + "(" + danhsachcot + ") values(" + danhsachthamso + ")";
-                ketnoi.Add_Data(Select);
+                ketnoi.Load_Data(Select);
                 return true;
             }
             catch (Exception)
@@ -126,7 +129,7 @@ namespace GiaoDien
                                              "\"" + SDT + "\"" + ", " +
                                              "\"" + Email + "\"");
                     string Select = "insert into KhachHang " + "(" + danhsachcot + ") values(" + danhsachthamso + ")";
-                    ketnoi.Add_Data(Select);
+                    ketnoi.Load_Data(Select);
                     return true;
                 }
             }
@@ -153,7 +156,7 @@ namespace GiaoDien
                 {
                     KetNoi ketnoi = new KetNoi();
                     string Update = "Update KhachHang set QuanLy = True Where KhachHang.TenDangNhap = \"" + TenDangNhap + "\"";
-                    ketnoi.Add_Data(Update);
+                    ketnoi.Load_Data(Update);
                     return true;
                 }
                 catch (Exception)

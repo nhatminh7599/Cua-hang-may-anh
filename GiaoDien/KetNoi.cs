@@ -51,14 +51,16 @@ namespace GiaoDien
         /// <param name="TenBang"></param>
         /// <returns>Trả về bảng chứa dữ liệu sau khi thực thi câu lệnh query
         /// Trả về bảng rỗng nếu xảy ra lỗi</returns>
-        public DataSet Load_Data(string Select)
+        public DataSet Load_Data(string Select, string TenBang)
         {
+            string s = "Select * From " + TenBang;
             try
             {
-                string s = Select;
                 if (Open_DataAccess())
                 {
-                    adaShowData = new OleDbDataAdapter(Select, con);
+                    com = new OleDbCommand(Select, con);
+                    com.ExecuteNonQuery();
+                    adaShowData = new OleDbDataAdapter(s, con);
                     adaShowData.Fill(dsHienThi);
                     Close_Connect();
                     return dsHienThi;
@@ -69,35 +71,28 @@ namespace GiaoDien
                     return dsHienThi;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                dsHienThi.Clear();
+                MessageBox.Show(ex.Message, "Lỗi dữ liệu");
+                adaShowData = new OleDbDataAdapter(s, con);
+                adaShowData.Fill(dsHienThi);
+                Close_Connect();
                 return dsHienThi;
             }
         }
-
-        /// <summary>
-        /// Nhận vào câu lênh query, thao tác lên CSDL
-        /// </summary>
-        /// <param name="Select"></param>
-        /// <returns></returns>
-        public bool Add_Data(string Select)
+        public void Load_Data(string Select)
         {
             try
             {
-                string s = Select;
-                if (Open_DataAccess())
-                {
-                    com = new OleDbCommand(Select, con);
-                    com.ExecuteNonQuery();
-                    Close_Connect();
-                    return true;
-                }
-                else return false;
+                Open_DataAccess();
+                adaShowData = new OleDbDataAdapter(Select, con);
+                com = new OleDbCommand(Select, con);
+                com.ExecuteNonQuery();
+                Close_Connect();
             }
             catch (Exception)
             {
-                return false;
+                MessageBox.Show("Loi", "Loi");
             }
         }
     }

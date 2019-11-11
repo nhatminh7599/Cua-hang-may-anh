@@ -127,7 +127,7 @@
             this.MoTa});
             this.dtvsp.DataSource = this.dsSPBindingSource;
             this.dtvsp.Location = new System.Drawing.Point(16, 282);
-            this.dtvsp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtvsp.Margin = new System.Windows.Forms.Padding(4);
             this.dtvsp.Name = "dtvsp";
             this.dtvsp.Size = new System.Drawing.Size(735, 220);
             this.dtvsp.TabIndex = 0;
@@ -156,7 +156,7 @@
             // btXoa
             // 
             this.btXoa.Location = new System.Drawing.Point(355, 172);
-            this.btXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(111, 48);
             this.btXoa.TabIndex = 11;
@@ -167,7 +167,7 @@
             // btThem
             // 
             this.btThem.Location = new System.Drawing.Point(355, 41);
-            this.btThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btThem.Margin = new System.Windows.Forms.Padding(4);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(111, 48);
             this.btThem.TabIndex = 11;
@@ -178,7 +178,7 @@
             // btSua
             // 
             this.btSua.Location = new System.Drawing.Point(355, 108);
-            this.btSua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btSua.Margin = new System.Windows.Forms.Padding(4);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(111, 48);
             this.btSua.TabIndex = 11;
@@ -200,7 +200,7 @@
             // txtTim
             // 
             this.txtTim.Location = new System.Drawing.Point(503, 94);
-            this.txtTim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTim.Margin = new System.Windows.Forms.Padding(4);
             this.txtTim.Multiline = true;
             this.txtTim.Name = "txtTim";
             this.txtTim.Size = new System.Drawing.Size(225, 69);
@@ -209,7 +209,7 @@
             // btTim
             // 
             this.btTim.Location = new System.Drawing.Point(561, 172);
-            this.btTim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btTim.Margin = new System.Windows.Forms.Padding(4);
             this.btTim.Name = "btTim";
             this.btTim.Size = new System.Drawing.Size(117, 52);
             this.btTim.TabIndex = 14;
@@ -220,7 +220,7 @@
             // 
             this.txtMoTa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsSPBindingSource, "MoTa", true));
             this.txtMoTa.Location = new System.Drawing.Point(91, 214);
-            this.txtMoTa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMoTa.Margin = new System.Windows.Forms.Padding(4);
             this.txtMoTa.Multiline = true;
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.Size = new System.Drawing.Size(221, 38);
@@ -230,7 +230,7 @@
             // 
             this.txtGia.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsSPBindingSource, "Gia", true));
             this.txtGia.Location = new System.Drawing.Point(91, 164);
-            this.txtGia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGia.Margin = new System.Windows.Forms.Padding(4);
             this.txtGia.Multiline = true;
             this.txtGia.Name = "txtGia";
             this.txtGia.Size = new System.Drawing.Size(221, 42);
@@ -240,7 +240,7 @@
             // 
             this.txtSoLuong.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsSPBindingSource, "SoLuong", true));
             this.txtSoLuong.Location = new System.Drawing.Point(91, 117);
-            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoLuong.Multiline = true;
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(221, 38);
@@ -250,7 +250,7 @@
             // 
             this.txtTenSP.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsSPBindingSource, "TenSP", true));
             this.txtTenSP.Location = new System.Drawing.Point(91, 66);
-            this.txtTenSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenSP.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenSP.Multiline = true;
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(221, 42);
@@ -260,7 +260,7 @@
             // 
             this.txtMaSP.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsSPBindingSource, "MaSP", true));
             this.txtMaSP.Location = new System.Drawing.Point(91, 17);
-            this.txtMaSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaSP.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaSP.Multiline = true;
             this.txtMaSP.Name = "txtMaSP";
             this.txtMaSP.Size = new System.Drawing.Size(221, 41);
@@ -318,7 +318,7 @@
             this.Controls.Add(this.btThem);
             this.Controls.Add(this.btXoa);
             this.Controls.Add(this.dtvsp);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Danhsachsanpham";
             this.Text = "Danhsachsanpham";
             this.TopMost = true;

@@ -14,76 +14,82 @@ namespace GiaoDien
     {
         OleDbConnection cnn = new OleDbConnection();
         KetNoi ketnoi = new KetNoi();
+        DataSet ds;
         public Danhsachsanpham()
         {
             InitializeComponent();
         }
-        public void hienthi()
+        public void hienthi(DataGridView dg, string TenBang)
         {
             try
             {
-                DataSet ds = ketnoi.Load_Data("SELECT * FROM DsSP");
-                dtvsp.DataSource = ds.Tables[0];
+                ds = ketnoi.Load_Data("SELECT * FROM " + TenBang, "DsSP");
+                dg.DataSource = ds.Tables[0];
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Có lỗi!!!!!", "Lỗi");
+                MessageBox.Show(ex.Message, "Lỗi");
             }
         }
-
         private void Danhsachsanpham_Load(object sender, EventArgs e)
         {
-            hienthi();
+            hienthi(dtvsp, "DsSp");
         }
 
         private void btThem_Click(object sender, EventArgs e)
         {
             try
             {
-                
-                if (ThaoTac.KTTonTai("DsSP", "MaSP", txtMaSP.Text))
-                    MessageBox.Show("Mã hóa đơn đã tồn tại!!!!");
+                if (txtMaSP.Text == "" || txtTenSP.Text == "" || txtSoLuong.Text == "")
+                    MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu");
                 else
                 {
-                    string danhsachcot = "MaSP, TenSP, SoLuong, Gia, MoTa";
-                    string danhsachthamso = ("\"" + txtMaSP.Text + "\"" + ", " +
-                                         "\"" + txtTenSP.Text + "\"" + ", " +
-                                         "\"" + txtSoLuong.Text + "\"" + ", " +
-                                         "\"" + txtGia.Text + "\"" + ", " +
-                                         "\"" + txtMoTa.Text + "\"");
-                    string accINSET = "INSERT INTO DsSP (" + danhsachcot + ") values (" + danhsachthamso + ")";
-                    DataSet ds = ketnoi.Load_Data(accINSET);
-                    ketnoi.Add_Data(accINSET);
-                    ketnoi.Close_Connect();
-                    hienthi();
+                    if (ThaoTac.KTTonTai("DsSP", "MaSP", txtMaSP.Text))
+                        MessageBox.Show("Mã hóa đơn đã tồn tại!!!!");
+                    else
+                    {
+                        string danhsachcot = "MaSP, TenSP, SoLuong, Gia, MoTa";
+                        string danhsachthamso = ("\"" + txtMaSP.Text + "\"" + ", " +
+                                            "\"" + txtTenSP.Text + "\"" + ", " +
+                                            "\"" + txtSoLuong.Text + "\"" + ", " +
+                                             "\"" + txtGia.Text + "\"" + ", " +
+                                             "\"" + txtMoTa.Text + "\"");
+                        string accINSET = "INSERT INTO DsSP (" + danhsachcot + ") values (" + danhsachthamso + ")";
+                        ds.Clear();
+                        ds = ketnoi.Load_Data(accINSET, "DsSP");
+                        dtvsp.DataSource = ds.Tables[0];
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Thêm thất bại!!!! " + ex.Message);
+                MessageBox.Show(ex.Message, "Lỗi dữ liệu");
             }
         }
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            //DialogResult dialodResult = MessageBox.Show("Bạn có chắc muốn xóa????", "Some title", MessageBoxButtons.YesNo);
-            //if (dialodResult == DialogResult.Yes)
-            //{
-            //    try
-            //    {
-            //        cnn.Open();
-            //        string accINSET = "DELETE FROM DsSP WHERE MaSP='" + txtMaSP.Text + "'";
-            //        OleDbCommand cmd = new OleDbCommand(accINSET, cnn);
-            //        cmd.ExecuteNonQuery();
-            //        cnn.Close();
-            //        hienthi();
-            //        MessageBox.Show("Xóa hóa đơn " + txtMaSP.Text + "");
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show("Xóa thất bại!!!!!" + ex.Message);
-            //    }
-            //}
+            DialogResult dialodResult = MessageBox.Show("Bạn có chắc muốn xóa????", "Some title", MessageBoxButtons.YesNo);
+            if (dialodResult == DialogResult.Yes)
+            {
+                try
+                {
+                    string ma = dtvsp.CurrentRow.Cells[0].Value.ToString();
+                    ketnoi.Open_DataAccess();
+                    string accINSET = "DELETE FROM DsSP WHERE MaSP = \"" + ma + "\"";
+                    OleDbCommand cmd = new OleDbCommand(accINSET, ketnoi.con);
+                    cmd.ExecuteNonQuery();
+                    ketnoi.Close_Connect();
+                    ds.Clear();
+                    ds = ketnoi.Load_Data("SELECT * FROM DsSP", "DsSP");
+                    dtvsp.DataSource = ds.Tables[0];
+                    MessageBox.Show("Đã xóa hóa đơn " + ma);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Xóa thất bại!!!!!" + ex.Message);
+                }
+            }
         }
 
         private void dtvsp_CellClick(object sender, DataGridViewCellEventArgs e)

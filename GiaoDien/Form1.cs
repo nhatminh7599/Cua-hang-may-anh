@@ -28,7 +28,7 @@ namespace GiaoDien
                 string Select = ("Select * From Khachhang Where KhachHang.TenDangNhap = \"" + tenTaiKhoan + "\"");
                 KetNoi conn = new KetNoi();
                 string[] s = new string[8];
-                ds = conn.Load_Data(Select);
+                ds = conn.Load_Data(Select, "KhachHang");
                 for (int i = 0; i < 8; i++)
                 {
                     s[i] = ds.Tables[0].Rows[0].ItemArray[i].ToString();
