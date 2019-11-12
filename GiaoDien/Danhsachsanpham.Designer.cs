@@ -117,6 +117,8 @@
             // 
             // dtvsp
             // 
+            this.dtvsp.AllowUserToAddRows = false;
+            this.dtvsp.AllowUserToDeleteRows = false;
             this.dtvsp.AutoGenerateColumns = false;
             this.dtvsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtvsp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -128,8 +130,10 @@
             this.dtvsp.DataSource = this.dsSPBindingSource;
             this.dtvsp.Location = new System.Drawing.Point(16, 282);
             this.dtvsp.Margin = new System.Windows.Forms.Padding(4);
+            this.dtvsp.MultiSelect = false;
             this.dtvsp.Name = "dtvsp";
-            this.dtvsp.Size = new System.Drawing.Size(735, 220);
+            this.dtvsp.ReadOnly = true;
+            this.dtvsp.Size = new System.Drawing.Size(712, 220);
             this.dtvsp.TabIndex = 0;
             this.dtvsp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvsp_CellClick);
             // 
@@ -235,6 +239,7 @@
             this.txtGia.Name = "txtGia";
             this.txtGia.Size = new System.Drawing.Size(221, 42);
             this.txtGia.TabIndex = 22;
+            this.txtGia.TextChanged += new System.EventHandler(this.txtTenSP_TextChanged);
             // 
             // txtSoLuong
             // 
@@ -245,6 +250,7 @@
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(221, 38);
             this.txtSoLuong.TabIndex = 20;
+            this.txtSoLuong.TextChanged += new System.EventHandler(this.txtTenSP_TextChanged);
             // 
             // txtTenSP
             // 
@@ -255,6 +261,7 @@
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(221, 42);
             this.txtTenSP.TabIndex = 18;
+            this.txtTenSP.TextChanged += new System.EventHandler(this.txtTenSP_TextChanged);
             // 
             // txtMaSP
             // 
@@ -265,42 +272,48 @@
             this.txtMaSP.Name = "txtMaSP";
             this.txtMaSP.Size = new System.Drawing.Size(221, 41);
             this.txtMaSP.TabIndex = 16;
+            this.txtMaSP.TextChanged += new System.EventHandler(this.txtTenSP_TextChanged);
             // 
             // MaSP
             // 
             this.MaSP.DataPropertyName = "MaSP";
             this.MaSP.HeaderText = "MaSP";
             this.MaSP.Name = "MaSP";
+            this.MaSP.ReadOnly = true;
             // 
             // TenSP
             // 
             this.TenSP.DataPropertyName = "TenSP";
             this.TenSP.HeaderText = "TenSP";
             this.TenSP.Name = "TenSP";
+            this.TenSP.ReadOnly = true;
             // 
             // SoLuong
             // 
             this.SoLuong.DataPropertyName = "SoLuong";
             this.SoLuong.HeaderText = "SoLuong";
             this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
             // 
             // Gia
             // 
             this.Gia.DataPropertyName = "Gia";
             this.Gia.HeaderText = "Gia";
             this.Gia.Name = "Gia";
+            this.Gia.ReadOnly = true;
             // 
             // MoTa
             // 
             this.MoTa.DataPropertyName = "MoTa";
             this.MoTa.HeaderText = "MoTa";
             this.MoTa.Name = "MoTa";
+            this.MoTa.ReadOnly = true;
             // 
             // Danhsachsanpham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 517);
+            this.ClientSize = new System.Drawing.Size(752, 517);
             this.Controls.Add(moTaLabel);
             this.Controls.Add(this.txtMoTa);
             this.Controls.Add(giaLabel);
@@ -319,7 +332,9 @@
             this.Controls.Add(this.btXoa);
             this.Controls.Add(this.dtvsp);
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "Danhsachsanpham";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danhsachsanpham";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Danhsachsanpham_Load);
