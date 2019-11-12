@@ -90,6 +90,7 @@ namespace GiaoDien
                     string ma = dtvsp.CurrentRow.Cells[0].Value.ToString();
                     if (ma == "")
                         ma = txtMaSP.Text;
+                    ds.Clear();
                     ketnoi.Open_DataAccess();
                     string accINSET = "DELETE FROM DsSP WHERE MaSP = " + ma + "";
                     OleDbCommand cmd = new OleDbCommand(accINSET, ketnoi.con);

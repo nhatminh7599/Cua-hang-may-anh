@@ -39,23 +39,23 @@
             this.lbDangNhap = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
             this.dtvsp2 = new System.Windows.Forms.DataGridView();
-            this.cuaHangMayAnhDataSet = new GiaoDien.CuaHangMayAnhDataSet();
-            this.cuaHangMayAnhDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsSPBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsSPTableAdapter = new GiaoDien.CuaHangMayAnhDataSetTableAdapters.DsSPTableAdapter();
             this.maSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.giaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moTaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dsSPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cuaHangMayAnhDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cuaHangMayAnhDataSet = new GiaoDien.CuaHangMayAnhDataSet();
+            this.dsSPTableAdapter = new GiaoDien.CuaHangMayAnhDataSetTableAdapters.DsSPTableAdapter();
             Á = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picboxphukien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxfilm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxmayanh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtvsp2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayAnhDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayAnhDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSPBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayAnhDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayAnhDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // Á
@@ -183,58 +183,64 @@
             this.dtvsp2.DataSource = this.dsSPBindingSource;
             this.dtvsp2.Location = new System.Drawing.Point(9, 162);
             this.dtvsp2.Name = "dtvsp2";
+            this.dtvsp2.ReadOnly = true;
             this.dtvsp2.RowTemplate.Height = 24;
             this.dtvsp2.Size = new System.Drawing.Size(545, 270);
             this.dtvsp2.TabIndex = 33;
-            // 
-            // cuaHangMayAnhDataSet
-            // 
-            this.cuaHangMayAnhDataSet.DataSetName = "CuaHangMayAnhDataSet";
-            this.cuaHangMayAnhDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cuaHangMayAnhDataSetBindingSource
-            // 
-            this.cuaHangMayAnhDataSetBindingSource.DataSource = this.cuaHangMayAnhDataSet;
-            this.cuaHangMayAnhDataSetBindingSource.Position = 0;
-            // 
-            // dsSPBindingSource
-            // 
-            this.dsSPBindingSource.DataMember = "DsSP";
-            this.dsSPBindingSource.DataSource = this.cuaHangMayAnhDataSetBindingSource;
-            // 
-            // dsSPTableAdapter
-            // 
-            this.dsSPTableAdapter.ClearBeforeFill = true;
             // 
             // maSPDataGridViewTextBoxColumn
             // 
             this.maSPDataGridViewTextBoxColumn.DataPropertyName = "MaSP";
             this.maSPDataGridViewTextBoxColumn.HeaderText = "MaSP";
             this.maSPDataGridViewTextBoxColumn.Name = "maSPDataGridViewTextBoxColumn";
+            this.maSPDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tenSPDataGridViewTextBoxColumn
             // 
             this.tenSPDataGridViewTextBoxColumn.DataPropertyName = "TenSP";
             this.tenSPDataGridViewTextBoxColumn.HeaderText = "TenSP";
             this.tenSPDataGridViewTextBoxColumn.Name = "tenSPDataGridViewTextBoxColumn";
+            this.tenSPDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // soLuongDataGridViewTextBoxColumn
             // 
             this.soLuongDataGridViewTextBoxColumn.DataPropertyName = "SoLuong";
             this.soLuongDataGridViewTextBoxColumn.HeaderText = "SoLuong";
             this.soLuongDataGridViewTextBoxColumn.Name = "soLuongDataGridViewTextBoxColumn";
+            this.soLuongDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // giaDataGridViewTextBoxColumn
             // 
             this.giaDataGridViewTextBoxColumn.DataPropertyName = "Gia";
             this.giaDataGridViewTextBoxColumn.HeaderText = "Gia";
             this.giaDataGridViewTextBoxColumn.Name = "giaDataGridViewTextBoxColumn";
+            this.giaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // moTaDataGridViewTextBoxColumn
             // 
             this.moTaDataGridViewTextBoxColumn.DataPropertyName = "MoTa";
             this.moTaDataGridViewTextBoxColumn.HeaderText = "MoTa";
             this.moTaDataGridViewTextBoxColumn.Name = "moTaDataGridViewTextBoxColumn";
+            this.moTaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dsSPBindingSource
+            // 
+            this.dsSPBindingSource.DataMember = "DsSP";
+            this.dsSPBindingSource.DataSource = this.cuaHangMayAnhDataSetBindingSource;
+            // 
+            // cuaHangMayAnhDataSetBindingSource
+            // 
+            this.cuaHangMayAnhDataSetBindingSource.DataSource = this.cuaHangMayAnhDataSet;
+            this.cuaHangMayAnhDataSetBindingSource.Position = 0;
+            // 
+            // cuaHangMayAnhDataSet
+            // 
+            this.cuaHangMayAnhDataSet.DataSetName = "CuaHangMayAnhDataSet";
+            this.cuaHangMayAnhDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dsSPTableAdapter
+            // 
+            this.dsSPTableAdapter.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -262,9 +268,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picboxfilm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxmayanh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtvsp2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayAnhDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayAnhDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSPBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayAnhDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayAnhDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
