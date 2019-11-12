@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace GiaoDien
 {
@@ -28,7 +29,9 @@ namespace GiaoDien
                 string Select = ("Select * From Khachhang Where KhachHang.TenDangNhap = \"" + tenTaiKhoan + "\"");
                 KetNoi conn = new KetNoi();
                 string[] s = new string[8];
-                ds = conn.Load_Data(Select, "KhachHang");
+                conn.Open_DataAccess();
+                conn.adaShowData = new OleDbDataAdapter(Select, conn.con);
+                conn.adaShowData.Fill(ds);
                 for (int i = 0; i < 8; i++)
                 {
                     s[i] = ds.Tables[0].Rows[0].ItemArray[i].ToString();
@@ -44,10 +47,17 @@ namespace GiaoDien
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'cuaHangMayAnhDataSet.DsSP' table. You can move, or remove it, as needed.
+            this.dsSPTableAdapter.Fill(this.cuaHangMayAnhDataSet.DsSP);
             //ThaoTac.ThemQuanLy("thach123", "asd", "asd", "asd", "asd", "asd");
             this.Hide();
             Form f = new Danhsachsanpham();
             f.Show();
+        }
+
+        private void lbName_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

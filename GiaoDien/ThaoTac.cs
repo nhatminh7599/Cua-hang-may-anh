@@ -53,7 +53,9 @@ namespace GiaoDien
             {
                 DataSet ds = new DataSet();
                 string Select = "SELECT MatKhau From KhachHang Where KhachHang.TenDangNhap = \"" + TenDangNhap + "\"";
-                ds = con.Load_Data(Select, "KhachHang");
+                con.Open_DataAccess();
+                con.adaShowData = new OleDbDataAdapter(Select, con.con);
+                con.adaShowData.Fill(ds);
                 string s = ds.Tables[0].Rows[0].ItemArray[0].ToString();
                 if (MatKhau == s)
                     return true;

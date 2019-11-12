@@ -35,6 +35,11 @@
             System.Windows.Forms.Label tenSPLabel;
             System.Windows.Forms.Label maSPLabel;
             this.dtvsp = new System.Windows.Forms.DataGridView();
+            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dsSPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cuaHangMayAnhDataSet = new GiaoDien.CuaHangMayAnhDataSet();
             this.dsSPTableAdapter = new GiaoDien.CuaHangMayAnhDataSetTableAdapters.DsSPTableAdapter();
@@ -50,11 +55,12 @@
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.txtTenSP = new System.Windows.Forms.TextBox();
             this.txtMaSP = new System.Windows.Forms.TextBox();
-            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moTaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btTaiLai = new System.Windows.Forms.Button();
             moTaLabel = new System.Windows.Forms.Label();
             giaLabel = new System.Windows.Forms.Label();
             soLuongLabel = new System.Windows.Forms.Label();
@@ -126,7 +132,12 @@
             this.TenSP,
             this.SoLuong,
             this.Gia,
-            this.MoTa});
+            this.MoTa,
+            this.maSPDataGridViewTextBoxColumn,
+            this.tenSPDataGridViewTextBoxColumn,
+            this.soLuongDataGridViewTextBoxColumn,
+            this.giaDataGridViewTextBoxColumn,
+            this.moTaDataGridViewTextBoxColumn});
             this.dtvsp.DataSource = this.dsSPBindingSource;
             this.dtvsp.Location = new System.Drawing.Point(16, 282);
             this.dtvsp.Margin = new System.Windows.Forms.Padding(4);
@@ -136,6 +147,41 @@
             this.dtvsp.Size = new System.Drawing.Size(712, 220);
             this.dtvsp.TabIndex = 0;
             this.dtvsp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvsp_CellClick);
+            // 
+            // MaSP
+            // 
+            this.MaSP.DataPropertyName = "MaSP";
+            this.MaSP.HeaderText = "MaSP";
+            this.MaSP.Name = "MaSP";
+            this.MaSP.ReadOnly = true;
+            // 
+            // TenSP
+            // 
+            this.TenSP.DataPropertyName = "TenSP";
+            this.TenSP.HeaderText = "TenSP";
+            this.TenSP.Name = "TenSP";
+            this.TenSP.ReadOnly = true;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "SoLuong";
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
+            // 
+            // Gia
+            // 
+            this.Gia.DataPropertyName = "Gia";
+            this.Gia.HeaderText = "Gia";
+            this.Gia.Name = "Gia";
+            this.Gia.ReadOnly = true;
+            // 
+            // MoTa
+            // 
+            this.MoTa.DataPropertyName = "MoTa";
+            this.MoTa.HeaderText = "MoTa";
+            this.MoTa.Name = "MoTa";
+            this.MoTa.ReadOnly = true;
             // 
             // dsSPBindingSource
             // 
@@ -159,7 +205,7 @@
             // 
             // btXoa
             // 
-            this.btXoa.Location = new System.Drawing.Point(355, 172);
+            this.btXoa.Location = new System.Drawing.Point(355, 149);
             this.btXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(111, 48);
@@ -170,7 +216,7 @@
             // 
             // btThem
             // 
-            this.btThem.Location = new System.Drawing.Point(355, 41);
+            this.btThem.Location = new System.Drawing.Point(355, 17);
             this.btThem.Margin = new System.Windows.Forms.Padding(4);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(111, 48);
@@ -181,7 +227,7 @@
             // 
             // btSua
             // 
-            this.btSua.Location = new System.Drawing.Point(355, 108);
+            this.btSua.Location = new System.Drawing.Point(355, 81);
             this.btSua.Margin = new System.Windows.Forms.Padding(4);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(111, 48);
@@ -194,20 +240,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(543, 55);
+            this.label1.Location = new System.Drawing.Point(548, 78);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 20);
+            this.label1.Size = new System.Drawing.Size(159, 20);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Nhập mã cần tìm:";
+            this.label1.Text = "Nhập tên sản phẩm:";
             // 
             // txtTim
             // 
-            this.txtTim.Location = new System.Drawing.Point(503, 94);
+            this.txtTim.Location = new System.Drawing.Point(514, 111);
             this.txtTim.Margin = new System.Windows.Forms.Padding(4);
             this.txtTim.Multiline = true;
             this.txtTim.Name = "txtTim";
-            this.txtTim.Size = new System.Drawing.Size(225, 69);
+            this.txtTim.Size = new System.Drawing.Size(225, 44);
             this.txtTim.TabIndex = 13;
             // 
             // btTim
@@ -219,6 +265,7 @@
             this.btTim.TabIndex = 14;
             this.btTim.Text = "Tìm kiếm";
             this.btTim.UseVisualStyleBackColor = true;
+            this.btTim.Click += new System.EventHandler(this.btTim_Click);
             // 
             // txtMoTa
             // 
@@ -274,46 +321,57 @@
             this.txtMaSP.TabIndex = 16;
             this.txtMaSP.TextChanged += new System.EventHandler(this.txtTenSP_TextChanged);
             // 
-            // MaSP
+            // maSPDataGridViewTextBoxColumn
             // 
-            this.MaSP.DataPropertyName = "MaSP";
-            this.MaSP.HeaderText = "MaSP";
-            this.MaSP.Name = "MaSP";
-            this.MaSP.ReadOnly = true;
+            this.maSPDataGridViewTextBoxColumn.DataPropertyName = "MaSP";
+            this.maSPDataGridViewTextBoxColumn.HeaderText = "MaSP";
+            this.maSPDataGridViewTextBoxColumn.Name = "maSPDataGridViewTextBoxColumn";
+            this.maSPDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // TenSP
+            // tenSPDataGridViewTextBoxColumn
             // 
-            this.TenSP.DataPropertyName = "TenSP";
-            this.TenSP.HeaderText = "TenSP";
-            this.TenSP.Name = "TenSP";
-            this.TenSP.ReadOnly = true;
+            this.tenSPDataGridViewTextBoxColumn.DataPropertyName = "TenSP";
+            this.tenSPDataGridViewTextBoxColumn.HeaderText = "TenSP";
+            this.tenSPDataGridViewTextBoxColumn.Name = "tenSPDataGridViewTextBoxColumn";
+            this.tenSPDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // SoLuong
+            // soLuongDataGridViewTextBoxColumn
             // 
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "SoLuong";
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.ReadOnly = true;
+            this.soLuongDataGridViewTextBoxColumn.DataPropertyName = "SoLuong";
+            this.soLuongDataGridViewTextBoxColumn.HeaderText = "SoLuong";
+            this.soLuongDataGridViewTextBoxColumn.Name = "soLuongDataGridViewTextBoxColumn";
+            this.soLuongDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Gia
+            // giaDataGridViewTextBoxColumn
             // 
-            this.Gia.DataPropertyName = "Gia";
-            this.Gia.HeaderText = "Gia";
-            this.Gia.Name = "Gia";
-            this.Gia.ReadOnly = true;
+            this.giaDataGridViewTextBoxColumn.DataPropertyName = "Gia";
+            this.giaDataGridViewTextBoxColumn.HeaderText = "Gia";
+            this.giaDataGridViewTextBoxColumn.Name = "giaDataGridViewTextBoxColumn";
+            this.giaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // MoTa
+            // moTaDataGridViewTextBoxColumn
             // 
-            this.MoTa.DataPropertyName = "MoTa";
-            this.MoTa.HeaderText = "MoTa";
-            this.MoTa.Name = "MoTa";
-            this.MoTa.ReadOnly = true;
+            this.moTaDataGridViewTextBoxColumn.DataPropertyName = "MoTa";
+            this.moTaDataGridViewTextBoxColumn.HeaderText = "MoTa";
+            this.moTaDataGridViewTextBoxColumn.Name = "moTaDataGridViewTextBoxColumn";
+            this.moTaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // btTaiLai
+            // 
+            this.btTaiLai.Location = new System.Drawing.Point(355, 214);
+            this.btTaiLai.Name = "btTaiLai";
+            this.btTaiLai.Size = new System.Drawing.Size(111, 48);
+            this.btTaiLai.TabIndex = 25;
+            this.btTaiLai.Text = "Tải lại";
+            this.btTaiLai.UseVisualStyleBackColor = true;
+            this.btTaiLai.Click += new System.EventHandler(this.btTaiLai_Click);
             // 
             // Danhsachsanpham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 517);
+            this.Controls.Add(this.btTaiLai);
             this.Controls.Add(moTaLabel);
             this.Controls.Add(this.txtMoTa);
             this.Controls.Add(giaLabel);
@@ -369,5 +427,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
         private System.Windows.Forms.DataGridViewTextBoxColumn MoTa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maSPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenSPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soLuongDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn giaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn moTaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btTaiLai;
     }
 }

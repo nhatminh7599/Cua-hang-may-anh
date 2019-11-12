@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label Á;
             this.lbphukien = new System.Windows.Forms.Label();
             this.lbfilm = new System.Windows.Forms.Label();
@@ -37,10 +38,24 @@
             this.picboxmayanh = new System.Windows.Forms.PictureBox();
             this.lbDangNhap = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
+            this.dtvsp2 = new System.Windows.Forms.DataGridView();
+            this.cuaHangMayAnhDataSet = new GiaoDien.CuaHangMayAnhDataSet();
+            this.cuaHangMayAnhDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsSPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsSPTableAdapter = new GiaoDien.CuaHangMayAnhDataSetTableAdapters.DsSPTableAdapter();
+            this.maSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moTaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             Á = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picboxphukien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxfilm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxmayanh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvsp2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayAnhDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayAnhDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsSPBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Á
@@ -79,7 +94,7 @@
             this.lbfilm.Location = new System.Drawing.Point(271, 67);
             this.lbfilm.Name = "lbfilm";
             this.lbfilm.Padding = new System.Windows.Forms.Padding(70, 0, 0, 0);
-            this.lbfilm.Size = new System.Drawing.Size(274, 85);
+            this.lbfilm.Size = new System.Drawing.Size(283, 85);
             this.lbfilm.TabIndex = 28;
             this.lbfilm.Text = "FILM";
             this.lbfilm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -153,6 +168,73 @@
             this.lbName.TabIndex = 32;
             this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbName.Visible = false;
+            this.lbName.Click += new System.EventHandler(this.lbName_Click);
+            // 
+            // dtvsp2
+            // 
+            this.dtvsp2.AutoGenerateColumns = false;
+            this.dtvsp2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtvsp2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.maSPDataGridViewTextBoxColumn,
+            this.tenSPDataGridViewTextBoxColumn,
+            this.soLuongDataGridViewTextBoxColumn,
+            this.giaDataGridViewTextBoxColumn,
+            this.moTaDataGridViewTextBoxColumn});
+            this.dtvsp2.DataSource = this.dsSPBindingSource;
+            this.dtvsp2.Location = new System.Drawing.Point(9, 162);
+            this.dtvsp2.Name = "dtvsp2";
+            this.dtvsp2.RowTemplate.Height = 24;
+            this.dtvsp2.Size = new System.Drawing.Size(545, 270);
+            this.dtvsp2.TabIndex = 33;
+            // 
+            // cuaHangMayAnhDataSet
+            // 
+            this.cuaHangMayAnhDataSet.DataSetName = "CuaHangMayAnhDataSet";
+            this.cuaHangMayAnhDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cuaHangMayAnhDataSetBindingSource
+            // 
+            this.cuaHangMayAnhDataSetBindingSource.DataSource = this.cuaHangMayAnhDataSet;
+            this.cuaHangMayAnhDataSetBindingSource.Position = 0;
+            // 
+            // dsSPBindingSource
+            // 
+            this.dsSPBindingSource.DataMember = "DsSP";
+            this.dsSPBindingSource.DataSource = this.cuaHangMayAnhDataSetBindingSource;
+            // 
+            // dsSPTableAdapter
+            // 
+            this.dsSPTableAdapter.ClearBeforeFill = true;
+            // 
+            // maSPDataGridViewTextBoxColumn
+            // 
+            this.maSPDataGridViewTextBoxColumn.DataPropertyName = "MaSP";
+            this.maSPDataGridViewTextBoxColumn.HeaderText = "MaSP";
+            this.maSPDataGridViewTextBoxColumn.Name = "maSPDataGridViewTextBoxColumn";
+            // 
+            // tenSPDataGridViewTextBoxColumn
+            // 
+            this.tenSPDataGridViewTextBoxColumn.DataPropertyName = "TenSP";
+            this.tenSPDataGridViewTextBoxColumn.HeaderText = "TenSP";
+            this.tenSPDataGridViewTextBoxColumn.Name = "tenSPDataGridViewTextBoxColumn";
+            // 
+            // soLuongDataGridViewTextBoxColumn
+            // 
+            this.soLuongDataGridViewTextBoxColumn.DataPropertyName = "SoLuong";
+            this.soLuongDataGridViewTextBoxColumn.HeaderText = "SoLuong";
+            this.soLuongDataGridViewTextBoxColumn.Name = "soLuongDataGridViewTextBoxColumn";
+            // 
+            // giaDataGridViewTextBoxColumn
+            // 
+            this.giaDataGridViewTextBoxColumn.DataPropertyName = "Gia";
+            this.giaDataGridViewTextBoxColumn.HeaderText = "Gia";
+            this.giaDataGridViewTextBoxColumn.Name = "giaDataGridViewTextBoxColumn";
+            // 
+            // moTaDataGridViewTextBoxColumn
+            // 
+            this.moTaDataGridViewTextBoxColumn.DataPropertyName = "MoTa";
+            this.moTaDataGridViewTextBoxColumn.HeaderText = "MoTa";
+            this.moTaDataGridViewTextBoxColumn.Name = "moTaDataGridViewTextBoxColumn";
             // 
             // Form1
             // 
@@ -160,6 +242,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(1007, 444);
+            this.Controls.Add(this.dtvsp2);
             this.Controls.Add(Á);
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.lbDangNhap);
@@ -178,6 +261,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picboxphukien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxfilm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxmayanh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvsp2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayAnhDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayAnhDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsSPBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -192,6 +279,16 @@
         private System.Windows.Forms.Label lbmayanh;
         private System.Windows.Forms.Label lbDangNhap;
         private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.DataGridView dtvsp2;
+        private System.Windows.Forms.BindingSource cuaHangMayAnhDataSetBindingSource;
+        private CuaHangMayAnhDataSet cuaHangMayAnhDataSet;
+        private System.Windows.Forms.BindingSource dsSPBindingSource;
+        private CuaHangMayAnhDataSetTableAdapters.DsSPTableAdapter dsSPTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maSPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenSPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soLuongDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn giaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn moTaDataGridViewTextBoxColumn;
     }
 }
 
