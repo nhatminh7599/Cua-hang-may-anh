@@ -71,9 +71,9 @@ namespace GiaoDien
                     return dsHienThi;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message, "Lỗi dữ liệu");
+                MessageBox.Show("Mã sản phẩm đã tồn tại hoặc sai kiểu dữ liệu", "Lỗi dữ liệu");
                 adaShowData = new OleDbDataAdapter(s, con);
                 adaShowData.Fill(dsHienThi);
                 Close_Connect();

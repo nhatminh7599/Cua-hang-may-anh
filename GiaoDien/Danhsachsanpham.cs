@@ -37,9 +37,9 @@ namespace GiaoDien
                 txtGia.Text = gia;
                 txtMoTa.Text = mota;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message, "Lỗi");
+                MessageBox.Show("Lỗi dữ liệu", "Lỗi");
             }
         }
         private void Danhsachsanpham_Load(object sender, EventArgs e)
