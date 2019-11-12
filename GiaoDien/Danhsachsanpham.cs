@@ -129,7 +129,7 @@ namespace GiaoDien
             {
                 string accINSET = "UPDATE DsSP SET TenSP = \""
                                    + txtTenSP.Text + "\" ,Soluong = " + txtSoLuong.Text + ", Gia = "
-                                   + txtGia.Text + " WHERE DsSP.MaSP = " + txtMaSP.Text;
+                                   + txtGia.Text + ", MoTa = \"" + txtMoTa.Text + "\" WHERE DsSP.MaSP = " + txtMaSP.Text;
                 ds.Clear();
                 ds = ketnoi.Load_Data(accINSET, "DsSP");
                 dtvsp.DataSource = ds.Tables[0];
