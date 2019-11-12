@@ -25,7 +25,7 @@ namespace GiaoDien
         {
             try
             {
-                string s = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien\CuaHangMayAnh.mdb";
+                string s = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=CuaHangMayAnh.mdb";
                 con = new OleDbConnection(s);
                 con.Open();
                 return true;

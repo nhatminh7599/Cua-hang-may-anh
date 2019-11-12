@@ -24,7 +24,6 @@ namespace GiaoDien
         {
             try
             {
-                ds.Clear();
                 ds = ketnoi.Load_Data("SELECT * FROM " + TenBang, "DsSP");
                 dg.DataSource = ds.Tables[0];
                 string ma = dtvsp.CurrentRow.Cells[0].Value.ToString();
@@ -206,6 +205,7 @@ namespace GiaoDien
 
         private void btTaiLai_Click(object sender, EventArgs e)
         {
+            ds.Clear();
             hienthi(dtvsp, "DsSp");
         }
 
