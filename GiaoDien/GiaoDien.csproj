@@ -57,6 +57,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CuaHangMayAnhDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CuaHangMayAnhDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CuaHangMayAnhDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DangKy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +146,17 @@
     </None>
     <None Include="CuaHangMayAnhDataSet.xss">
       <DependentUpon>CuaHangMayAnhDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CuaHangMayAnhDataSet1.xsc">
+      <DependentUpon>CuaHangMayAnhDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CuaHangMayAnhDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CuaHangMayAnhDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CuaHangMayAnhDataSet1.xss">
+      <DependentUpon>CuaHangMayAnhDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

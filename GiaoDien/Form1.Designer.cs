@@ -30,12 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label Á;
-            this.lbphukien = new System.Windows.Forms.Label();
-            this.lbfilm = new System.Windows.Forms.Label();
-            this.lbmayanh = new System.Windows.Forms.Label();
-            this.picboxphukien = new System.Windows.Forms.PictureBox();
-            this.picboxfilm = new System.Windows.Forms.PictureBox();
-            this.picboxmayanh = new System.Windows.Forms.PictureBox();
             this.lbDangNhap = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
             this.dtvsp2 = new System.Windows.Forms.DataGridView();
@@ -48,10 +42,11 @@
             this.cuaHangMayAnhDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cuaHangMayAnhDataSet = new GiaoDien.CuaHangMayAnhDataSet();
             this.dsSPTableAdapter = new GiaoDien.CuaHangMayAnhDataSetTableAdapters.DsSPTableAdapter();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             Á = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxphukien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxfilm)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxmayanh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtvsp2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayAnhDataSetBindingSource)).BeginInit();
@@ -70,85 +65,16 @@
             Á.Location = new System.Drawing.Point(-2, -1);
             Á.Name = "Á";
             Á.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            Á.Size = new System.Drawing.Size(1012, 68);
+            Á.Size = new System.Drawing.Size(556, 68);
             Á.TabIndex = 0;
             Á.Text = "THÍCH THÌ MUA KHÔNG THÍCH THÌ MUA\r\n\r\n\r\n";
             Á.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbphukien
-            // 
-            this.lbphukien.BackColor = System.Drawing.Color.Peru;
-            this.lbphukien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbphukien.Location = new System.Drawing.Point(545, 67);
-            this.lbphukien.Name = "lbphukien";
-            this.lbphukien.Padding = new System.Windows.Forms.Padding(70, 0, 0, 0);
-            this.lbphukien.Size = new System.Drawing.Size(274, 85);
-            this.lbphukien.TabIndex = 30;
-            this.lbphukien.Text = "PHỤ KIỆN";
-            this.lbphukien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbfilm
-            // 
-            this.lbfilm.BackColor = System.Drawing.Color.Peru;
-            this.lbfilm.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbfilm.Location = new System.Drawing.Point(271, 67);
-            this.lbfilm.Name = "lbfilm";
-            this.lbfilm.Padding = new System.Windows.Forms.Padding(70, 0, 0, 0);
-            this.lbfilm.Size = new System.Drawing.Size(283, 85);
-            this.lbfilm.TabIndex = 28;
-            this.lbfilm.Text = "FILM";
-            this.lbfilm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbmayanh
-            // 
-            this.lbmayanh.BackColor = System.Drawing.Color.Peru;
-            this.lbmayanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbmayanh.Location = new System.Drawing.Point(-3, 67);
-            this.lbmayanh.Name = "lbmayanh";
-            this.lbmayanh.Padding = new System.Windows.Forms.Padding(70, 0, 0, 0);
-            this.lbmayanh.Size = new System.Drawing.Size(274, 85);
-            this.lbmayanh.TabIndex = 9;
-            this.lbmayanh.Text = "MÁY ẢNH";
-            this.lbmayanh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // picboxphukien
-            // 
-            this.picboxphukien.BackColor = System.Drawing.Color.Peru;
-            this.picboxphukien.Image = global::GiaoDien.Properties.Resources.camera_bag1;
-            this.picboxphukien.Location = new System.Drawing.Point(556, 67);
-            this.picboxphukien.Name = "picboxphukien";
-            this.picboxphukien.Size = new System.Drawing.Size(85, 85);
-            this.picboxphukien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picboxphukien.TabIndex = 31;
-            this.picboxphukien.TabStop = false;
-            // 
-            // picboxfilm
-            // 
-            this.picboxfilm.BackColor = System.Drawing.Color.Peru;
-            this.picboxfilm.Image = global::GiaoDien.Properties.Resources.film;
-            this.picboxfilm.Location = new System.Drawing.Point(282, 67);
-            this.picboxfilm.Name = "picboxfilm";
-            this.picboxfilm.Size = new System.Drawing.Size(85, 85);
-            this.picboxfilm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picboxfilm.TabIndex = 29;
-            this.picboxfilm.TabStop = false;
-            // 
-            // picboxmayanh
-            // 
-            this.picboxmayanh.BackColor = System.Drawing.Color.Peru;
-            this.picboxmayanh.Image = global::GiaoDien.Properties.Resources.photo_camera;
-            this.picboxmayanh.Location = new System.Drawing.Point(8, 67);
-            this.picboxmayanh.Name = "picboxmayanh";
-            this.picboxmayanh.Size = new System.Drawing.Size(85, 85);
-            this.picboxmayanh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picboxmayanh.TabIndex = 27;
-            this.picboxmayanh.TabStop = false;
             // 
             // lbDangNhap
             // 
             this.lbDangNhap.BackColor = System.Drawing.Color.Peru;
             this.lbDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDangNhap.Location = new System.Drawing.Point(815, 67);
+            this.lbDangNhap.Location = new System.Drawing.Point(346, 67);
             this.lbDangNhap.Name = "lbDangNhap";
             this.lbDangNhap.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
             this.lbDangNhap.Size = new System.Drawing.Size(195, 85);
@@ -161,7 +87,7 @@
             // 
             this.lbName.BackColor = System.Drawing.Color.Peru;
             this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(815, 67);
+            this.lbName.Location = new System.Drawing.Point(346, 67);
             this.lbName.Name = "lbName";
             this.lbName.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
             this.lbName.Size = new System.Drawing.Size(195, 85);
@@ -172,6 +98,8 @@
             // 
             // dtvsp2
             // 
+            this.dtvsp2.AllowUserToAddRows = false;
+            this.dtvsp2.AllowUserToDeleteRows = false;
             this.dtvsp2.AutoGenerateColumns = false;
             this.dtvsp2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtvsp2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -185,7 +113,7 @@
             this.dtvsp2.Name = "dtvsp2";
             this.dtvsp2.ReadOnly = true;
             this.dtvsp2.RowTemplate.Height = 24;
-            this.dtvsp2.Size = new System.Drawing.Size(545, 270);
+            this.dtvsp2.Size = new System.Drawing.Size(532, 270);
             this.dtvsp2.TabIndex = 33;
             // 
             // maSPDataGridViewTextBoxColumn
@@ -242,47 +170,69 @@
             // 
             this.dsSPTableAdapter.ClearBeforeFill = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(167, 70);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(157, 20);
+            this.textBox1.TabIndex = 34;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(279, 97);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(44, 28);
+            this.button1.TabIndex = 35;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(67, 97);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(44, 28);
+            this.button2.TabIndex = 35;
+            this.button2.Text = "button1";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(29, 70);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(113, 20);
+            this.textBox2.TabIndex = 34;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
-            this.ClientSize = new System.Drawing.Size(1007, 444);
+            this.ClientSize = new System.Drawing.Size(553, 444);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dtvsp2);
             this.Controls.Add(Á);
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.lbDangNhap);
-            this.Controls.Add(this.picboxphukien);
-            this.Controls.Add(this.lbphukien);
-            this.Controls.Add(this.picboxfilm);
-            this.Controls.Add(this.lbfilm);
-            this.Controls.Add(this.picboxmayanh);
-            this.Controls.Add(this.lbmayanh);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mua hàng vô đây nè";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picboxphukien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxfilm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxmayanh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtvsp2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSPBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayAnhDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayAnhDataSet)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox picboxmayanh;
-        private System.Windows.Forms.PictureBox picboxfilm;
-        private System.Windows.Forms.PictureBox picboxphukien;
-        private System.Windows.Forms.Label lbphukien;
-        private System.Windows.Forms.Label lbfilm;
-        private System.Windows.Forms.Label lbmayanh;
         private System.Windows.Forms.Label lbDangNhap;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.DataGridView dtvsp2;
@@ -295,6 +245,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn soLuongDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn giaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn moTaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 
