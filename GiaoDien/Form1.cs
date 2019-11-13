@@ -47,17 +47,18 @@ namespace GiaoDien
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'cuaHangMayAnhDataSet.DsSP' table. You can move, or remove it, as needed.
             this.dsSPTableAdapter.Fill(this.cuaHangMayAnhDataSet.DsSP);
-            //ThaoTac.ThemQuanLy("thach123", "asd", "asd", "asd", "asd", "asd");
-            this.Hide();
+            lbName.Visible = false;
+            lbName.Enabled = false;
+            //this.Hide();
             Form f = new Danhsachsanpham();
             f.Show();
         }
 
         private void lbName_Click(object sender, EventArgs e)
         {
-
+            Form f = new ThongTin();
+            f.Show();
         }
 
     }

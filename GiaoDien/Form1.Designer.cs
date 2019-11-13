@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label Á;
             this.lbDangNhap = new System.Windows.Forms.Label();
-            this.lbName = new System.Windows.Forms.Label();
             this.dtvsp2 = new System.Windows.Forms.DataGridView();
             this.maSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +45,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lbName = new System.Windows.Forms.Label();
             Á = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtvsp2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSPBindingSource)).BeginInit();
@@ -72,29 +72,17 @@
             // 
             // lbDangNhap
             // 
-            this.lbDangNhap.BackColor = System.Drawing.Color.Peru;
-            this.lbDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDangNhap.Location = new System.Drawing.Point(346, 67);
+            this.lbDangNhap.BackColor = System.Drawing.Color.Beige;
+            this.lbDangNhap.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDangNhap.Location = new System.Drawing.Point(432, 67);
+            this.lbDangNhap.Margin = new System.Windows.Forms.Padding(0);
             this.lbDangNhap.Name = "lbDangNhap";
-            this.lbDangNhap.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
-            this.lbDangNhap.Size = new System.Drawing.Size(195, 85);
+            this.lbDangNhap.Size = new System.Drawing.Size(122, 58);
             this.lbDangNhap.TabIndex = 32;
-            this.lbDangNhap.Text = "ĐĂNG NHẬP";
+            this.lbDangNhap.Text = "Đăng nhập";
             this.lbDangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbDangNhap.Click += new System.EventHandler(this.lbdangnhap_Click);
-            // 
-            // lbName
-            // 
-            this.lbName.BackColor = System.Drawing.Color.Peru;
-            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(346, 67);
-            this.lbName.Name = "lbName";
-            this.lbName.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
-            this.lbName.Size = new System.Drawing.Size(195, 85);
-            this.lbName.TabIndex = 32;
-            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbName.Visible = false;
-            this.lbName.Click += new System.EventHandler(this.lbName_Click);
             // 
             // dtvsp2
             // 
@@ -174,7 +162,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(167, 70);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(157, 20);
+            this.textBox1.Size = new System.Drawing.Size(157, 23);
             this.textBox1.TabIndex = 34;
             // 
             // button1
@@ -199,22 +187,35 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(29, 70);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(113, 20);
+            this.textBox2.Size = new System.Drawing.Size(113, 23);
             this.textBox2.TabIndex = 34;
+            // 
+            // lbName
+            // 
+            this.lbName.BackColor = System.Drawing.Color.Beige;
+            this.lbName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.Location = new System.Drawing.Point(432, 67);
+            this.lbName.Margin = new System.Windows.Forms.Padding(0);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(122, 58);
+            this.lbName.TabIndex = 36;
+            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbName.Click += new System.EventHandler(this.lbName_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(553, 444);
+            this.Controls.Add(this.lbName);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dtvsp2);
             this.Controls.Add(Á);
-            this.Controls.Add(this.lbName);
             this.Controls.Add(this.lbDangNhap);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.MaximizeBox = false;
@@ -234,7 +235,6 @@
         #endregion
 
         private System.Windows.Forms.Label lbDangNhap;
-        private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.DataGridView dtvsp2;
         private System.Windows.Forms.BindingSource cuaHangMayAnhDataSetBindingSource;
         private CuaHangMayAnhDataSet cuaHangMayAnhDataSet;
@@ -249,6 +249,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label lbName;
     }
 }
 

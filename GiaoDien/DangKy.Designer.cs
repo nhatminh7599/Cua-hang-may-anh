@@ -51,7 +51,7 @@
             this.btDK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btDK.Name = "btDK";
             this.btDK.Size = new System.Drawing.Size(131, 42);
-            this.btDK.TabIndex = 11;
+            this.btDK.TabIndex = 6;
             this.btDK.Text = "Đăng ký";
             this.btDK.UseVisualStyleBackColor = true;
             this.btDK.Click += new System.EventHandler(this.btDK_Click);
@@ -63,7 +63,7 @@
             this.txtMK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMK.Name = "txtMK";
             this.txtMK.Size = new System.Drawing.Size(172, 30);
-            this.txtMK.TabIndex = 9;
+            this.txtMK.TabIndex = 1;
             this.txtMK.TextChanged += new System.EventHandler(this.txtMK_TextChanged);
             // 
             // txtTK
@@ -73,7 +73,7 @@
             this.txtTK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTK.Name = "txtTK";
             this.txtTK.Size = new System.Drawing.Size(172, 30);
-            this.txtTK.TabIndex = 8;
+            this.txtTK.TabIndex = 0;
             this.txtTK.TextChanged += new System.EventHandler(this.txtTK_TextChanged);
             // 
             // z
@@ -103,7 +103,7 @@
             this.txtSDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(172, 30);
-            this.txtSDT.TabIndex = 13;
+            this.txtSDT.TabIndex = 4;
             // 
             // label1
             // 
@@ -122,7 +122,7 @@
             this.txtTen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(172, 30);
-            this.txtTen.TabIndex = 15;
+            this.txtTen.TabIndex = 2;
             // 
             // label2
             // 
@@ -141,7 +141,7 @@
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(172, 30);
-            this.txtEmail.TabIndex = 13;
+            this.txtEmail.TabIndex = 5;
             // 
             // label3
             // 
@@ -160,7 +160,7 @@
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(172, 30);
-            this.txtDiaChi.TabIndex = 13;
+            this.txtDiaChi.TabIndex = 3;
             // 
             // label4
             // 

@@ -25,12 +25,30 @@ namespace GiaoDien
             }
             else
             {
-                if (ThaoTac.ThemKhachHang(txtTK.Text, txtMK.Text, txtDiaChi.Text, txtTen.Text, txtSDT.Text, txtEmail.Text))
+                string sdt = txtSDT.Text;
+                bool isSDT = true;
+                if (sdt.Length == 10)
                 {
-                    MessageBox.Show("Đăng ký thành công", "Thông báo");
-                    this.Close();
+                    for (int i = 0; i < 10; i++)
+                        if (!char.IsDigit(sdt[i]))
+                        {
+                            isSDT = false;
+                            break;
+                        }
                 }
-                else MessageBox.Show("Đăng ký thất bại", "Thông báo");
+                else 
+                    isSDT = false;
+                if (isSDT)
+                {
+                    if (ThaoTac.ThemKhachHang(txtTK.Text, txtMK.Text, txtDiaChi.Text, txtTen.Text, txtSDT.Text, txtEmail.Text))
+                    {
+                        MessageBox.Show("Đăng ký thành công", "Thông báo");
+                        this.Close();
+                    }
+                    else MessageBox.Show("Đăng ký thất bại", "Thông báo");
+                }
+                else
+                    MessageBox.Show("Số điện thoại không hợp lệ", "Thông báo");
             }
         }
 
