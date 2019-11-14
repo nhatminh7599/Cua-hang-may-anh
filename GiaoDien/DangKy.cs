@@ -41,7 +41,7 @@ namespace GiaoDien
                 if (isSDT)
                 {
                     if (!isQuanLy)
-                        if (ThaoTac.ThemKhachHang(txtTK.Text, txtMK.Text, txtDiaChi.Text, txtTen.Text, txtSDT.Text, txtEmail.Text))
+                        if (ThaoTac.ThemKhachHang(txtTK.Text, txtMK.Text, txtDiaChi.Text, txtTen.Text, txtEmail.Text, txtSDT.Text))
                         {
                             MessageBox.Show("Đăng ký thành công", "Thông báo");
                             this.Close();
