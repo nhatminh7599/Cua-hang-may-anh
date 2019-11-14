@@ -135,6 +135,7 @@
             this.txtMK.Location = new System.Drawing.Point(211, 90);
             this.txtMK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMK.Name = "txtMK";
+            this.txtMK.PasswordChar = '*';
             this.txtMK.Size = new System.Drawing.Size(172, 30);
             this.txtMK.TabIndex = 19;
             // 

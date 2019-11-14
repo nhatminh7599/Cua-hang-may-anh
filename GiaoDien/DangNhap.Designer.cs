@@ -66,6 +66,7 @@
             // 
             this.txtTenMK.Location = new System.Drawing.Point(144, 77);
             this.txtTenMK.Name = "txtTenMK";
+            this.txtTenMK.PasswordChar = '*';
             this.txtTenMK.Size = new System.Drawing.Size(172, 22);
             this.txtTenMK.TabIndex = 1;
             this.txtTenMK.TextChanged += new System.EventHandler(this.txtTenMK_TextChanged);

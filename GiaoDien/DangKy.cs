@@ -82,7 +82,18 @@ namespace GiaoDien
             {
                 chbQuanLy.Visible = true;
                 chbQuanLy.Checked = true;
-                }
+            }
+            else
+            {
+                chbQuanLy.Visible = false;
+                chbQuanLy.Checked = false;
+            }
+        }
+
+        private void DangKy_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            chbQuanLy.Visible = false;
+            chbQuanLy.Checked = false;
         }
     }
 }

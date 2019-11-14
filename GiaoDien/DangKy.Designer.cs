@@ -63,6 +63,7 @@
             this.txtMK.Location = new System.Drawing.Point(205, 85);
             this.txtMK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMK.Name = "txtMK";
+            this.txtMK.PasswordChar = '*';
             this.txtMK.Size = new System.Drawing.Size(172, 30);
             this.txtMK.TabIndex = 1;
             this.txtMK.TextChanged += new System.EventHandler(this.txtMK_TextChanged);
@@ -213,6 +214,7 @@
             this.Name = "DangKy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TopMost = true;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DangKy_FormClosed);
             this.Load += new System.EventHandler(this.DangKy_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
