@@ -39,7 +39,6 @@
             this.btDK = new System.Windows.Forms.Button();
             this.txtMK = new System.Windows.Forms.TextBox();
             this.z = new System.Windows.Forms.Label();
-            this.btDangXuat = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtTen
@@ -122,7 +121,7 @@
             // 
             this.btDK.Enabled = false;
             this.btDK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDK.Location = new System.Drawing.Point(67, 317);
+            this.btDK.Location = new System.Drawing.Point(153, 309);
             this.btDK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btDK.Name = "btDK";
             this.btDK.Size = new System.Drawing.Size(131, 42);
@@ -149,18 +148,6 @@
             this.z.TabIndex = 17;
             this.z.Text = "Mật khẩu";
             // 
-            // btDangXuat
-            // 
-            this.btDangXuat.Enabled = false;
-            this.btDangXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDangXuat.Location = new System.Drawing.Point(243, 317);
-            this.btDangXuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btDangXuat.Name = "btDangXuat";
-            this.btDangXuat.Size = new System.Drawing.Size(131, 42);
-            this.btDangXuat.TabIndex = 20;
-            this.btDangXuat.Text = "Đăng xuất";
-            this.btDangXuat.UseVisualStyleBackColor = true;
-            // 
             // ThongTin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -174,7 +161,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btDangXuat);
             this.Controls.Add(this.btDK);
             this.Controls.Add(this.txtMK);
             this.Controls.Add(this.z);
@@ -199,6 +185,5 @@
         private System.Windows.Forms.Button btDK;
         private System.Windows.Forms.TextBox txtMK;
         private System.Windows.Forms.Label z;
-        private System.Windows.Forms.Button btDangXuat;
     }
 }

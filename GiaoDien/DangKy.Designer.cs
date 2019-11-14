@@ -41,13 +41,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.chbQuanLy = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btDK
             // 
             this.btDK.Enabled = false;
             this.btDK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDK.Location = new System.Drawing.Point(147, 366);
+            this.btDK.Location = new System.Drawing.Point(151, 409);
             this.btDK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btDK.Name = "btDK";
             this.btDK.Size = new System.Drawing.Size(131, 42);
@@ -172,11 +173,26 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "Địa chỉ";
             // 
+            // chbQuanLy
+            // 
+            this.chbQuanLy.AutoCheck = false;
+            this.chbQuanLy.AutoSize = true;
+            this.chbQuanLy.Enabled = false;
+            this.chbQuanLy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbQuanLy.Location = new System.Drawing.Point(164, 357);
+            this.chbQuanLy.Name = "chbQuanLy";
+            this.chbQuanLy.Size = new System.Drawing.Size(102, 29);
+            this.chbQuanLy.TabIndex = 15;
+            this.chbQuanLy.Text = "Quản lý";
+            this.chbQuanLy.UseVisualStyleBackColor = true;
+            this.chbQuanLy.Visible = false;
+            // 
             // DangKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 439);
+            this.ClientSize = new System.Drawing.Size(451, 462);
+            this.Controls.Add(this.chbQuanLy);
             this.Controls.Add(this.txtTen);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtEmail);
@@ -195,8 +211,8 @@
             this.MinimizeBox = false;
             this.Name = "DangKy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DangKi";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.DangKy_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,5 +233,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox chbQuanLy;
     }
 }

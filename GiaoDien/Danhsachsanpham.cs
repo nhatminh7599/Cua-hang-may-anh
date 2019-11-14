@@ -210,5 +210,16 @@ namespace GiaoDien
             hienthi(dtvsp, "DsSp");
         }
 
+        private void btThemQuanLy_Click(object sender, EventArgs e)
+        {
+            Form f = new DangKy();
+            DangKy.isQuanLy = true;
+            f.ShowDialog();
+        }
+
+        private void btCapNhatQuanLy_Click(object sender, EventArgs e)
+        {
+        }
+
     }
 }

@@ -38,5 +38,12 @@ namespace GiaoDien
             txtSDT.Text = KH.SDT();
             txtEmail.Text = KH.Email();
         }
+
+        private void btDangXuat_Click(object sender, EventArgs e)
+        {
+            Form1.isDangNhap = false;
+            
+            this.Close();
+        }
     }
 }

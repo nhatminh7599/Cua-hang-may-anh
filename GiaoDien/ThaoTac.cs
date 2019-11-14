@@ -123,13 +123,13 @@ namespace GiaoDien
                 else
                 {
                     KetNoi ketnoi = new KetNoi();
-                    string danhsachcot = "TenDangNhap, MatKhau, DiaChi, HoTen, SDT, Email";
+                    string danhsachcot = "TenDangNhap, MatKhau, DiaChi, HoTen, SDT, Email, QuanLy";
                     string danhsachthamso = ("\"" + TenDangNhap + "\"" + ", " +
                                              "\"" + MatKhau + "\"" + ", " +
                                              "\"" + HoTen + "\"" + ", " +
                                              "\"" + DiaChi + "\"" + ", " +
                                              "\"" + SDT + "\"" + ", " +
-                                             "\"" + Email + "\"");
+                                             "\"" + Email + "\"" + ", " + "True");
                     string Select = "insert into KhachHang " + "(" + danhsachcot + ") values(" + danhsachthamso + ")";
                     ketnoi.Load_Data(Select);
                     return true;

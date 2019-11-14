@@ -7,7 +7,7 @@ namespace GiaoDien
 {
     class KhachHang
     {
-        protected int id;
+        protected int maKhachHang;
         protected string tenDangNhap;
         protected string matKhau;
         protected string ten;
@@ -21,9 +21,9 @@ namespace GiaoDien
             this.tenDangNhap = this.matKhau = this.ten = this.diaChi = this.sDT = this.email = "";
             this.chucVu = false;
         }
-        public KhachHang(int id, string TenDangNhap, string MatKhau, string Ten, string DiaChi, string SDT, string Email, bool ChucVu)
+        public KhachHang(int maKhachHang, string TenDangNhap, string MatKhau, string Ten, string DiaChi, string SDT, string Email, bool ChucVu)
         {
-            this.id = id;
+            this.maKhachHang = maKhachHang;
             this.tenDangNhap = TenDangNhap;
             this.matKhau = MatKhau;
             this.ten = Ten;
@@ -45,5 +45,7 @@ namespace GiaoDien
         public void SDT(string value) { this.sDT = value; }
         public string Email() { return this.email; }
         public void Email(string value) { this.email = value; }
+        public bool ChucVu() { return this.chucVu; }
+        public void TenDangNhap(bool value) { this.chucVu = value; }
     }
 }

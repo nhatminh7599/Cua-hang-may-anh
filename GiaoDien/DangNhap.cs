@@ -23,6 +23,7 @@ namespace GiaoDien
                 if (ThaoTac.KTMatKhau(txtTenTK.Text, txtTenMK.Text)) // KT mật khẩu
                 {
                     Form1.tenTaiKhoan = txtTenTK.Text;
+                    Form1.isDangNhap = true;
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }

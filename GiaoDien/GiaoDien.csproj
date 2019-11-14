@@ -52,6 +52,12 @@
     <Compile Include="Cach ThanhToan.Designer.cs">
       <DependentUpon>Cach ThanhToan.cs</DependentUpon>
     </Compile>
+    <Compile Include="CapNhatQuanLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapNhatQuanLy.Designer.cs">
+      <DependentUpon>CapNhatQuanLy.cs</DependentUpon>
+    </Compile>
     <Compile Include="CuaHangMayAnhDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -106,6 +112,9 @@
     </Compile>
     <EmbeddedResource Include="Cach ThanhToan.resx">
       <DependentUpon>Cach ThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapNhatQuanLy.resx">
+      <DependentUpon>CapNhatQuanLy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DangKy.resx">
       <DependentUpon>DangKy.cs</DependentUpon>

@@ -46,6 +46,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.lbName = new System.Windows.Forms.Label();
+            this.btQuanLy = new System.Windows.Forms.Button();
+            this.btDangXuat = new System.Windows.Forms.Button();
             Á = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtvsp2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSPBindingSource)).BeginInit();
@@ -75,10 +77,10 @@
             this.lbDangNhap.BackColor = System.Drawing.Color.Beige;
             this.lbDangNhap.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDangNhap.Location = new System.Drawing.Point(432, 67);
+            this.lbDangNhap.Location = new System.Drawing.Point(343, 67);
             this.lbDangNhap.Margin = new System.Windows.Forms.Padding(0);
             this.lbDangNhap.Name = "lbDangNhap";
-            this.lbDangNhap.Size = new System.Drawing.Size(122, 58);
+            this.lbDangNhap.Size = new System.Drawing.Size(193, 58);
             this.lbDangNhap.TabIndex = 32;
             this.lbDangNhap.Text = "Đăng nhập";
             this.lbDangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -97,11 +99,11 @@
             this.giaDataGridViewTextBoxColumn,
             this.moTaDataGridViewTextBoxColumn});
             this.dtvsp2.DataSource = this.dsSPBindingSource;
-            this.dtvsp2.Location = new System.Drawing.Point(9, 162);
+            this.dtvsp2.Location = new System.Drawing.Point(5, 174);
             this.dtvsp2.Name = "dtvsp2";
             this.dtvsp2.ReadOnly = true;
             this.dtvsp2.RowTemplate.Height = 24;
-            this.dtvsp2.Size = new System.Drawing.Size(532, 270);
+            this.dtvsp2.Size = new System.Drawing.Size(532, 292);
             this.dtvsp2.TabIndex = 33;
             // 
             // maSPDataGridViewTextBoxColumn
@@ -195,20 +197,45 @@
             this.lbName.BackColor = System.Drawing.Color.Beige;
             this.lbName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(432, 67);
+            this.lbName.Location = new System.Drawing.Point(343, 67);
             this.lbName.Margin = new System.Windows.Forms.Padding(0);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(122, 58);
+            this.lbName.Size = new System.Drawing.Size(193, 58);
             this.lbName.TabIndex = 36;
             this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbName.Click += new System.EventHandler(this.lbName_Click);
+            // 
+            // btQuanLy
+            // 
+            this.btQuanLy.Enabled = false;
+            this.btQuanLy.Location = new System.Drawing.Point(343, 128);
+            this.btQuanLy.Name = "btQuanLy";
+            this.btQuanLy.Size = new System.Drawing.Size(99, 40);
+            this.btQuanLy.TabIndex = 37;
+            this.btQuanLy.Text = "Quản lý";
+            this.btQuanLy.UseVisualStyleBackColor = true;
+            this.btQuanLy.Visible = false;
+            this.btQuanLy.Click += new System.EventHandler(this.btQuanLy_Click);
+            // 
+            // btDangXuat
+            // 
+            this.btDangXuat.Enabled = false;
+            this.btDangXuat.Location = new System.Drawing.Point(448, 128);
+            this.btDangXuat.Name = "btDangXuat";
+            this.btDangXuat.Size = new System.Drawing.Size(89, 40);
+            this.btDangXuat.TabIndex = 38;
+            this.btDangXuat.Text = "Đăng xuất";
+            this.btDangXuat.UseVisualStyleBackColor = true;
+            this.btDangXuat.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
-            this.ClientSize = new System.Drawing.Size(553, 444);
+            this.ClientSize = new System.Drawing.Size(545, 478);
+            this.Controls.Add(this.btDangXuat);
+            this.Controls.Add(this.btQuanLy);
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -250,6 +277,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.Button btQuanLy;
+        private System.Windows.Forms.Button btDangXuat;
     }
 }
 

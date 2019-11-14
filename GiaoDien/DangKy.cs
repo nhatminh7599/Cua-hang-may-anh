@@ -16,7 +16,7 @@ namespace GiaoDien
         {
             InitializeComponent();
         }
-
+        public static bool isQuanLy = false;
         private void btDK_Click(object sender, EventArgs e)
         {
             if (ThaoTac.KTTonTai("KhachHang", "TenDangNhap", txtTK.Text))
@@ -40,12 +40,22 @@ namespace GiaoDien
                     isSDT = false;
                 if (isSDT)
                 {
-                    if (ThaoTac.ThemKhachHang(txtTK.Text, txtMK.Text, txtDiaChi.Text, txtTen.Text, txtSDT.Text, txtEmail.Text))
-                    {
-                        MessageBox.Show("Đăng ký thành công", "Thông báo");
-                        this.Close();
+                    if (!isQuanLy)
+                        if (ThaoTac.ThemKhachHang(txtTK.Text, txtMK.Text, txtDiaChi.Text, txtTen.Text, txtSDT.Text, txtEmail.Text))
+                        {
+                            MessageBox.Show("Đăng ký thành công", "Thông báo");
+                            this.Close();
+                        }
+                        else MessageBox.Show("Đăng ký thất bại", "Thông báo");
+                    else
+                    { 
+                        if(ThaoTac.ThemQuanLy(txtTK.Text, txtMK.Text, txtDiaChi.Text, txtTen.Text, txtSDT.Text, txtEmail.Text))
+                        {
+                            MessageBox.Show("Đăng ký thành công", "Thông báo");
+                            this.Close();
+                        }
+                        else MessageBox.Show("Đăng ký thất bại", "Thông báo");
                     }
-                    else MessageBox.Show("Đăng ký thất bại", "Thông báo");
                 }
                 else
                     MessageBox.Show("Số điện thoại không hợp lệ", "Thông báo");
@@ -64,6 +74,15 @@ namespace GiaoDien
             if (txtMK.Text.Length > 5 && txtTK.Text.Length > 5)
                 btDK.Enabled = true;
             else btDK.Enabled = false;
+        }
+
+        private void DangKy_Load(object sender, EventArgs e)
+        {
+            if (isQuanLy)
+            {
+                chbQuanLy.Visible = true;
+                chbQuanLy.Checked = true;
+                }
         }
     }
 }

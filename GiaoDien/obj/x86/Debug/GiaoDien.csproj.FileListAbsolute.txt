@@ -39,3 +39,4 @@ C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien\bin\Debug\CuaHangMayAnh.mdb
 C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien\obj\x86\Debug\GiaoDien.Danhsachsanpham.resources
 C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien\obj\x86\Debug\GiaoDien.ThongTin.resources
 C:\Users\Thach\Desktop\Cua-hang-may-anh\GiaoDien\obj\x86\Debug\GiaoDien.ThongTin.resources
+C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien\obj\x86\Debug\GiaoDien.CapNhatQuanLy.resources

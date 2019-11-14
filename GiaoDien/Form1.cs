@@ -17,8 +17,8 @@ namespace GiaoDien
             InitializeComponent();
         }
         public static string tenTaiKhoan;
-        
         KhachHang KH;
+        public static bool isDangNhap = false;
         private void lbdangnhap_Click(object sender, EventArgs e)
         {
             Form moi = new DangNhap();
@@ -33,32 +33,42 @@ namespace GiaoDien
                 conn.adaShowData = new OleDbDataAdapter(Select, conn.con);
                 conn.adaShowData.Fill(ds);
                 for (int i = 0; i < 8; i++)
-                {
                     s[i] = ds.Tables[0].Rows[0].ItemArray[i].ToString();
-                }
                 KH = new KhachHang(int.Parse(s[0]), s[1], s[2], s[3], s[4], s[5], s[6], bool.Parse(s[7]));
                 lbDangNhap.Visible = false;
                 lbDangNhap.Enabled = false;
                 lbName.Text = KH.Ten();
                 lbName.Visible = true;
                 lbName.Enabled = true;
+                btDangXuat.Enabled = true;
+                btDangXuat.Visible = true;
+                if (KH.ChucVu())
+                {
+                    btQuanLy.Enabled = true;
+                    btQuanLy.Visible = true;
+                }
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void Form1_Load(object sender, EventArgs e)
         {
-            this.dsSPTableAdapter.Fill(this.cuaHangMayAnhDataSet.DsSP);
+            KH = new KhachHang();
             lbName.Visible = false;
             lbName.Enabled = false;
-            //this.Hide();
-            Form f = new Danhsachsanpham();
-            f.Show();
+            btQuanLy.Visible = false;
+            btQuanLy.Enabled = false;
         }
 
         private void lbName_Click(object sender, EventArgs e)
         {
             Form f = new ThongTin();
-            f.Show();
+            f.ShowDialog();
+        }
+
+        private void btQuanLy_Click(object sender, EventArgs e)
+        {
+            Form f = new Danhsachsanpham();
+            f.ShowDialog();
         }
 
     }
