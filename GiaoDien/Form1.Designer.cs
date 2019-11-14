@@ -227,6 +227,7 @@
             this.btDangXuat.Text = "Đăng xuất";
             this.btDangXuat.UseVisualStyleBackColor = true;
             this.btDangXuat.Visible = false;
+            this.btDangXuat.Click += new System.EventHandler(this.btDangXuat_Click);
             // 
             // Form1
             // 
@@ -245,6 +246,7 @@
             this.Controls.Add(Á);
             this.Controls.Add(this.lbDangNhap);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

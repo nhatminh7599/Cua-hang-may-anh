@@ -378,6 +378,7 @@
             this.Controls.Add(this.btThem);
             this.Controls.Add(this.btXoa);
             this.Controls.Add(this.dtvsp);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Danhsachsanpham";

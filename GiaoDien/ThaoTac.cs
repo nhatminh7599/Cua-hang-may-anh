@@ -150,16 +150,16 @@ namespace GiaoDien
         {
             if (ThaoTac.KTTonTai("KhachHang", "TenDangNhap", TenDangNhap))
             {
-                MessageBox.Show("Tài khoản không tồn tại", "Lỗi", MessageBoxButtons.OK);
-                return false;
+                KetNoi ketnoi = new KetNoi();
+                string Update = "Update KhachHang set QuanLy = True Where KhachHang.TenDangNhap = \"" + TenDangNhap + "\"";
+                ketnoi.Load_Data(Update);
+                return true;
             }
             else
                 try
                 {
-                    KetNoi ketnoi = new KetNoi();
-                    string Update = "Update KhachHang set QuanLy = True Where KhachHang.TenDangNhap = \"" + TenDangNhap + "\"";
-                    ketnoi.Load_Data(Update);
-                    return true;
+                    MessageBox.Show("Tài khoản không tồn tại", "Lỗi", MessageBoxButtons.OK);
+                    return false; 
                 }
                 catch (Exception)
                 {

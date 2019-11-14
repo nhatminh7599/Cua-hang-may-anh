@@ -25,7 +25,10 @@ namespace GiaoDien
         {
             try
             {
-                string s = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Application.StartupPath + @"\CuaHangMayAnh.mdb";
+                string t = Application.StartupPath;
+                int i = t.LastIndexOf('\\') - 3;
+                t = t.Substring(0, i) + "CuaHangMayAnh.mdb";
+                string s = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + t;
                 con = new OleDbConnection(s);
                 con.Open();
                 return true;

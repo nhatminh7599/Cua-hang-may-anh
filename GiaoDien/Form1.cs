@@ -71,5 +71,19 @@ namespace GiaoDien
             f.ShowDialog();
         }
 
+        private void btDangXuat_Click(object sender, EventArgs e)
+        {
+            KH = new KhachHang();
+            lbName.Text = "";
+            lbName.Enabled = false;
+            lbName.Visible = false;
+            lbDangNhap.Visible = true;
+            lbDangNhap.Enabled = true;
+            btDangXuat.Visible = false;
+            btDangXuat.Enabled = false;
+            btQuanLy.Visible = false;
+            btQuanLy.Enabled = false;
+        }
+
     }
 }

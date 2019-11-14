@@ -36,7 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btDK = new System.Windows.Forms.Button();
+            this.btLuu = new System.Windows.Forms.Button();
             this.txtMK = new System.Windows.Forms.TextBox();
             this.z = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -117,17 +117,17 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "Họ tên";
             // 
-            // btDK
+            // btLuu
             // 
-            this.btDK.Enabled = false;
-            this.btDK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDK.Location = new System.Drawing.Point(153, 309);
-            this.btDK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btDK.Name = "btDK";
-            this.btDK.Size = new System.Drawing.Size(131, 42);
-            this.btDK.TabIndex = 20;
-            this.btDK.Text = "Lưu";
-            this.btDK.UseVisualStyleBackColor = true;
+            this.btLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLuu.Location = new System.Drawing.Point(153, 309);
+            this.btLuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btLuu.Name = "btLuu";
+            this.btLuu.Size = new System.Drawing.Size(131, 42);
+            this.btLuu.TabIndex = 20;
+            this.btLuu.Text = "Lưu";
+            this.btLuu.UseVisualStyleBackColor = true;
+            this.btLuu.Click += new System.EventHandler(this.btLuu_Click);
             // 
             // txtMK
             // 
@@ -161,10 +161,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btDK);
+            this.Controls.Add(this.btLuu);
             this.Controls.Add(this.txtMK);
             this.Controls.Add(this.z);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "ThongTin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThongTin";
             this.Load += new System.EventHandler(this.ThongTin_Load);
             this.ResumeLayout(false);
@@ -182,7 +184,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btDK;
+        private System.Windows.Forms.Button btLuu;
         private System.Windows.Forms.TextBox txtMK;
         private System.Windows.Forms.Label z;
     }

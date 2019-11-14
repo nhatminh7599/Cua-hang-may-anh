@@ -39,11 +39,22 @@ namespace GiaoDien
             txtEmail.Text = KH.Email();
         }
 
-        private void btDangXuat_Click(object sender, EventArgs e)
+        private void btLuu_Click(object sender, EventArgs e)
         {
-            Form1.isDangNhap = false;
-            
-            this.Close();
+            try
+            {
+                string accINSET = "UPDATE KhachHang SET HoTen = \""
+                                       + txtTen.Text + "\" ,MatKhau = \"" + txtMK.Text + "\", DiaChi = \""
+                                       + txtDiaChi.Text + "\", Email = \"" + txtEmail.Text + "\", SDT = \""
+                                       + txtSDT.Text + "\" WHERE KhachHang.TenDangNhap = \"" + KH.TenDangNhap() + "\"";
+                KetNoi ketnoi = new KetNoi();
+                ketnoi.Load_Data(accINSET);
+                MessageBox.Show("Lưu thông tin thành công", "Thông báo");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lưu thông tin thất bại", "Lỗi");
+            }
         }
     }
 }

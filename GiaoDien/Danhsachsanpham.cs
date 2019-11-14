@@ -219,6 +219,8 @@ namespace GiaoDien
 
         private void btCapNhatQuanLy_Click(object sender, EventArgs e)
         {
+            Form f = new CapNhatQuanLy();
+            f.ShowDialog();
         }
 
     }
