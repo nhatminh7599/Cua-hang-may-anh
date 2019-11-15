@@ -40,12 +40,12 @@ namespace GiaoDien
             txtGia.Clear();
             txtMoTa.Clear();
         }
-        public void HienThi(DataGridView dg, string TenBang)
+        public void HienThi()
         {
             try
             {
-                ds = ketnoi.Load_Data("SELECT * FROM " + TenBang, "DsSP");
-                dg.DataSource = ds.Tables[0];
+                ds = ketnoi.Load_Data("SELECT * FROM DsSP", "DsSP");
+                dtvsp.DataSource = ds.Tables[0];
                 LayDuLieu();
             }
             catch (Exception)
@@ -55,7 +55,7 @@ namespace GiaoDien
         }
         private void Danhsachsanpham_Load(object sender, EventArgs e)
         {
-            HienThi(dtvsp, "DsSp");
+            HienThi();
         }
 
         private void btThem_Click(object sender, EventArgs e)
@@ -99,10 +99,9 @@ namespace GiaoDien
                     ds.Clear();
                     ketnoi.Open_DataAccess();
                     string accINSET = "DELETE FROM DsSP WHERE MaSP = " + ma + "";
-                    OleDbCommand cmd = new OleDbCommand(accINSET, ketnoi.con);
-                    cmd.ExecuteNonQuery();
-                    ketnoi.Close_Connect();
-                    HienThi(dtvsp, "DsSP");
+                    ds.Clear();
+                    ds = ketnoi.Load_Data(accINSET, "DsSP");
+                    dtvsp.DataSource = ds.Tables[0];
                     MessageBox.Show("Đã xóa sản phẩm " + ma);
                 }
                 catch (Exception ex)
@@ -184,7 +183,7 @@ namespace GiaoDien
         private void btTaiLai_Click(object sender, EventArgs e)
         {
             ds.Clear();
-            HienThi(dtvsp, "DsSp");
+            HienThi();
         }
 
         private void btThemQuanLy_Click(object sender, EventArgs e)
