@@ -19,23 +19,34 @@ namespace GiaoDien
         {
             InitializeComponent();
         }
-
-        public void hienthi(DataGridView dg, string TenBang)
+        public void LayDuLieu()
+        {
+            string ma = dtvsp.CurrentRow.Cells[0].Value.ToString();
+            string ten = dtvsp.CurrentRow.Cells[1].Value.ToString();
+            string soluong = dtvsp.CurrentRow.Cells[2].Value.ToString();
+            string gia = dtvsp.CurrentRow.Cells[3].Value.ToString();
+            string mota = dtvsp.CurrentRow.Cells[4].Value.ToString();
+            txtMaSP.Text = ma;
+            txtTenSP.Text = ten;
+            txtSoLuong.Text = soluong;
+            txtGia.Text = gia;
+            txtMoTa.Text = mota;
+        }
+        public void XoaDuLieu()
+        {
+            txtMaSP.Clear();
+            txtTenSP.Clear();
+            txtSoLuong.Clear();
+            txtGia.Clear();
+            txtMoTa.Clear();
+        }
+        public void HienThi(DataGridView dg, string TenBang)
         {
             try
             {
                 ds = ketnoi.Load_Data("SELECT * FROM " + TenBang, "DsSP");
                 dg.DataSource = ds.Tables[0];
-                string ma = dtvsp.CurrentRow.Cells[0].Value.ToString();
-                string ten = dtvsp.CurrentRow.Cells[1].Value.ToString();
-                string soluong = dtvsp.CurrentRow.Cells[2].Value.ToString();
-                string gia = dtvsp.CurrentRow.Cells[3].Value.ToString();
-                string mota = dtvsp.CurrentRow.Cells[4].Value.ToString();
-                txtMaSP.Text = ma;
-                txtTenSP.Text = ten;
-                txtSoLuong.Text = soluong;
-                txtGia.Text = gia;
-                txtMoTa.Text = mota;
+                LayDuLieu();
             }
             catch (Exception)
             {
@@ -44,8 +55,7 @@ namespace GiaoDien
         }
         private void Danhsachsanpham_Load(object sender, EventArgs e)
         {
-            hienthi(dtvsp, "DsSp");
-            
+            HienThi(dtvsp, "DsSp");
         }
 
         private void btThem_Click(object sender, EventArgs e)
@@ -66,11 +76,7 @@ namespace GiaoDien
                     ds.Clear();
                     ds = ketnoi.Load_Data(accINSET, "DsSP");
                     dtvsp.DataSource = ds.Tables[0];
-                    txtMaSP.Clear();
-                    txtTenSP.Clear();
-                    txtSoLuong.Clear();
-                    txtGia.Clear();
-                    txtMoTa.Clear();
+                    XoaDuLieu();
                     btThem.Enabled = false;
                 }
             }
@@ -96,10 +102,7 @@ namespace GiaoDien
                     OleDbCommand cmd = new OleDbCommand(accINSET, ketnoi.con);
                     cmd.ExecuteNonQuery();
                     ketnoi.Close_Connect();
-                    hienthi(dtvsp, "DsSP");
-                    //ds.Clear();
-                    //ds = ketnoi.Load_Data("SELECT * FROM DsSP", "DsSP");
-                    //dtvsp.DataSource = ds.Tables[0];
+                    HienThi(dtvsp, "DsSP");
                     MessageBox.Show("Đã xóa sản phẩm " + ma);
                 }
                 catch (Exception ex)
@@ -111,16 +114,7 @@ namespace GiaoDien
 
         private void dtvsp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string ma = dtvsp.CurrentRow.Cells[0].Value.ToString();
-            string ten = dtvsp.CurrentRow.Cells[1].Value.ToString();
-            string soluong = dtvsp.CurrentRow.Cells[2].Value.ToString();
-            string gia = dtvsp.CurrentRow.Cells[3].Value.ToString();
-            string mota = dtvsp.CurrentRow.Cells[4].Value.ToString();
-            txtMaSP.Text = ma;
-            txtTenSP.Text = ten;
-            txtSoLuong.Text = soluong;
-            txtGia.Text = gia;
-            txtMoTa.Text = mota;
+            LayDuLieu();
         }
 
         private void btSua_Click(object sender, EventArgs e)
@@ -133,11 +127,7 @@ namespace GiaoDien
                 ds.Clear();
                 ds = ketnoi.Load_Data(accINSET, "DsSP");
                 dtvsp.DataSource = ds.Tables[0];
-                txtMaSP.Clear();
-                txtTenSP.Clear();
-                txtSoLuong.Clear();
-                txtGia.Clear();
-                txtMoTa.Clear();
+                XoaDuLieu();
                 btThem.Enabled = false;
             }
             catch (Exception)
@@ -183,31 +173,18 @@ namespace GiaoDien
             dtvsp.DataSource = ds.Tables[0];
             if (ds.Tables[0].Rows.Count > 0)
             {
-                string ma = dtvsp.CurrentRow.Cells[0].Value.ToString();
-                string ten = dtvsp.CurrentRow.Cells[1].Value.ToString();
-                string soluong = dtvsp.CurrentRow.Cells[2].Value.ToString();
-                string gia = dtvsp.CurrentRow.Cells[3].Value.ToString();
-                string mota = dtvsp.CurrentRow.Cells[4].Value.ToString();
-                txtMaSP.Text = ma;
-                txtTenSP.Text = ten;
-                txtSoLuong.Text = soluong;
-                txtGia.Text = gia;
-                txtMoTa.Text = mota;
+                LayDuLieu();
             }
             else
             {
-                txtMaSP.Clear();
-                txtTenSP.Clear();
-                txtSoLuong.Clear();
-                txtGia.Clear();
-                txtMoTa.Clear();
+                XoaDuLieu();
             }
         }
 
         private void btTaiLai_Click(object sender, EventArgs e)
         {
             ds.Clear();
-            hienthi(dtvsp, "DsSp");
+            HienThi(dtvsp, "DsSp");
         }
 
         private void btThemQuanLy_Click(object sender, EventArgs e)

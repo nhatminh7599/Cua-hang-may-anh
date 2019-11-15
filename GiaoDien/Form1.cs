@@ -83,6 +83,7 @@ namespace GiaoDien
             btDangXuat.Enabled = false;
             btQuanLy.Visible = false;
             btQuanLy.Enabled = false;
+            DangKy.isQuanLy = false;
         }
 
     }
