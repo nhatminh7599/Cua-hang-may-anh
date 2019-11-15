@@ -193,5 +193,26 @@ namespace GiaoDien
                     return false;
                 }
         }
+
+        public static bool KTHoaDon(int MaHD, int MaSP)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                string Select = "SELECT MaHD From CTHoaDon k Where k.MaSP = " + MaSP + " and k.ThanhToan = No";
+                con.Open_DataAccess();
+                con.adaShowData = new OleDbDataAdapter(Select, con.con);
+                con.adaShowData.Fill(ds);
+                con.Close_Connect();
+                int s = ds.Tables[0].Rows.Count;
+                if (s > 0)
+                    return true;
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

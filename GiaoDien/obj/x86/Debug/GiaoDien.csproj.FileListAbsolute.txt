@@ -14,7 +14,6 @@ C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien\obj\x86\Debug\GiaoDien.DangK
 C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien\obj\x86\Debug\GiaoDien.DangNhap.resources
 C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien\obj\x86\Debug\GiaoDien.Form1.resources
 C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien\obj\x86\Debug\GiaoDien.Properties.Resources.resources
-C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien\obj\x86\Debug\GiaoDien.ThanhToan.resources
 C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien\obj\x86\Debug\GiaoDien.csproj.GenerateResource.Cache
 C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien\bin\Debug\GiaoDien.exe
 C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien\bin\Debug\GiaoDien.pdb

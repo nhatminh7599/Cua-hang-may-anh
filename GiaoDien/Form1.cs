@@ -22,6 +22,7 @@ namespace GiaoDien
         KetNoi ketnoi = new KetNoi();
         DataSet ds = new DataSet();
 
+        public static int maHoaDon = 1;
         public static string tenTaiKhoan;
         KhachHang KH;
         public static bool isDangNhap = false;
@@ -58,6 +59,7 @@ namespace GiaoDien
 
         public void Form1_Load(object sender, EventArgs e)
         {
+            while(ThaoTac.KTTonTai("HoaDon", "MaHD", maHoaDon)) maHoaDon++;
             ds = ketnoi.Load_Data("SELECT * FROM DsSP", "DsSP");
             dtvsp2.DataSource = ds.Tables[0];
             KH = new KhachHang();
@@ -81,6 +83,7 @@ namespace GiaoDien
 
         private void btDangXuat_Click(object sender, EventArgs e)
         {
+            tenTaiKhoan = "";
             KH = new KhachHang();
             lbName.Text = "";
             lbName.Enabled = false;
@@ -92,26 +95,57 @@ namespace GiaoDien
             btQuanLy.Visible = false;
             btQuanLy.Enabled = false;
             DangKy.isQuanLy = false;
+            isDangNhap = false;
         }
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            try
+            if (isDangNhap)
             {
-                string ma = dtvsp2.CurrentRow.Cells[0].Value.ToString();
-                string sl = txtSoLuong.Text;
-                string gia = dtvsp2.CurrentRow.Cells[3].Value.ToString();
+                try
+                {
+                    string ma = dtvsp2.CurrentRow.Cells[0].Value.ToString();
+                    string sl = txtSoLuong.Text;
+                    string gia = dtvsp2.CurrentRow.Cells[3].Value.ToString();
+                    if (!ThaoTac.KTTonTai("HoaDon", "MaHD", maHoaDon))
+                    {
 
-                string danhsachcot = "MaSP, Gia, SoLuong";
-                string danhsachgiatri = ma + ", " + gia + ", " + sl;
-                string accINSET = "INSERT INTO CTHoaDon (" + danhsachcot + ") values (" + danhsachgiatri + ")";
-                ketnoi.Load_Data(accINSET);
-                MessageBox.Show("Thêm thành công", "Thông báo");
+                        DateTime ngay = DateTime.UtcNow;
+                        string s = "insert into HoaDon (MaHD, NgayTao) values (" + maHoaDon + ", #" + @ngay.ToString() + "#)";
+                        ketnoi.Load_Data(s);
+                        
+                    }
+                    if (ThaoTac.KTHoaDon(maHoaDon, int.Parse(ma)))
+                    {
+                        DataSet ds = new DataSet();
+                        ketnoi.Open_DataAccess();
+                        ketnoi.adaShowData = new OleDbDataAdapter("Select SoLuong From CTHoaDon Where MaSP = " + ma, ketnoi.con);
+                        ketnoi.adaShowData.Fill(ds);
+                        ketnoi.Close_Connect();
+                        int i = int.Parse(ds.Tables[0].Rows[0].ItemArray[0].ToString());
+                        string Update = "Update CTHoaDon SET SoLuong = " + (int.Parse(sl) + i) + " Where MaSP = " + ma + " and ThanhToan = No";
+                        ketnoi.Load_Data(Update);
+                        MessageBox.Show("Thêm thành công", "Thông báo");
+                        txtSoLuong.Text = "1";
+                    }
+                    else
+                    {
+                        string danhsachcot = "MaHD, MaSP, Gia, SoLuong";
+                        string danhsachgiatri = maHoaDon + ", " + ma + ", " + gia + ", " + sl;
+                        string accINSET = "INSERT INTO CTHoaDon (" + danhsachcot + ") values (" + danhsachgiatri + ")";
+                        ketnoi.Load_Data(accINSET);
+                        MessageBox.Show("Thêm thành công", "Thông báo");
+                        txtSoLuong.Text = "1";
+                    }
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi!!!!!" + ex);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi!!!!!" + ex);
-            }
+            else
+                MessageBox.Show("Vui lòng đăng nhập", "Lỗi");
         }
 
         private void btCong_Click(object sender, EventArgs e)
@@ -141,8 +175,13 @@ namespace GiaoDien
 
         private void btGioHang_Click(object sender, EventArgs e)
         {
-            GioHang gh = new GioHang();
-            gh.Show();
+            if (isDangNhap)
+            {
+                GioHang gh = new GioHang();
+                gh.ShowDialog();
+            }
+            else
+                MessageBox.Show("Vui lòng đăng nhập", "Lỗi");
         }
 
     }
