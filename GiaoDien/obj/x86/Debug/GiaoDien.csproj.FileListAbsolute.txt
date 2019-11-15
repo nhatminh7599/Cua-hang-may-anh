@@ -42,3 +42,4 @@ C:\Users\Thach\Desktop\Cua-hang-may-anh\GiaoDien\obj\x86\Debug\GiaoDien.ThongTin
 C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien\obj\x86\Debug\GiaoDien.CapNhatQuanLy.resources
 C:\Users\Thach\Desktop\Cua-hang-may-anh\GiaoDien\obj\x86\Debug\GiaoDien.CapNhatQuanLy.resources
 C:\Users\Thach\Desktop\Cua-hang-may-anh\GiaoDien\obj\x86\Debug\GiaoDien.GioHang.resources
+C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien\obj\x86\Debug\GiaoDien.GioHang.resources

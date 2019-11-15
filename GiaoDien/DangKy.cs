@@ -36,7 +36,7 @@ namespace GiaoDien
                             break;
                         }
                 }
-                else 
+                else
                     isSDT = false;
                 if (isSDT)
                 {
@@ -48,8 +48,8 @@ namespace GiaoDien
                         }
                         else MessageBox.Show("Đăng ký thất bại", "Thông báo");
                     else
-                    { 
-                        if(ThaoTac.ThemQuanLy(txtTK.Text, txtMK.Text, txtDiaChi.Text, txtTen.Text, txtSDT.Text, txtEmail.Text))
+                    {
+                        if (ThaoTac.ThemQuanLy(txtTK.Text, txtMK.Text, txtDiaChi.Text, txtTen.Text, txtSDT.Text, txtEmail.Text))
                         {
                             MessageBox.Show("Đăng ký thành công", "Thông báo");
                             this.Close();

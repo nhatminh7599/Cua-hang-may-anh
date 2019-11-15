@@ -62,23 +62,13 @@ namespace GiaoDien
         {
             try
             {
-                if (ThaoTac.KTTonTai("DsSP", "MaSP", txtMaSP.Text))
-                    MessageBox.Show("Mã hóa đơn đã tồn tại!!!!");
-                else
-                {
-                    string danhsachcot = "MaSP, TenSP, SoLuong, Gia, MoTa";
-                    string danhsachthamso = ("\"" + txtMaSP.Text + "\"" + ", " +
-                                        "\"" + txtTenSP.Text + "\"" + ", " +
-                                        "\"" + txtSoLuong.Text + "\"" + ", " +
-                                         "\"" + txtGia.Text + "\"" + ", " +
-                                         "\"" + txtMoTa.Text + "\"");
-                    string accINSET = "INSERT INTO DsSP (" + danhsachcot + ") values (" + danhsachthamso + ")";
-                    ds.Clear();
-                    ds = ketnoi.Load_Data(accINSET, "DsSP");
-                    dtvsp.DataSource = ds.Tables[0];
-                    XoaDuLieu();
-                    btThem.Enabled = false;
-                }
+                SanPham sp = new SanPham(int.Parse(txtMaSP.Text), txtTenSP.Text, int.Parse(txtSoLuong.Text), double.Parse(txtGia.Text), txtMoTa.Text);
+                sp.ThemSanPham();
+                ds.Clear();
+                ds = ketnoi.Load_Data("Select * From DsSP", "DsSP");
+                dtvsp.DataSource = ds.Tables[0];
+                XoaDuLieu();
+                btThem.Enabled = false;
             }
             catch (Exception)
             {
@@ -93,20 +83,17 @@ namespace GiaoDien
             {
                 try
                 {
-                    string ma = dtvsp.CurrentRow.Cells[0].Value.ToString();
-                    if (ma == "")
-                        ma = txtMaSP.Text;
+                    SanPham sp = new SanPham(int.Parse(txtMaSP.Text), txtTenSP.Text, int.Parse(txtSoLuong.Text), double.Parse(txtGia.Text), txtMoTa.Text);
+                    sp.XoaSanPham();
                     ds.Clear();
-                    ketnoi.Open_DataAccess();
-                    string accINSET = "DELETE FROM DsSP WHERE MaSP = " + ma + "";
-                    ds.Clear();
-                    ds = ketnoi.Load_Data(accINSET, "DsSP");
+                    ds = ketnoi.Load_Data("Select * From DsSP", "DsSP");
                     dtvsp.DataSource = ds.Tables[0];
-                    MessageBox.Show("Đã xóa sản phẩm " + ma);
+                    XoaDuLieu();
+                    btThem.Enabled = false;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show("Xóa thất bại!!!!!" + ex.Message);
+                    MessageBox.Show("Lỗi dữ liệu", "Lỗi");
                 }
             }
         }
@@ -120,11 +107,10 @@ namespace GiaoDien
         {
             try
             {
-                string accINSET = "UPDATE DsSP SET TenSP = \""
-                                   + txtTenSP.Text + "\" ,Soluong = " + txtSoLuong.Text + ", Gia = "
-                                   + txtGia.Text + ", MoTa = \"" + txtMoTa.Text + "\" WHERE DsSP.MaSP = " + txtMaSP.Text;
+                SanPham sp = new SanPham(int.Parse(txtMaSP.Text), txtTenSP.Text, int.Parse(txtSoLuong.Text), double.Parse(txtGia.Text), txtMoTa.Text);
+                sp.SuaSanPham();
                 ds.Clear();
-                ds = ketnoi.Load_Data(accINSET, "DsSP");
+                ds = ketnoi.Load_Data("Select * From DsSP", "DsSP");
                 dtvsp.DataSource = ds.Tables[0];
                 XoaDuLieu();
                 btThem.Enabled = false;
