@@ -41,36 +41,22 @@
             this.cuaHangMayAnhDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cuaHangMayAnhDataSet = new GiaoDien.CuaHangMayAnhDataSet();
             this.dsSPTableAdapter = new GiaoDien.CuaHangMayAnhDataSetTableAdapters.DsSPTableAdapter();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.lbName = new System.Windows.Forms.Label();
             this.btQuanLy = new System.Windows.Forms.Button();
             this.btDangXuat = new System.Windows.Forms.Button();
+            this.btTru = new System.Windows.Forms.Button();
+            this.btCong = new System.Windows.Forms.Button();
+            this.btThem = new System.Windows.Forms.Button();
+            this.btGioHang = new System.Windows.Forms.Button();
+            this.btTim = new System.Windows.Forms.Button();
+            this.txtSoLuong = new System.Windows.Forms.TextBox();
+            this.txtTim = new System.Windows.Forms.TextBox();
             Á = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtvsp2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayAnhDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayAnhDataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Á
-            // 
-            Á.AllowDrop = true;
-            Á.BackColor = System.Drawing.Color.Khaki;
-            Á.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            Á.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            Á.ForeColor = System.Drawing.Color.Red;
-            Á.Image = global::GiaoDien.Properties.Resources.istockphoto_470355658_1024x1024;
-            Á.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            Á.Location = new System.Drawing.Point(-2, -1);
-            Á.Name = "Á";
-            Á.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            Á.Size = new System.Drawing.Size(556, 68);
-            Á.TabIndex = 0;
-            Á.Text = "THÍCH THÌ MUA KHÔNG THÍCH THÌ MUA\r\n\r\n\r\n";
-            Á.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbDangNhap
             // 
@@ -99,12 +85,13 @@
             this.giaDataGridViewTextBoxColumn,
             this.moTaDataGridViewTextBoxColumn});
             this.dtvsp2.DataSource = this.dsSPBindingSource;
-            this.dtvsp2.Location = new System.Drawing.Point(5, 174);
+            this.dtvsp2.Location = new System.Drawing.Point(5, 239);
             this.dtvsp2.Name = "dtvsp2";
             this.dtvsp2.ReadOnly = true;
             this.dtvsp2.RowTemplate.Height = 24;
-            this.dtvsp2.Size = new System.Drawing.Size(532, 292);
+            this.dtvsp2.Size = new System.Drawing.Size(532, 227);
             this.dtvsp2.TabIndex = 33;
+            this.dtvsp2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvsp2_CellContentClick);
             // 
             // maSPDataGridViewTextBoxColumn
             // 
@@ -160,38 +147,6 @@
             // 
             this.dsSPTableAdapter.ClearBeforeFill = true;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(167, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(157, 23);
-            this.textBox1.TabIndex = 34;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(279, 97);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(44, 28);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(67, 97);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(44, 28);
-            this.button2.TabIndex = 35;
-            this.button2.Text = "button1";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(29, 70);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(113, 23);
-            this.textBox2.TabIndex = 34;
-            // 
             // lbName
             // 
             this.lbName.BackColor = System.Drawing.Color.Beige;
@@ -229,19 +184,104 @@
             this.btDangXuat.Visible = false;
             this.btDangXuat.Click += new System.EventHandler(this.btDangXuat_Click);
             // 
+            // btTru
+            // 
+            this.btTru.Location = new System.Drawing.Point(12, 126);
+            this.btTru.Name = "btTru";
+            this.btTru.Size = new System.Drawing.Size(16, 23);
+            this.btTru.TabIndex = 49;
+            this.btTru.Text = "-";
+            this.btTru.UseVisualStyleBackColor = true;
+            this.btTru.Click += new System.EventHandler(this.btTru_Click);
+            // 
+            // btCong
+            // 
+            this.btCong.Location = new System.Drawing.Point(67, 126);
+            this.btCong.Name = "btCong";
+            this.btCong.Size = new System.Drawing.Size(16, 23);
+            this.btCong.TabIndex = 50;
+            this.btCong.Text = "+";
+            this.btCong.UseVisualStyleBackColor = true;
+            this.btCong.Click += new System.EventHandler(this.btCong_Click);
+            // 
+            // btThem
+            // 
+            this.btThem.Location = new System.Drawing.Point(12, 74);
+            this.btThem.Name = "btThem";
+            this.btThem.Size = new System.Drawing.Size(70, 46);
+            this.btThem.TabIndex = 51;
+            this.btThem.Text = "Thêm";
+            this.btThem.UseVisualStyleBackColor = true;
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
+            // 
+            // btGioHang
+            // 
+            this.btGioHang.Location = new System.Drawing.Point(13, 155);
+            this.btGioHang.Name = "btGioHang";
+            this.btGioHang.Size = new System.Drawing.Size(70, 46);
+            this.btGioHang.TabIndex = 52;
+            this.btGioHang.Text = "Giỏ hàng";
+            this.btGioHang.UseVisualStyleBackColor = true;
+            this.btGioHang.Click += new System.EventHandler(this.btGioHang_Click);
+            // 
+            // btTim
+            // 
+            this.btTim.Location = new System.Drawing.Point(181, 135);
+            this.btTim.Name = "btTim";
+            this.btTim.Size = new System.Drawing.Size(70, 46);
+            this.btTim.TabIndex = 48;
+            this.btTim.Text = "Tìm kiếm";
+            this.btTim.UseVisualStyleBackColor = true;
+            // 
+            // txtSoLuong
+            // 
+            this.txtSoLuong.Location = new System.Drawing.Point(34, 126);
+            this.txtSoLuong.Multiline = true;
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Size = new System.Drawing.Size(27, 23);
+            this.txtSoLuong.TabIndex = 46;
+            // 
+            // txtTim
+            // 
+            this.txtTim.Location = new System.Drawing.Point(136, 74);
+            this.txtTim.Multiline = true;
+            this.txtTim.Name = "txtTim";
+            this.txtTim.Size = new System.Drawing.Size(157, 55);
+            this.txtTim.TabIndex = 47;
+            // 
+            // Á
+            // 
+            Á.AllowDrop = true;
+            Á.BackColor = System.Drawing.Color.Khaki;
+            Á.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            Á.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            Á.ForeColor = System.Drawing.Color.Red;
+            Á.Image = global::GiaoDien.Properties.Resources.istockphoto_470355658_1024x1024;
+            Á.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            Á.Location = new System.Drawing.Point(-2, -1);
+            Á.Name = "Á";
+            Á.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            Á.Size = new System.Drawing.Size(556, 68);
+            Á.TabIndex = 0;
+            Á.Text = "THÍCH THÌ MUA KHÔNG THÍCH THÌ MUA\r\n\r\n\r\n";
+            Á.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(545, 478);
+            this.Controls.Add(this.btTru);
+            this.Controls.Add(this.btCong);
+            this.Controls.Add(this.btThem);
+            this.Controls.Add(this.btGioHang);
+            this.Controls.Add(this.btTim);
+            this.Controls.Add(this.txtSoLuong);
+            this.Controls.Add(this.txtTim);
             this.Controls.Add(this.btDangXuat);
             this.Controls.Add(this.btQuanLy);
             this.Controls.Add(this.lbName);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dtvsp2);
             this.Controls.Add(Á);
             this.Controls.Add(this.lbDangNhap);
@@ -274,13 +314,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn soLuongDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn giaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn moTaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Button btQuanLy;
         private System.Windows.Forms.Button btDangXuat;
+        private System.Windows.Forms.Button btTru;
+        private System.Windows.Forms.Button btCong;
+        private System.Windows.Forms.Button btThem;
+        private System.Windows.Forms.Button btGioHang;
+        private System.Windows.Forms.Button btTim;
+        private System.Windows.Forms.TextBox txtSoLuong;
+        private System.Windows.Forms.TextBox txtTim;
     }
 }
 

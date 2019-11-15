@@ -16,6 +16,13 @@ namespace GiaoDien
         {
             InitializeComponent();
         }
+
+        OleDbConnection cnn = new OleDbConnection();
+        KetNoi ketnoi = new KetNoi();
+        DataSet ds = new DataSet();
+        ArrayList arraymaSP = new ArrayList();
+        ArrayList arraysl = new ArrayList();
+
         public static string tenTaiKhoan;
         KhachHang KH;
         public static bool isDangNhap = false;
@@ -84,6 +91,52 @@ namespace GiaoDien
             btQuanLy.Visible = false;
             btQuanLy.Enabled = false;
             DangKy.isQuanLy = false;
+        }
+
+        private void btThem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string ma = dtvsp2.CurrentRow.Cells[0].Value.ToString();
+                arraymaSP.Add(ma);
+                string sl = dtvsp2.CurrentRow.Cells[2].Value.ToString();
+                arraysl.Add(sl);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi!!!!!" + ex);
+            }
+        }
+
+        private void btCong_Click(object sender, EventArgs e)
+        {
+            int sl = int.Parse(dtvsp2.CurrentRow.Cells[2].Value.ToString());
+            if (int.Parse(txtSoLuong.Text) < sl)
+            {
+                int s = int.Parse(txtSoLuong.Text);
+                txtSoLuong.Text = (++s).ToString();
+            }
+        }
+
+        private void btTru_Click(object sender, EventArgs e)
+        {
+            int sl = int.Parse(dtvsp2.CurrentRow.Cells[2].Value.ToString());
+            if (int.Parse(txtSoLuong.Text) > 0)
+            {
+                int s = int.Parse(txtSoLuong.Text);
+                txtSoLuong.Text = (--s).ToString();
+            }
+        }
+
+        private void dtvsp2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtSoLuong.Text = 1.ToString();
+        }
+
+        private void btGioHang_Click(object sender, EventArgs e)
+        {
+            GioHang gh = new GioHang();
+            gh.Show();
         }
 
     }
