@@ -42,6 +42,7 @@
             this.btThanhToan.TabIndex = 3;
             this.btThanhToan.Text = "Thanh Toan";
             this.btThanhToan.UseVisualStyleBackColor = true;
+            this.btThanhToan.Click += new System.EventHandler(this.btThanhToan_Click);
             // 
             // btXoa
             // 
@@ -51,6 +52,7 @@
             this.btXoa.TabIndex = 4;
             this.btXoa.Text = "Xóa";
             this.btXoa.UseVisualStyleBackColor = true;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // dataGridView1
             // 
@@ -70,6 +72,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "GioHang";
             this.Text = "GioHang";
+            this.Load += new System.EventHandler(this.GioHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

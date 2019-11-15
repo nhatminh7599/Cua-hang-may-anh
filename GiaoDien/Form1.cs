@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Collections;
 
 namespace GiaoDien
 {
@@ -20,8 +21,6 @@ namespace GiaoDien
         OleDbConnection cnn = new OleDbConnection();
         KetNoi ketnoi = new KetNoi();
         DataSet ds = new DataSet();
-        ArrayList arraymaSP = new ArrayList();
-        ArrayList arraysl = new ArrayList();
 
         public static string tenTaiKhoan;
         KhachHang KH;
@@ -59,6 +58,8 @@ namespace GiaoDien
 
         public void Form1_Load(object sender, EventArgs e)
         {
+            ds = ketnoi.Load_Data("SELECT * FROM DsSP", "DsSP");
+            dtvsp2.DataSource = ds.Tables[0];
             KH = new KhachHang();
             lbName.Visible = false;
             lbName.Enabled = false;
@@ -98,9 +99,14 @@ namespace GiaoDien
             try
             {
                 string ma = dtvsp2.CurrentRow.Cells[0].Value.ToString();
-                arraymaSP.Add(ma);
-                string sl = dtvsp2.CurrentRow.Cells[2].Value.ToString();
-                arraysl.Add(sl);
+                string sl = txtSoLuong.Text;
+                string gia = dtvsp2.CurrentRow.Cells[3].Value.ToString();
+
+                string danhsachcot = "MaSP, Gia, SoLuong";
+                string danhsachgiatri = ma + ", " + gia + ", " + sl;
+                string accINSET = "INSERT INTO CTHoaDon (" + danhsachcot + ") values (" + danhsachgiatri + ")";
+                ketnoi.Load_Data(accINSET);
+                MessageBox.Show("Thêm thành công", "Thông báo");
             }
             catch (Exception ex)
             {

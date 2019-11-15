@@ -58,6 +58,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayAnhDataSet)).BeginInit();
             this.SuspendLayout();
             // 
+            // Á
+            // 
+            Á.AllowDrop = true;
+            Á.BackColor = System.Drawing.Color.Khaki;
+            Á.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            Á.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            Á.ForeColor = System.Drawing.Color.Red;
+            Á.Image = global::GiaoDien.Properties.Resources.istockphoto_470355658_1024x1024;
+            Á.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            Á.Location = new System.Drawing.Point(-2, -1);
+            Á.Name = "Á";
+            Á.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            Á.Size = new System.Drawing.Size(556, 68);
+            Á.TabIndex = 0;
+            Á.Text = "THÍCH THÌ MUA KHÔNG THÍCH THÌ MUA\r\n\r\n\r\n";
+            Á.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lbDangNhap
             // 
             this.lbDangNhap.BackColor = System.Drawing.Color.Beige;
@@ -238,8 +255,11 @@
             this.txtSoLuong.Location = new System.Drawing.Point(34, 126);
             this.txtSoLuong.Multiline = true;
             this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.ReadOnly = true;
             this.txtSoLuong.Size = new System.Drawing.Size(27, 23);
             this.txtSoLuong.TabIndex = 46;
+            this.txtSoLuong.Text = "1";
+            this.txtSoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTim
             // 
@@ -248,23 +268,6 @@
             this.txtTim.Name = "txtTim";
             this.txtTim.Size = new System.Drawing.Size(157, 55);
             this.txtTim.TabIndex = 47;
-            // 
-            // Á
-            // 
-            Á.AllowDrop = true;
-            Á.BackColor = System.Drawing.Color.Khaki;
-            Á.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            Á.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            Á.ForeColor = System.Drawing.Color.Red;
-            Á.Image = global::GiaoDien.Properties.Resources.istockphoto_470355658_1024x1024;
-            Á.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            Á.Location = new System.Drawing.Point(-2, -1);
-            Á.Name = "Á";
-            Á.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            Á.Size = new System.Drawing.Size(556, 68);
-            Á.TabIndex = 0;
-            Á.Text = "THÍCH THÌ MUA KHÔNG THÍCH THÌ MUA\r\n\r\n\r\n";
-            Á.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
