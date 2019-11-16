@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
             this.txtTongTien = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +45,7 @@
             this.btThanhToan.Name = "btThanhToan";
             this.btThanhToan.Size = new System.Drawing.Size(104, 37);
             this.btThanhToan.TabIndex = 3;
-            this.btThanhToan.Text = "Thanh Toan";
+            this.btThanhToan.Text = "Thanh toán";
             this.btThanhToan.UseVisualStyleBackColor = true;
             this.btThanhToan.Click += new System.EventHandler(this.btThanhToan_Click);
             // 
@@ -77,7 +78,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(138, 26);
+            this.label1.Location = new System.Drawing.Point(216, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(181, 25);
             this.label1.TabIndex = 5;
@@ -103,11 +104,22 @@
             this.txtTongTien.TabIndex = 7;
             this.txtTongTien.Text = "0";
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(308, 274);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 34);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "VND";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // GioHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(598, 367);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTongTien);
             this.Controls.Add(this.label);
             this.Controls.Add(this.label1);
@@ -132,5 +144,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.TextBox txtTongTien;
+        private System.Windows.Forms.Label label2;
     }
 }

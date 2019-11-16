@@ -210,6 +210,7 @@ namespace GiaoDien
 
         private void btTaiLai_Click(object sender, EventArgs e)
         {
+            ds.Clear();
             ds = ketnoi.Load_Data("SELECT * FROM DsSP", "DsSP");
             dtvsp2.DataSource = ds.Tables[0];
             txtTim.Text = "";
