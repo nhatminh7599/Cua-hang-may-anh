@@ -170,6 +170,7 @@ namespace GiaoDien
         {
             ds.Clear();
             HienThi();
+            txtTim.Text = "";
         }
 
         private void btThemQuanLy_Click(object sender, EventArgs e)

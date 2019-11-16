@@ -39,7 +39,7 @@
             // 
             // btThanhToan
             // 
-            this.btThanhToan.Location = new System.Drawing.Point(365, 271);
+            this.btThanhToan.Location = new System.Drawing.Point(487, 271);
             this.btThanhToan.Margin = new System.Windows.Forms.Padding(4);
             this.btThanhToan.Name = "btThanhToan";
             this.btThanhToan.Size = new System.Drawing.Size(104, 37);
@@ -50,7 +50,7 @@
             // 
             // btXoa
             // 
-            this.btXoa.Location = new System.Drawing.Point(253, 271);
+            this.btXoa.Location = new System.Drawing.Point(375, 271);
             this.btXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(104, 37);
@@ -70,7 +70,7 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(459, 183);
+            this.dataGridView1.Size = new System.Drawing.Size(581, 183);
             this.dataGridView1.TabIndex = 2;
             // 
             // label1
@@ -99,7 +99,7 @@
             this.txtTongTien.Location = new System.Drawing.Point(108, 274);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.ReadOnly = true;
-            this.txtTongTien.Size = new System.Drawing.Size(138, 34);
+            this.txtTongTien.Size = new System.Drawing.Size(194, 34);
             this.txtTongTien.TabIndex = 7;
             this.txtTongTien.Text = "0";
             // 
@@ -107,7 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 367);
+            this.ClientSize = new System.Drawing.Size(598, 367);
             this.Controls.Add(this.txtTongTien);
             this.Controls.Add(this.label);
             this.Controls.Add(this.label1);

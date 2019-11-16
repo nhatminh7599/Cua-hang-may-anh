@@ -62,7 +62,7 @@ namespace GiaoDien
                 if(ThaoTac.KTTonTai("DsSP", "MaSP", this.ma))
                 {
                     string accINSET = "UPDATE DsSP SET TenSP = \""
-                                       + this.ten + "\" ,Soluong = " + this.soluong + ", Gia = "
+                                       + this.ten + "\", Soluong = " + this.soluong + ", Gia = "
                                        + this.dongia + ", MoTa = \"" + this.mota + "\" WHERE DsSP.MaSP = " + this.ma;
                     ketnoi.Load_Data(accINSET);
                 }
@@ -79,7 +79,7 @@ namespace GiaoDien
             {
                 
                 string del = "DELETE FROM DsSP WHERE MaSP = " + this.ma;
-                ketnoi.Load_Data(del, "DsSP");
+                ketnoi.Load_Data(del);
                 MessageBox.Show("Đã xóa sản phẩm " + this.ma);
             }
             catch (Exception ex)

@@ -19,9 +19,9 @@ namespace GiaoDien
 
         KetNoi ketnoi = new KetNoi();
         DataSet ds = new DataSet();
-
-        private void GioHang_Load(object sender, EventArgs e)
+        public void HienThi()
         {
+            ds.Clear();
             string select = "SELECT DsSP.MaSP, DsSP.TenSP, CTHoaDon.SoLuong, CTHoaDon.Gia FROM DsSP INNER JOIN CTHoaDon ON DsSP.MaSP = CTHoaDon.MaSP Where CTHoaDon.MaHD = " + Form1.maHoaDon + " and ThanhToan = No";
             ketnoi.Open_DataAccess();
             ketnoi.adaShowData = new OleDbDataAdapter(select, ketnoi.con);
@@ -34,6 +34,12 @@ namespace GiaoDien
                 tam += int.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString()) * int.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString());
             }
             txtTongTien.Text = tam.ToString();
+            if(dataGridView1.Rows.Count == 0)
+                btXoa.Enabled = false;
+        }
+        private void GioHang_Load(object sender, EventArgs e)
+        {
+            HienThi();
         }
 
         private void btXoa_Click(object sender, EventArgs e)
@@ -43,14 +49,15 @@ namespace GiaoDien
             {
                 try
                 {
-                    //ketnoi.Open_DataAccess();
-                    //ketnoi.adaShowData = new OleDbDataAdapter("Select MaSP From CTHoaDon WHERE MaHD = " + Form1.maHoaDon, ketnoi.con);
-                    
-                    //string accINSET = "DELETE FROM CTHoaDon WHERE MaSP = " + ma + "";
-                    //ds.Clear();
-                    //ds = ketnoi.Load_Data(accINSET, "CTHoaDon");
-                    //dataGridView1.DataSource = ds.Tables[0];
-                    //MessageBox.Show("Đã xóa sản phẩm " + ma);
+                    if (dataGridView1.RowCount > 0)
+                    {
+                        string MaSP = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                        string del = "Delete From CTHoaDon Where MaSP = " + MaSP + " and MaHD = " + Form1.maHoaDon;
+                        ketnoi.Load_Data(del);
+                        HienThi();
+                    }
+                    if (dataGridView1.Rows.Count == 0)
+                        btXoa.Enabled = false;
                 }
                 catch (Exception ex)
                 {
@@ -64,25 +71,37 @@ namespace GiaoDien
            
             try
             {
+                int row = ds.Tables[0].Rows.Count;
                 ds.Clear();
-                ds = ketnoi.Load_Data("select * from CTHoaDon", "CTHoaDon");
+                ketnoi.adaShowData = new OleDbDataAdapter("select MaSP from CTHoaDon Where MaHD = " + Form1.maHoaDon, ketnoi.con);
+                ketnoi.adaShowData.Fill(ds);
                 ketnoi.Open_DataAccess();
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                for (int i = 0; i < row; i++)
                 {
-                    string ma = ds.Tables[0].Rows[1].ItemArray[i].ToString();
+                    string ma = ds.Tables[0].Rows[i].ItemArray[0].ToString();
                     ketnoi.adaShowData = new OleDbDataAdapter("SELECT SoLuong FROM DsSP WHERE DsSP.MaSP = " + ma, ketnoi.con);
                     DataSet tam = new DataSet();
                     ketnoi.adaShowData.Fill(tam);
                     string sl = tam.Tables[0].Rows[0].ItemArray[0].ToString();
-                    int s = (int.Parse(sl) - int.Parse(ds.Tables[0].Rows[i].ItemArray[1].ToString()));
-                    string UpdateDsSP = "UPDATE DsSP SET SoLuong = "  + s + " Where DsSP.MaSP = " + ds.Tables[0].Rows[i].ItemArray[2].ToString();
+                    int s = (int.Parse(sl) - int.Parse(ds.Tables[0].Rows[i].ItemArray[0].ToString()));
+                    string UpdateDsSP = "UPDATE DsSP SET SoLuong = "  + s + " Where DsSP.MaSP = " + ds.Tables[0].Rows[i].ItemArray[0].ToString();
                     ketnoi.Load_Data(UpdateDsSP);
                 }
                 string UpdateCTHoaDon = "UPDATE CTHoaDon SET ThanhToan = Yes Where MaHD = " + Form1.maHoaDon;
                 ketnoi.Load_Data(UpdateCTHoaDon);
                 ketnoi.Close_Connect();
                 ds.Clear();
+                string v = "Select MaKH From KhachHang Where TenDangNhap = \"" + Form1.tenTaiKhoan + "\"";
+                ketnoi.Open_DataAccess();
+                ketnoi.adaShowData = new OleDbDataAdapter(v, ketnoi.con);
+                ds = new DataSet();
+                ketnoi.adaShowData.Fill(ds);
+                ketnoi.Close_Connect();
+                string MaKH = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+                string UpdateMaKH = "Update HoaDon set MaKH =  " + MaKH + " Where MaHD = " + Form1.maHoaDon;
+                ketnoi.Load_Data(UpdateMaKH);
                 Form1.maHoaDon++;
+                txtTongTien.Text = "0" ;
                 MessageBox.Show("Thanh toán thành công!!!!");
             }
             catch (Exception ex)

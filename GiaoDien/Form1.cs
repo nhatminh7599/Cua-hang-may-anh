@@ -119,11 +119,11 @@ namespace GiaoDien
                     {
                         DataSet ds = new DataSet();
                         ketnoi.Open_DataAccess();
-                        ketnoi.adaShowData = new OleDbDataAdapter("Select SoLuong From CTHoaDon Where MaSP = " + ma, ketnoi.con);
+                        ketnoi.adaShowData = new OleDbDataAdapter("Select SoLuong From CTHoaDon Where MaSP = " + ma + " and MaHD = " + maHoaDon, ketnoi.con);
                         ketnoi.adaShowData.Fill(ds);
                         ketnoi.Close_Connect();
                         int i = int.Parse(ds.Tables[0].Rows[0].ItemArray[0].ToString());
-                        string Update = "Update CTHoaDon SET SoLuong = " + (int.Parse(sl) + i) + " Where MaSP = " + ma + " and ThanhToan = No";
+                        string Update = "Update CTHoaDon SET SoLuong = " + (int.Parse(sl) + i) + " Where MaSP = " + ma + " and MaHD = " + maHoaDon;
                         ketnoi.Load_Data(Update);
                         MessageBox.Show("Thêm thành công", "Thông báo");
                         txtSoLuong.Text = "1";
@@ -184,5 +184,35 @@ namespace GiaoDien
                 MessageBox.Show("Vui lòng đăng nhập", "Lỗi");
         }
 
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!ThaoTac.KTThanhToan(maHoaDon))
+            {
+                string del = "DELETE FROM CTHoaDon WHERE MaHD = " + maHoaDon;
+                ketnoi.Load_Data(del);
+                del = "Delete from HoaDon Where MaHD = " + maHoaDon;
+                ketnoi.Load_Data(del);
+            }
+        }
+
+        private void btTim_Click(object sender, EventArgs e)
+        {
+            ketnoi.Open_DataAccess();
+            string s = "SELECT * FROM DsSP WHERE (((DsSP.TenSP) = \"" + txtTim.Text + "\"));";
+            ds.Clear();
+            ketnoi.com = new OleDbCommand(s, ketnoi.con);
+            ketnoi.com.ExecuteNonQuery();
+            ketnoi.adaShowData = new OleDbDataAdapter(s, ketnoi.con);
+            ketnoi.adaShowData.Fill(ds);
+            ketnoi.Close_Connect();
+            dtvsp2.DataSource = ds.Tables[0];
+        }
+
+        private void btTaiLai_Click(object sender, EventArgs e)
+        {
+            ds = ketnoi.Load_Data("SELECT * FROM DsSP", "DsSP");
+            dtvsp2.DataSource = ds.Tables[0];
+            txtTim.Text = "";
+        }
     }
 }

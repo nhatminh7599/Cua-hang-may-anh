@@ -51,6 +51,7 @@
             this.btTim = new System.Windows.Forms.Button();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.txtTim = new System.Windows.Forms.TextBox();
+            this.btTaiLai = new System.Windows.Forms.Button();
             Á = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtvsp2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSPBindingSource)).BeginInit();
@@ -243,12 +244,13 @@
             // 
             // btTim
             // 
-            this.btTim.Location = new System.Drawing.Point(181, 135);
+            this.btTim.Location = new System.Drawing.Point(241, 85);
             this.btTim.Name = "btTim";
-            this.btTim.Size = new System.Drawing.Size(70, 46);
+            this.btTim.Size = new System.Drawing.Size(87, 28);
             this.btTim.TabIndex = 48;
             this.btTim.Text = "Tìm kiếm";
             this.btTim.UseVisualStyleBackColor = true;
+            this.btTim.Click += new System.EventHandler(this.btTim_Click);
             // 
             // txtSoLuong
             // 
@@ -263,18 +265,29 @@
             // 
             // txtTim
             // 
-            this.txtTim.Location = new System.Drawing.Point(136, 74);
+            this.txtTim.Location = new System.Drawing.Point(123, 85);
             this.txtTim.Multiline = true;
             this.txtTim.Name = "txtTim";
-            this.txtTim.Size = new System.Drawing.Size(157, 55);
+            this.txtTim.Size = new System.Drawing.Size(112, 28);
             this.txtTim.TabIndex = 47;
+            // 
+            // btTaiLai
+            // 
+            this.btTaiLai.Location = new System.Drawing.Point(174, 161);
+            this.btTaiLai.Name = "btTaiLai";
+            this.btTaiLai.Size = new System.Drawing.Size(99, 40);
+            this.btTaiLai.TabIndex = 53;
+            this.btTaiLai.Text = "Tải lại";
+            this.btTaiLai.UseVisualStyleBackColor = true;
+            this.btTaiLai.Click += new System.EventHandler(this.btTaiLai_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(545, 478);
+            this.Controls.Add(this.btTaiLai);
             this.Controls.Add(this.btTru);
             this.Controls.Add(this.btCong);
             this.Controls.Add(this.btThem);
@@ -294,6 +307,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mua hàng vô đây nè";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtvsp2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSPBindingSource)).EndInit();
@@ -327,6 +341,7 @@
         private System.Windows.Forms.Button btTim;
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.TextBox txtTim;
+        private System.Windows.Forms.Button btTaiLai;
     }
 }
 

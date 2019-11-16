@@ -204,12 +204,34 @@ namespace GiaoDien
                 con.adaShowData = new OleDbDataAdapter(Select, con.con);
                 con.adaShowData.Fill(ds);
                 con.Close_Connect();
-                int s = ds.Tables[0].Rows.Count;
-                if (s > 0)
+                int s = int.Parse(ds.Tables[0].Rows[0].ItemArray[0].ToString());
+                if (s == MaHD)
                     return true;
                 return false;
             }
             catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public static bool KTThanhToan(int MaHD)
+        {
+
+            try
+            {
+                DataSet ds = new DataSet();
+                string Select = "SELECT TenTaiKhoan From HoaDon Where MaHD = " + MaHD;
+                con.Open_DataAccess();
+                con.adaShowData = new OleDbDataAdapter(Select, con.con);
+                con.adaShowData.Fill(ds);
+                con.Close_Connect();
+                string s = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+                if (s != "")
+                    return true;
+                return false;
+            }
+            catch
             {
                 return false;
             }
