@@ -260,8 +260,9 @@
             this.txtSoLuong.ReadOnly = true;
             this.txtSoLuong.Size = new System.Drawing.Size(27, 23);
             this.txtSoLuong.TabIndex = 46;
-            this.txtSoLuong.Text = "1";
+            this.txtSoLuong.Text = "0";
             this.txtSoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSoLuong.TextChanged += new System.EventHandler(this.txtSoLuong_TextChanged);
             // 
             // txtTim
             // 

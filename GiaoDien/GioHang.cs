@@ -102,7 +102,10 @@ namespace GiaoDien
                 ketnoi.Load_Data(UpdateMaKH);
                 Form1.maHoaDon++;
                 txtTongTien.Text = "0" ;
-                MessageBox.Show("Thanh toán thành công!!!!");
+                if(!Form1.isQuanLy)
+                    MessageBox.Show("Thanh toán thành công, Nhân viên sẽ liên hệ đến bạn để lấy xác nhận đơn hàng");
+                else
+                    MessageBox.Show("Thanh toán thành công");
             }
             catch (Exception ex)
             {

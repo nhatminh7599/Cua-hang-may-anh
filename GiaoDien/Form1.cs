@@ -25,6 +25,7 @@ namespace GiaoDien
         public static int maHoaDon = 1;
         public static string tenTaiKhoan;
         KhachHang KH;
+        public static bool isQuanLy = false;
         public static bool isDangNhap = false;
         private void lbdangnhap_Click(object sender, EventArgs e)
         {
@@ -51,6 +52,7 @@ namespace GiaoDien
                 btDangXuat.Visible = true;
                 if (KH.ChucVu())
                 {
+                    isQuanLy = true;
                     btQuanLy.Enabled = true;
                     btQuanLy.Visible = true;
                 }
@@ -67,6 +69,7 @@ namespace GiaoDien
             lbName.Enabled = false;
             btQuanLy.Visible = false;
             btQuanLy.Enabled = false;
+            btThem.Enabled = false;
         }
 
         private void lbName_Click(object sender, EventArgs e)
@@ -96,6 +99,7 @@ namespace GiaoDien
             btQuanLy.Enabled = false;
             DangKy.isQuanLy = false;
             isDangNhap = false;
+            isQuanLy = false;
         }
 
         private void btThem_Click(object sender, EventArgs e)
@@ -113,7 +117,7 @@ namespace GiaoDien
                         DateTime ngay = DateTime.UtcNow;
                         string s = "insert into HoaDon (MaHD, NgayTao) values (" + maHoaDon + ", #" + @ngay.ToString() + "#)";
                         ketnoi.Load_Data(s);
-                        
+
                     }
                     if (ThaoTac.KTHoaDon(maHoaDon, int.Parse(ma)))
                     {
@@ -126,7 +130,7 @@ namespace GiaoDien
                         string Update = "Update CTHoaDon SET SoLuong = " + (int.Parse(sl) + i) + " Where MaSP = " + ma + " and MaHD = " + maHoaDon;
                         ketnoi.Load_Data(Update);
                         MessageBox.Show("Thêm thành công", "Thông báo");
-                        txtSoLuong.Text = "1";
+                        txtSoLuong.Text = "0";
                     }
                     else
                     {
@@ -135,9 +139,9 @@ namespace GiaoDien
                         string accINSET = "INSERT INTO CTHoaDon (" + danhsachcot + ") values (" + danhsachgiatri + ")";
                         ketnoi.Load_Data(accINSET);
                         MessageBox.Show("Thêm thành công", "Thông báo");
-                        txtSoLuong.Text = "1";
+                        txtSoLuong.Text = "0";
                     }
-                    
+
                 }
                 catch (Exception ex)
                 {
@@ -214,6 +218,13 @@ namespace GiaoDien
             ds = ketnoi.Load_Data("SELECT * FROM DsSP", "DsSP");
             dtvsp2.DataSource = ds.Tables[0];
             txtTim.Text = "";
+        }
+
+        private void txtSoLuong_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSoLuong.Text == "0")
+                btThem.Enabled = false;
+            else btThem.Enabled = true;
         }
     }
 }
