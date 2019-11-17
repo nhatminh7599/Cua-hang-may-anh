@@ -1,0 +1,8 @@
+C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\TestProject\bin\Debug\CuaHangMayAnh.mdb
+C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\TestProject\bin\Debug\TestProject.dll
+C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\TestProject\bin\Debug\TestProject.pdb
+C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\TestProject\bin\Debug\GiaoDien.exe
+C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\TestProject\bin\Debug\GiaoDien.pdb
+C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\TestProject\obj\Debug\TestProject.csprojResolveAssemblyReference.cache
+C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\TestProject\obj\Debug\TestProject.dll
+C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\TestProject\obj\Debug\TestProject.pdb

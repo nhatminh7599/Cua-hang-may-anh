@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GiaoDien
 {
-    class KhachHang
+    public class KhachHang
     {
         protected int maKhachHang;
         protected string tenDangNhap;

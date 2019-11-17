@@ -16,7 +16,18 @@ namespace GiaoDien
         public DataSet dsHienThi = new DataSet();
         public OleDbDataAdapter adaShowData;
         public OleDbCommand com;
-
+        string connect = "";
+        public KetNoi()
+        {
+            string t = Application.StartupPath;
+            int i = t.LastIndexOf('\\') - 3;
+            t = t.Substring(0, i) + "CuaHangMayAnh.mdb";
+            string connect = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + t;
+        }
+        public void setConnect(string value)
+        {
+            this.connect = value;
+        }
         /// <summary>
         /// Kết nối đến access
         /// </summary>
@@ -25,11 +36,8 @@ namespace GiaoDien
         {
             try
             {
-                string t = Application.StartupPath;
-                int i = t.LastIndexOf('\\') - 3;
-                t = t.Substring(0, i) + "CuaHangMayAnh.mdb";
-                string s = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + t;
-                con = new OleDbConnection(s);
+                
+                con = new OleDbConnection(connect);
                 con.Open();
                 return true;
             }

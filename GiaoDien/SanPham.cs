@@ -10,7 +10,7 @@ using System.Data.OleDb;
 
 namespace GiaoDien
 {
-    class SanPham
+    public class SanPham
     {
         public int ma;
         public string ten;
