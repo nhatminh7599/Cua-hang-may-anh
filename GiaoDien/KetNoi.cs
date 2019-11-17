@@ -26,7 +26,16 @@ namespace GiaoDien
         }
         public void setConnect(string value)
         {
-            this.connect = value;
+            this.connect = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + value;
+        }
+        public void setadaShowData(string value)
+        {
+            this.adaShowData = new OleDbDataAdapter(value, this.con);
+        }
+        public DataSet adaFill(DataSet ds)
+        {
+            this.adaShowData.Fill(ds);
+            return ds;
         }
         /// <summary>
         /// Kết nối đến access
@@ -36,8 +45,7 @@ namespace GiaoDien
         {
             try
             {
-                
-                con = new OleDbConnection(connect);
+                this.con = new OleDbConnection(this.connect);
                 con.Open();
                 return true;
             }

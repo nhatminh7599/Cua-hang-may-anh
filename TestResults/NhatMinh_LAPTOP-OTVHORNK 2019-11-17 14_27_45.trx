@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="40519a63-a5e6-4c91-bf78-70027c8c6abb" name="NhatMinh@LAPTOP-OTVHORNK 2019-11-17 14:27:45" runUser="LAPTOP-OTVHORNK\NhatMinh" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="293b60f0-7b6a-4642-86ed-df84e909a222">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="NhatMinh_LAPTOP-OTVHORNK 2019-11-17 14_27_45">
+      <DeploymentItem filename="C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien\bin\Debug\GiaoDien.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2019-11-17T14:27:45.7334460+07:00" queuing="2019-11-17T14:27:46.7878270+07:00" start="2019-11-17T14:27:46.8496880+07:00" finish="2019-11-17T14:28:49.4327051+07:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="2" executed="2" passed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="LAPTOP-OTVHORNK" outcome="Error" timestamp="2019-11-17T14:28:49.4317271+07:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestDataSet_LoadData" storage="c:\users\nhatminh\desktop\cua-hang-may-anh\testproject\bin\debug\testproject.dll" id="40ee7bf2-d17b-a2d1-8457-ad6e71252d06">
+      <Execution id="ada07ef6-d16d-4cbd-aa04-f8941e135e38" />
+      <TestMethod codeBase="C:/Users/NhatMinh/Desktop/Cua-hang-may-anh/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.UnitTest1, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestDataSet_LoadData" />
+    </UnitTest>
+    <UnitTest name="TestOpenAccess" storage="c:\users\nhatminh\desktop\cua-hang-may-anh\testproject\bin\debug\testproject.dll" id="953a7484-decf-3733-f23c-37e9a601caeb">
+      <Execution id="8bf164ff-2cba-4ecf-aade-e5a968ea0faa" />
+      <TestMethod codeBase="C:/Users/NhatMinh/Desktop/Cua-hang-may-anh/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.UnitTest1, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestOpenAccess" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="953a7484-decf-3733-f23c-37e9a601caeb" executionId="8bf164ff-2cba-4ecf-aade-e5a968ea0faa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="40ee7bf2-d17b-a2d1-8457-ad6e71252d06" executionId="ada07ef6-d16d-4cbd-aa04-f8941e135e38" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="8bf164ff-2cba-4ecf-aade-e5a968ea0faa" testId="953a7484-decf-3733-f23c-37e9a601caeb" testName="TestOpenAccess" computerName="LAPTOP-OTVHORNK" duration="00:00:00.0975948" startTime="2019-11-17T14:27:46.9116767+07:00" endTime="2019-11-17T14:27:47.4712218+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8bf164ff-2cba-4ecf-aade-e5a968ea0faa">
+    </UnitTestResult>
+    <UnitTestResult executionId="ada07ef6-d16d-4cbd-aa04-f8941e135e38" testId="40ee7bf2-d17b-a2d1-8457-ad6e71252d06" testName="TestDataSet_LoadData" computerName="LAPTOP-OTVHORNK" duration="00:01:01.9485154" startTime="2019-11-17T14:27:47.4841897+07:00" endTime="2019-11-17T14:28:49.4327051+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ada07ef6-d16d-4cbd-aa04-f8941e135e38">
+    </UnitTestResult>
+  </Results>
+</TestRun>
