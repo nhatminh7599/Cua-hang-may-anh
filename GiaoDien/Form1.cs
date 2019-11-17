@@ -27,6 +27,14 @@ namespace GiaoDien
         public static KhachHang KH = new KhachHang();
         public static bool isQuanLy = false;
         public static bool isDangNhap = false;
+
+        public void HienThi()
+        {
+            ds.Clear();
+            ds = ketnoi.Load_Data("SELECT * FROM DsSP", "DsSP");
+            dtvsp2.DataSource = ds.Tables[0];
+        }
+
         private void lbdangnhap_Click(object sender, EventArgs e)
         {
             Form moi = new DangNhap();
@@ -62,8 +70,7 @@ namespace GiaoDien
         public void Form1_Load(object sender, EventArgs e)
         {
             while(ThaoTac.KTTonTai("HoaDon", "MaHD", maHoaDon)) maHoaDon++;
-            ds = ketnoi.Load_Data("SELECT * FROM DsSP", "DsSP");
-            dtvsp2.DataSource = ds.Tables[0];
+            HienThi();
             KH = new KhachHang();
             lbName.Visible = false;
             lbName.Enabled = false;
@@ -130,7 +137,6 @@ namespace GiaoDien
                         string Update = "Update CTHoaDon SET SoLuong = " + (int.Parse(sl) + i) + " Where MaSP = " + ma + " and MaHD = " + maHoaDon;
                         ketnoi.Load_Data(Update);
                         MessageBox.Show("Thêm thành công", "Thông báo");
-                        txtSoLuong.Text = "0";
                     }
                     else
                     {
@@ -139,14 +145,18 @@ namespace GiaoDien
                         string accINSET = "INSERT INTO CTHoaDon (" + danhsachcot + ") values (" + danhsachgiatri + ")";
                         ketnoi.Load_Data(accINSET);
                         MessageBox.Show("Thêm thành công", "Thông báo");
-                        txtSoLuong.Text = "0";
                     }
-
+                    int k = int.Parse(dtvsp2.CurrentRow.Cells[2].Value.ToString()) - int.Parse(txtSoLuong.Text);
+                    string UpdateSoLuong = "Update DsSP Set SoLuong = " + k + " Where MaSP = " + dtvsp2.CurrentRow.Cells[0].Value.ToString();
+                    ketnoi.Load_Data(UpdateSoLuong);
+                    txtSoLuong.Text = "0";
+                    HienThi();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Lỗi!!!!!" + ex);
                 }
+                txtSoLuong.Text = "0";
             }
             else
                 MessageBox.Show("Vui lòng đăng nhập", "Lỗi");
@@ -174,7 +184,7 @@ namespace GiaoDien
 
         private void dtvsp2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtSoLuong.Text = 1.ToString();
+            txtSoLuong.Text = "0";
         }
 
         private void btGioHang_Click(object sender, EventArgs e)
@@ -192,6 +202,24 @@ namespace GiaoDien
         {
             if (!ThaoTac.KTThanhToan(maHoaDon))
             {
+                DataSet tam = new DataSet();
+                ketnoi.adaShowData = new OleDbDataAdapter("Select MaSP, SoLuong from CTHoaDon Where MaHD = " + maHoaDon, ketnoi.con);
+                ketnoi.adaShowData.Fill(tam);
+                for (int i = 0; i < tam.Tables[0].Rows.Count; i++)
+                {
+                    int ma = int.Parse(tam.Tables[0].Rows[i][0].ToString());
+                    int k = int.Parse(tam.Tables[0].Rows[i][1].ToString());
+                    string select = "Select SoLuong from DsSP Where MaSP = " + ma;
+                    DataSet tam2 = new DataSet();
+                    ketnoi.Open_DataAccess();
+                    ketnoi.adaShowData = new OleDbDataAdapter(select, ketnoi.con);
+                    ketnoi.adaShowData.Fill(tam2);
+                    ketnoi.Close_Connect();
+                    int l = int.Parse(tam2.Tables[0].Rows[0].ItemArray[0].ToString());
+                    int tong = k + l;
+                    string UpdateSoLuong = "Update DsSP Set SoLuong = " + tong + " Where MaSP = " + ma;
+                    ketnoi.Load_Data(UpdateSoLuong);
+                }
                 string del = "DELETE FROM CTHoaDon WHERE MaHD = " + maHoaDon;
                 ketnoi.Load_Data(del);
                 del = "Delete from HoaDon Where MaHD = " + maHoaDon;

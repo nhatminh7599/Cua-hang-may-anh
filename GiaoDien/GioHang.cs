@@ -37,6 +37,10 @@ namespace GiaoDien
             if(dataGridView1.Rows.Count == 0)
                 btXoa.Enabled = false;
         }
+        public void CapNhatSoLuong()
+        { 
+            
+        }
         private void GioHang_Load(object sender, EventArgs e)
         {
             HienThi();
@@ -68,7 +72,7 @@ namespace GiaoDien
 
         private void btThanhToan_Click(object sender, EventArgs e)
         {
-           
+            bool thanhtoan = true;
             try
             {
                 int row = ds.Tables[0].Rows.Count;
@@ -84,28 +88,41 @@ namespace GiaoDien
                     ketnoi.adaShowData.Fill(tam);
                     string sl = tam.Tables[0].Rows[0].ItemArray[0].ToString();
                     int s = (int.Parse(sl) - int.Parse(ds.Tables[0].Rows[i].ItemArray[0].ToString()));
-                    string UpdateDsSP = "UPDATE DsSP SET SoLuong = "  + s + " Where DsSP.MaSP = " + ds.Tables[0].Rows[i].ItemArray[0].ToString();
-                    ketnoi.Load_Data(UpdateDsSP);
+                    if (s < 0)
+                    {
+                        MessageBox.Show("Sản phẩm hiện không đủ số lượng", "Thông báo");
+                        thanhtoan = false;
+                        throw new Exception("Sản phẩm hiện không đủ số lượng");
+                    }
+                    else
+                    {
+                        string UpdateDsSP = "UPDATE DsSP SET SoLuong = " + s + " Where DsSP.MaSP = " + ds.Tables[0].Rows[i].ItemArray[0].ToString();
+                        ketnoi.Load_Data(UpdateDsSP);
+                    }
                 }
-                string UpdateCTHoaDon = "UPDATE CTHoaDon SET ThanhToan = Yes Where MaHD = " + Form1.maHoaDon;
-                ketnoi.Load_Data(UpdateCTHoaDon);
-                ketnoi.Close_Connect();
-                ds.Clear();
-                string v = "Select MaKH From KhachHang Where TenDangNhap = \"" + Form1.tenTaiKhoan + "\"";
-                ketnoi.Open_DataAccess();
-                ketnoi.adaShowData = new OleDbDataAdapter(v, ketnoi.con);
-                ds = new DataSet();
-                ketnoi.adaShowData.Fill(ds);
-                ketnoi.Close_Connect();
-                string MaKH = ds.Tables[0].Rows[0].ItemArray[0].ToString();
-                string UpdateMaKH = "Update HoaDon set MaKH =  " + MaKH + " Where MaHD = " + Form1.maHoaDon;
-                ketnoi.Load_Data(UpdateMaKH);
-                Form1.maHoaDon++;
-                txtTongTien.Text = "0" ;
-                if(!Form1.isQuanLy)
-                    MessageBox.Show("Thanh toán thành công, Nhân viên sẽ liên hệ đến bạn để lấy xác nhận đơn hàng");
-                else
-                    MessageBox.Show("Thanh toán thành công");
+                if (thanhtoan)
+                {
+                    string UpdateCTHoaDon = "UPDATE CTHoaDon SET ThanhToan = Yes Where MaHD = " + Form1.maHoaDon;
+                    ketnoi.Load_Data(UpdateCTHoaDon);
+                    ketnoi.Close_Connect();
+                    ds.Clear();
+                    string v = "Select MaKH From KhachHang Where TenDangNhap = \"" + Form1.tenTaiKhoan + "\"";
+                    ketnoi.Open_DataAccess();
+                    ketnoi.adaShowData = new OleDbDataAdapter(v, ketnoi.con);
+                    ds = new DataSet();
+                    ketnoi.adaShowData.Fill(ds);
+                    ketnoi.Close_Connect();
+                    string MaKH = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+                    string UpdateMaKH = "Update HoaDon set MaKH =  " + MaKH + " Where MaHD = " + Form1.maHoaDon;
+                    ketnoi.Load_Data(UpdateMaKH);
+                    Form1.maHoaDon++;
+                    txtTongTien.Text = "0";
+                    if (!Form1.isQuanLy)
+                        MessageBox.Show("Thanh toán thành công, Nhân viên sẽ liên hệ đến bạn để lấy xác nhận đơn hàng");
+                    else
+                        MessageBox.Show("Thanh toán thành công");
+                }
+                else MessageBox.Show("Sản phẩm hiện không đủ số lượng", "Thông báo");
             }
             catch (Exception ex)
             {
