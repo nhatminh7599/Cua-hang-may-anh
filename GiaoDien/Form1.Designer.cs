@@ -52,6 +52,7 @@
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.txtTim = new System.Windows.Forms.TextBox();
             this.btTaiLai = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             Á = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtvsp2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSPBindingSource)).BeginInit();
@@ -81,7 +82,7 @@
             this.lbDangNhap.BackColor = System.Drawing.Color.Beige;
             this.lbDangNhap.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDangNhap.Location = new System.Drawing.Point(343, 67);
+            this.lbDangNhap.Location = new System.Drawing.Point(343, 91);
             this.lbDangNhap.Margin = new System.Windows.Forms.Padding(0);
             this.lbDangNhap.Name = "lbDangNhap";
             this.lbDangNhap.Size = new System.Drawing.Size(193, 58);
@@ -171,7 +172,7 @@
             this.lbName.BackColor = System.Drawing.Color.Beige;
             this.lbName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(343, 67);
+            this.lbName.Location = new System.Drawing.Point(343, 91);
             this.lbName.Margin = new System.Windows.Forms.Padding(0);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(193, 58);
@@ -182,7 +183,7 @@
             // btQuanLy
             // 
             this.btQuanLy.Enabled = false;
-            this.btQuanLy.Location = new System.Drawing.Point(343, 128);
+            this.btQuanLy.Location = new System.Drawing.Point(343, 161);
             this.btQuanLy.Name = "btQuanLy";
             this.btQuanLy.Size = new System.Drawing.Size(99, 40);
             this.btQuanLy.TabIndex = 37;
@@ -194,7 +195,7 @@
             // btDangXuat
             // 
             this.btDangXuat.Enabled = false;
-            this.btDangXuat.Location = new System.Drawing.Point(448, 128);
+            this.btDangXuat.Location = new System.Drawing.Point(448, 161);
             this.btDangXuat.Name = "btDangXuat";
             this.btDangXuat.Size = new System.Drawing.Size(89, 40);
             this.btDangXuat.TabIndex = 38;
@@ -245,7 +246,7 @@
             // 
             // btTim
             // 
-            this.btTim.Location = new System.Drawing.Point(241, 85);
+            this.btTim.Location = new System.Drawing.Point(240, 121);
             this.btTim.Name = "btTim";
             this.btTim.Size = new System.Drawing.Size(87, 28);
             this.btTim.TabIndex = 48;
@@ -267,10 +268,10 @@
             // 
             // txtTim
             // 
-            this.txtTim.Location = new System.Drawing.Point(123, 85);
+            this.txtTim.Location = new System.Drawing.Point(106, 121);
             this.txtTim.Multiline = true;
             this.txtTim.Name = "txtTim";
-            this.txtTim.Size = new System.Drawing.Size(112, 28);
+            this.txtTim.Size = new System.Drawing.Size(128, 28);
             this.txtTim.TabIndex = 47;
             // 
             // btTaiLai
@@ -283,12 +284,22 @@
             this.btTaiLai.UseVisualStyleBackColor = true;
             this.btTaiLai.Click += new System.EventHandler(this.btTaiLai_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(103, 101);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(132, 17);
+            this.label1.TabIndex = 54;
+            this.label1.Text = "Nhập tên sản phẩm";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(545, 478);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btTaiLai);
             this.Controls.Add(this.btTru);
             this.Controls.Add(this.btCong);
@@ -344,6 +355,7 @@
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.TextBox txtTim;
         private System.Windows.Forms.Button btTaiLai;
+        private System.Windows.Forms.Label label1;
     }
 }
 
