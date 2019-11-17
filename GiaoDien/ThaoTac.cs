@@ -53,6 +53,7 @@ namespace GiaoDien
         {
             try
             {
+                con.setConnect(@"C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien" + @"\CuaHangMayAnh.mdb");
                 DataSet ds = new DataSet();
                 string Select = "SELECT " + TenCot + " From " + TenBang + " k Where k." + TenCot + " = " + GiaTri;
                 con.Open_DataAccess();
