@@ -83,7 +83,8 @@ namespace GiaoDien
             {
                 try
                 {
-                    SanPham sp = new SanPham(int.Parse(txtMaSP.Text), txtTenSP.Text, int.Parse(txtSoLuong.Text), double.Parse(txtGia.Text), txtMoTa.Text);
+                    SanPham sp = new SanPham();
+                    sp.ma = int.Parse(txtMaSP.Text);
                     sp.XoaSanPham();
                     ds.Clear();
                     ds = ketnoi.Load_Data("Select * From DsSP", "DsSP");

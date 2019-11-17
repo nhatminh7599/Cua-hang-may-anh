@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="3cfce4ed-af41-4072-885b-820062b34068" name="NhatMinh@LAPTOP-OTVHORNK 2019-11-17 18:03:44" runUser="LAPTOP-OTVHORNK\NhatMinh" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="293b60f0-7b6a-4642-86ed-df84e909a222">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="NhatMinh_LAPTOP-OTVHORNK 2019-11-17 18_03_44">
+      <DeploymentItem filename="C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien\bin\Debug\GiaoDien.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2019-11-17T18:03:44.5303803+07:00" queuing="2019-11-17T18:03:45.5820057+07:00" start="2019-11-17T18:03:45.6428403+07:00" finish="2019-11-17T18:04:28.9423286+07:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="8" executed="3" passed="2" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="5" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="LAPTOP-OTVHORNK" outcome="Error" timestamp="2019-11-17T18:04:28.9423286+07:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestKTMatKhau_SaiThongTin" storage="c:\users\nhatminh\desktop\cua-hang-may-anh\testproject\bin\debug\testproject.dll" id="2a44b4e3-5f53-8c88-f788-3dac2839bb85">
+      <Execution id="6720bfe3-d1a1-4350-9c4f-87a57d1c0690" />
+      <TestMethod codeBase="C:/Users/NhatMinh/Desktop/Cua-hang-may-anh/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.UnitTest1, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestKTMatKhau_SaiThongTin" />
+    </UnitTest>
+    <UnitTest name="TestKTTonTaiGiaTriStringTrue" storage="c:\users\nhatminh\desktop\cua-hang-may-anh\testproject\bin\debug\testproject.dll" id="82739ca3-0c68-ca0b-0507-6c851be9e819">
+      <Execution id="30dc9a7e-6bdb-4f30-a1cb-cd05e1904a9a" />
+      <TestMethod codeBase="C:/Users/NhatMinh/Desktop/Cua-hang-may-anh/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.UnitTest1, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestKTTonTaiGiaTriStringTrue" />
+    </UnitTest>
+    <UnitTest name="TestKTTonTaiGiaTriStringFalse" storage="c:\users\nhatminh\desktop\cua-hang-may-anh\testproject\bin\debug\testproject.dll" id="48892fdf-792f-6913-9069-225a30b3e44e">
+      <Execution id="4f849ea5-218c-4f8b-b162-13f5c6be5a96" />
+      <TestMethod codeBase="C:/Users/NhatMinh/Desktop/Cua-hang-may-anh/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.UnitTest1, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestKTTonTaiGiaTriStringFalse" />
+    </UnitTest>
+    <UnitTest name="TestKTMatKhau_ItHon6KyTu" storage="c:\users\nhatminh\desktop\cua-hang-may-anh\testproject\bin\debug\testproject.dll" id="94b5376d-1cf0-89a5-ea19-bd84b56b2184">
+      <Execution id="a29c4600-8fd3-4f05-81b0-3880fb31ebe1" />
+      <TestMethod codeBase="C:/Users/NhatMinh/Desktop/Cua-hang-may-anh/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.UnitTest1, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestKTMatKhau_ItHon6KyTu" />
+    </UnitTest>
+    <UnitTest name="TestKTTonTaiGiaTriIntFalse" storage="c:\users\nhatminh\desktop\cua-hang-may-anh\testproject\bin\debug\testproject.dll" id="a0fcdfa4-63d8-ddf4-bffa-d8b338e6167d">
+      <Execution id="0dd73ad1-61d5-4b5a-a476-e84cd55d1b89" />
+      <TestMethod codeBase="C:/Users/NhatMinh/Desktop/Cua-hang-may-anh/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.UnitTest1, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestKTTonTaiGiaTriIntFalse" />
+    </UnitTest>
+    <UnitTest name="TestKTTonTaiGiaTriIntTrue" storage="c:\users\nhatminh\desktop\cua-hang-may-anh\testproject\bin\debug\testproject.dll" id="f9e0645b-2a70-f6fd-e356-1520485cc513">
+      <Execution id="d999c44b-817a-49b3-afe7-8057777efcd7" />
+      <TestMethod codeBase="C:/Users/NhatMinh/Desktop/Cua-hang-may-anh/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.UnitTest1, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestKTTonTaiGiaTriIntTrue" />
+    </UnitTest>
+    <UnitTest name="TestKTMatKhau" storage="c:\users\nhatminh\desktop\cua-hang-may-anh\testproject\bin\debug\testproject.dll" id="5e7b3674-8f66-dbaa-2296-433ca5893238">
+      <Execution id="db3b31bb-0362-4604-889d-7a675e298dbf" />
+      <TestMethod codeBase="C:/Users/NhatMinh/Desktop/Cua-hang-may-anh/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.UnitTest1, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestKTMatKhau" />
+    </UnitTest>
+    <UnitTest name="TestKTMatKhau_TaiKhoanKhongTonTai" storage="c:\users\nhatminh\desktop\cua-hang-may-anh\testproject\bin\debug\testproject.dll" id="bec96b4e-9bdb-85be-5bc5-ebe9b4d78c9d">
+      <Execution id="d77e1451-e3aa-4019-a2a8-58845c6aabf6" />
+      <TestMethod codeBase="C:/Users/NhatMinh/Desktop/Cua-hang-may-anh/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.UnitTest1, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestKTMatKhau_TaiKhoanKhongTonTai" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="f9e0645b-2a70-f6fd-e356-1520485cc513" executionId="d999c44b-817a-49b3-afe7-8057777efcd7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a0fcdfa4-63d8-ddf4-bffa-d8b338e6167d" executionId="0dd73ad1-61d5-4b5a-a476-e84cd55d1b89" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="82739ca3-0c68-ca0b-0507-6c851be9e819" executionId="30dc9a7e-6bdb-4f30-a1cb-cd05e1904a9a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="48892fdf-792f-6913-9069-225a30b3e44e" executionId="4f849ea5-218c-4f8b-b162-13f5c6be5a96" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bec96b4e-9bdb-85be-5bc5-ebe9b4d78c9d" executionId="d77e1451-e3aa-4019-a2a8-58845c6aabf6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="94b5376d-1cf0-89a5-ea19-bd84b56b2184" executionId="a29c4600-8fd3-4f05-81b0-3880fb31ebe1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2a44b4e3-5f53-8c88-f788-3dac2839bb85" executionId="6720bfe3-d1a1-4350-9c4f-87a57d1c0690" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5e7b3674-8f66-dbaa-2296-433ca5893238" executionId="db3b31bb-0362-4604-889d-7a675e298dbf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="d999c44b-817a-49b3-afe7-8057777efcd7" testId="f9e0645b-2a70-f6fd-e356-1520485cc513" testName="TestKTTonTaiGiaTriIntTrue" computerName="LAPTOP-OTVHORNK" duration="00:00:00.1730622" startTime="2019-11-17T18:03:45.7034876+07:00" endTime="2019-11-17T18:03:46.3127204+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d999c44b-817a-49b3-afe7-8057777efcd7">
+    </UnitTestResult>
+    <UnitTestResult executionId="0dd73ad1-61d5-4b5a-a476-e84cd55d1b89" testId="a0fcdfa4-63d8-ddf4-bffa-d8b338e6167d" testName="TestKTTonTaiGiaTriIntFalse" computerName="LAPTOP-OTVHORNK" duration="00:00:00.0626758" startTime="2019-11-17T18:03:46.3127204+07:00" endTime="2019-11-17T18:03:46.3910878+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0dd73ad1-61d5-4b5a-a476-e84cd55d1b89">
+    </UnitTestResult>
+    <UnitTestResult executionId="30dc9a7e-6bdb-4f30-a1cb-cd05e1904a9a" testId="82739ca3-0c68-ca0b-0507-6c851be9e819" testName="TestKTTonTaiGiaTriStringTrue" computerName="LAPTOP-OTVHORNK" duration="00:00:42.5358739" startTime="2019-11-17T18:03:46.4064547+07:00" endTime="2019-11-17T18:04:28.9423286+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="30dc9a7e-6bdb-4f30-a1cb-cd05e1904a9a">
+    </UnitTestResult>
+    <UnitTestResult executionId="4f849ea5-218c-4f8b-b162-13f5c6be5a96" testId="48892fdf-792f-6913-9069-225a30b3e44e" testName="TestKTTonTaiGiaTriStringFalse" computerName="LAPTOP-OTVHORNK" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4f849ea5-218c-4f8b-b162-13f5c6be5a96">
+    </UnitTestResult>
+    <UnitTestResult executionId="d77e1451-e3aa-4019-a2a8-58845c6aabf6" testId="bec96b4e-9bdb-85be-5bc5-ebe9b4d78c9d" testName="TestKTMatKhau_TaiKhoanKhongTonTai" computerName="LAPTOP-OTVHORNK" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d77e1451-e3aa-4019-a2a8-58845c6aabf6">
+    </UnitTestResult>
+    <UnitTestResult executionId="a29c4600-8fd3-4f05-81b0-3880fb31ebe1" testId="94b5376d-1cf0-89a5-ea19-bd84b56b2184" testName="TestKTMatKhau_ItHon6KyTu" computerName="LAPTOP-OTVHORNK" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a29c4600-8fd3-4f05-81b0-3880fb31ebe1">
+    </UnitTestResult>
+    <UnitTestResult executionId="6720bfe3-d1a1-4350-9c4f-87a57d1c0690" testId="2a44b4e3-5f53-8c88-f788-3dac2839bb85" testName="TestKTMatKhau_SaiThongTin" computerName="LAPTOP-OTVHORNK" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6720bfe3-d1a1-4350-9c4f-87a57d1c0690">
+    </UnitTestResult>
+    <UnitTestResult executionId="db3b31bb-0362-4604-889d-7a675e298dbf" testId="5e7b3674-8f66-dbaa-2296-433ca5893238" testName="TestKTMatKhau" computerName="LAPTOP-OTVHORNK" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="db3b31bb-0362-4604-889d-7a675e298dbf">
+    </UnitTestResult>
+  </Results>
+</TestRun>

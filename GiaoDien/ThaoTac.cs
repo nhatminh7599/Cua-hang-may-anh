@@ -27,11 +27,12 @@ namespace GiaoDien
             {
                 con.setConnect(@"C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien" + @"\CuaHangMayAnh.mdb");
                 DataSet ds = new DataSet();
+                ds.Clear();
                 string Select = "SELECT " + TenCot + " From " + TenBang + " k Where k." + TenCot + " = \"" + GiaTri + "\"";
                 con.Open_DataAccess();
                 con.adaShowData = new OleDbDataAdapter(Select, con.con);
-                con.adaShowData.Fill(ds);
                 con.Close_Connect();
+                con.adaShowData.Fill(ds);
                 int s = ds.Tables[0].Rows.Count;
                 if (s > 0)
                     return true;
@@ -80,6 +81,7 @@ namespace GiaoDien
         {
             try
             {
+                
                 if (TenDangNhap.Length < 6 || MatKhau.Length < 6)
                     return false;
                 else
@@ -142,8 +144,9 @@ namespace GiaoDien
 
             try
             {
+                con.setConnect(@"C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien" + @"\CuaHangMayAnh.mdb");
                 DataSet ds = new DataSet();
-                string Select = "SELECT TenTaiKhoan From HoaDon Where MaHD = " + MaHD;
+                string Select = "SELECT MaKH From HoaDon Where MaHD = " + MaHD;
                 con.Open_DataAccess();
                 con.adaShowData = new OleDbDataAdapter(Select, con.con);
                 con.adaShowData.Fill(ds);
@@ -151,7 +154,7 @@ namespace GiaoDien
                 string s = ds.Tables[0].Rows[0].ItemArray[0].ToString();
                 if (s != "")
                     return true;
-                return false;
+                else return false;
             }
             catch
             {
