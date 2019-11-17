@@ -95,6 +95,7 @@
             this.dtvsp2.AllowUserToAddRows = false;
             this.dtvsp2.AllowUserToDeleteRows = false;
             this.dtvsp2.AutoGenerateColumns = false;
+            this.dtvsp2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtvsp2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtvsp2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maSPDataGridViewTextBoxColumn,

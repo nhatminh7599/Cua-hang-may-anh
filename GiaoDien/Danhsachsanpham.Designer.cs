@@ -126,6 +126,7 @@
             this.dtvsp.AllowUserToAddRows = false;
             this.dtvsp.AllowUserToDeleteRows = false;
             this.dtvsp.AutoGenerateColumns = false;
+            this.dtvsp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtvsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtvsp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaSP,
@@ -135,7 +136,7 @@
             this.MoTa});
             this.dtvsp.DataSource = this.cuaHangMayAnhDataSetBindingSource;
             this.dtvsp.Location = new System.Drawing.Point(16, 282);
-            this.dtvsp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtvsp.Margin = new System.Windows.Forms.Padding(4);
             this.dtvsp.MultiSelect = false;
             this.dtvsp.Name = "dtvsp";
             this.dtvsp.ReadOnly = true;
@@ -206,7 +207,7 @@
             // btXoa
             // 
             this.btXoa.Location = new System.Drawing.Point(355, 149);
-            this.btXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(111, 48);
             this.btXoa.TabIndex = 11;
@@ -217,7 +218,7 @@
             // btThem
             // 
             this.btThem.Location = new System.Drawing.Point(355, 17);
-            this.btThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btThem.Margin = new System.Windows.Forms.Padding(4);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(111, 48);
             this.btThem.TabIndex = 11;
@@ -228,7 +229,7 @@
             // btSua
             // 
             this.btSua.Location = new System.Drawing.Point(355, 81);
-            this.btSua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btSua.Margin = new System.Windows.Forms.Padding(4);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(111, 48);
             this.btSua.TabIndex = 11;
@@ -238,8 +239,9 @@
             // 
             // label1
             // 
+            this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(472, 183);
+            this.label1.Location = new System.Drawing.Point(523, 187);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(159, 20);
@@ -249,7 +251,7 @@
             // txtTim
             // 
             this.txtTim.Location = new System.Drawing.Point(476, 209);
-            this.txtTim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTim.Margin = new System.Windows.Forms.Padding(4);
             this.txtTim.Multiline = true;
             this.txtTim.Name = "txtTim";
             this.txtTim.Size = new System.Drawing.Size(255, 30);
@@ -258,7 +260,7 @@
             // btTim
             // 
             this.btTim.Location = new System.Drawing.Point(614, 244);
-            this.btTim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btTim.Margin = new System.Windows.Forms.Padding(4);
             this.btTim.Name = "btTim";
             this.btTim.Size = new System.Drawing.Size(117, 30);
             this.btTim.TabIndex = 14;
@@ -270,7 +272,7 @@
             // 
             this.txtMoTa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsSPBindingSource, "MoTa", true));
             this.txtMoTa.Location = new System.Drawing.Point(91, 214);
-            this.txtMoTa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMoTa.Margin = new System.Windows.Forms.Padding(4);
             this.txtMoTa.Multiline = true;
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.Size = new System.Drawing.Size(221, 38);
@@ -280,7 +282,7 @@
             // 
             this.txtGia.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsSPBindingSource, "Gia", true));
             this.txtGia.Location = new System.Drawing.Point(91, 164);
-            this.txtGia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGia.Margin = new System.Windows.Forms.Padding(4);
             this.txtGia.Multiline = true;
             this.txtGia.Name = "txtGia";
             this.txtGia.Size = new System.Drawing.Size(221, 42);
@@ -291,7 +293,7 @@
             // 
             this.txtSoLuong.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsSPBindingSource, "SoLuong", true));
             this.txtSoLuong.Location = new System.Drawing.Point(91, 117);
-            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoLuong.Multiline = true;
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(221, 38);
@@ -302,7 +304,7 @@
             // 
             this.txtTenSP.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsSPBindingSource, "TenSP", true));
             this.txtTenSP.Location = new System.Drawing.Point(91, 66);
-            this.txtTenSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenSP.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenSP.Multiline = true;
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(221, 42);
@@ -313,7 +315,7 @@
             // 
             this.txtMaSP.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsSPBindingSource, "MaSP", true));
             this.txtMaSP.Location = new System.Drawing.Point(91, 17);
-            this.txtMaSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaSP.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaSP.Multiline = true;
             this.txtMaSP.Name = "txtMaSP";
             this.txtMaSP.Size = new System.Drawing.Size(221, 41);
@@ -333,8 +335,8 @@
             // 
             // btCapNhatQuanLy
             // 
-            this.btCapNhatQuanLy.Location = new System.Drawing.Point(547, 70);
-            this.btCapNhatQuanLy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btCapNhatQuanLy.Location = new System.Drawing.Point(527, 71);
+            this.btCapNhatQuanLy.Margin = new System.Windows.Forms.Padding(4);
             this.btCapNhatQuanLy.Name = "btCapNhatQuanLy";
             this.btCapNhatQuanLy.Size = new System.Drawing.Size(155, 52);
             this.btCapNhatQuanLy.TabIndex = 26;
@@ -344,8 +346,8 @@
             // 
             // btThemQuanLy
             // 
-            this.btThemQuanLy.Location = new System.Drawing.Point(547, 12);
-            this.btThemQuanLy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btThemQuanLy.Location = new System.Drawing.Point(527, 13);
+            this.btThemQuanLy.Margin = new System.Windows.Forms.Padding(4);
             this.btThemQuanLy.Name = "btThemQuanLy";
             this.btThemQuanLy.Size = new System.Drawing.Size(155, 52);
             this.btThemQuanLy.TabIndex = 27;
@@ -355,13 +357,14 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(547, 127);
+            this.button1.Location = new System.Drawing.Point(527, 128);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(155, 52);
             this.button1.TabIndex = 28;
             this.button1.Text = "Danh sách đơn hàng";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Danhsachsanpham
             // 
@@ -390,7 +393,7 @@
             this.Controls.Add(this.btXoa);
             this.Controls.Add(this.dtvsp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Danhsachsanpham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

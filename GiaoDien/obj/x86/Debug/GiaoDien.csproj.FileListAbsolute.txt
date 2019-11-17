@@ -76,3 +76,4 @@ D:\11.N.Thanh\C#\project\Cua-hang-may-anh\GiaoDien\obj\x86\Debug\GiaoDien.GioHan
 D:\11.N.Thanh\C#\project\Cua-hang-may-anh\GiaoDien\obj\x86\Debug\GiaoDien.Properties.Resources.resources
 D:\11.N.Thanh\C#\project\Cua-hang-may-anh\GiaoDien\obj\x86\Debug\GiaoDien.ThongTin.resources
 D:\11.N.Thanh\C#\project\Cua-hang-may-anh\GiaoDien\obj\x86\Debug\GiaoDien.csproj.GenerateResource.Cache
+C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien\obj\x86\Debug\GiaoDien.Danhsachdonhang.resources
