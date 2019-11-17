@@ -201,15 +201,24 @@ namespace GiaoDien
 
         private void btTim_Click(object sender, EventArgs e)
         {
-            ketnoi.Open_DataAccess();
-            string s = "SELECT * FROM DsSP WHERE (((DsSP.TenSP) = \"" + txtTim.Text + "\"));";
-            ds.Clear();
-            ketnoi.com = new OleDbCommand(s, ketnoi.con);
-            ketnoi.com.ExecuteNonQuery();
-            ketnoi.adaShowData = new OleDbDataAdapter(s, ketnoi.con);
-            ketnoi.adaShowData.Fill(ds);
-            ketnoi.Close_Connect();
-            dtvsp2.DataSource = ds.Tables[0];
+            if (txtTim.Text != "")
+            {
+                ketnoi.Open_DataAccess();
+                string s = "SELECT * FROM DsSP WHERE (((DsSP.TenSP) = \"" + txtTim.Text + "\"));";
+                ds.Clear();
+                ketnoi.com = new OleDbCommand(s, ketnoi.con);
+                ketnoi.com.ExecuteNonQuery();
+                ketnoi.adaShowData = new OleDbDataAdapter(s, ketnoi.con);
+                ketnoi.adaShowData.Fill(ds);
+                ketnoi.Close_Connect();
+                dtvsp2.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                ds.Clear();
+                ds = ketnoi.Load_Data("select * from DsSP", "DsSP");
+                dtvsp2.DataSource = ds.Tables[0];
+            }
         }
 
         private void btTaiLai_Click(object sender, EventArgs e)

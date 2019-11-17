@@ -94,12 +94,6 @@ namespace GiaoDien
             }
         }
 
-        
-
-        
-
-        
-
         public static bool KTHoaDon(int MaHD, int MaSP)
         {
             try
