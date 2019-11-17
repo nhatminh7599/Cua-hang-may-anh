@@ -33,11 +33,6 @@ namespace GiaoDien
         {
             this.adaShowData = new OleDbDataAdapter(value, this.con);
         }
-        public DataSet adaFill(DataSet ds)
-        {
-            this.adaShowData.Fill(ds);
-            return ds;
-        }
         /// <summary>
         /// Kết nối đến access
         /// </summary>
@@ -100,7 +95,7 @@ namespace GiaoDien
                 return dsHienThi;
             }
         }
-        public void Load_Data(string Select)
+        public bool Load_Data(string Select)
         {
             try
             {
@@ -109,10 +104,12 @@ namespace GiaoDien
                 com = new OleDbCommand(Select, con);
                 com.ExecuteNonQuery();
                 Close_Connect();
+                return true;
             }
             catch (Exception)
             {
                 MessageBox.Show("Loi", "Loi");
+                return false;
             }
         }
     }

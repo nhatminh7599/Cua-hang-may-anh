@@ -25,6 +25,7 @@ namespace GiaoDien
         {
             try
             {
+                con.setConnect(@"C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien" + @"\CuaHangMayAnh.mdb");
                 DataSet ds = new DataSet();
                 string Select = "SELECT " + TenCot + " From " + TenBang + " k Where k." + TenCot + " = \"" + GiaTri + "\"";
                 con.Open_DataAccess();
@@ -78,20 +79,40 @@ namespace GiaoDien
         {
             try
             {
-                DataSet ds = new DataSet();
-                string Select = "SELECT MatKhau From KhachHang Where KhachHang.TenDangNhap = \"" + TenDangNhap + "\"";
-                con.Open_DataAccess();
-                con.adaShowData = new OleDbDataAdapter(Select, con.con);
-                con.adaShowData.Fill(ds);
-                string s = ds.Tables[0].Rows[0].ItemArray[0].ToString();
-                if (MatKhau == s)
-                    return true;
-                return false;
+                if (TenDangNhap.Length < 6 || MatKhau.Length < 6)
+                    return false;
+                else
+                {
+                    DataSet ds = new DataSet();
+                    string Select = "SELECT MatKhau From KhachHang Where KhachHang.TenDangNhap = \"" + TenDangNhap + "\"";
+                    con.Open_DataAccess();
+                    con.adaShowData = new OleDbDataAdapter(Select, con.con);
+                    con.adaShowData.Fill(ds);
+                    string s = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+                    if (MatKhau == s)
+                        return true;
+                    return false;
+                }
             }
             catch (Exception)
             {
                 return false;
             }
+        }
+
+        public static bool KTSDT(string SDT)
+        {
+            if (SDT.Length == 10)
+            {
+                for (int i = 0; i < 10; i++)
+                    if (!char.IsDigit(SDT[i]))
+                    {
+                        return false;
+                    }
+            }
+            else
+                return false;
+            return true;
         }
 
         public static bool KTHoaDon(int MaHD, int MaSP)

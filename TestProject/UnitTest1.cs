@@ -17,12 +17,11 @@ namespace TestProject
     public class UnitTest1
     {
         private KetNoi ketnoi;
-        private string connect;
+        private string connect= @"C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien" + @"\CuaHangMayAnh.mdb";
         [TestInitialize]
         public void SetUp()
         {
             ketnoi = new KetNoi();
-            connect = @"C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien" + @"\CuaHangMayAnh.mdb";
             ketnoi.setConnect(connect);
         }
 
@@ -52,5 +51,54 @@ namespace TestProject
         }
 
         //Test class KhachHang
+        [TestMethod]
+        public void TestThemKhachHangRong()
+        {
+            KhachHang KH = new KhachHang();
+            Assert.IsFalse(KH.ThemKhachHang());
+        }
+
+        [TestMethod]
+        public void TestThemKhachHangDaTonTai()
+        {
+            KhachHang KH = new KhachHang("minh123", "minh123", "", "", "1231231231", "", true);
+            Assert.IsFalse(KH.ThemKhachHang());
+        }
+
+        [TestMethod]
+        public void TestThemKhachHang()
+        {
+            KhachHang KH = new KhachHang("minh1234", "minh1234", "", "", "1231231231", "", true);
+            Assert.IsTrue(KH.ThemKhachHang());
+        }
+
+        [TestMethod]
+        public void TestThemQuanLyDaTonTai()
+        {
+            KhachHang KH = new KhachHang("minh123", "minh123", "", "", "1231231231", "", true);
+            Assert.IsFalse(KH.ThemQuanLy());
+        }
+
+        [TestMethod]
+        public void TestThemQuanLy()
+        {
+            KhachHang KH = new KhachHang("minh12345", "minh12345", "", "", "1231231231", "", true);
+            Assert.IsTrue(KH.ThemQuanLy());
+        }
+
+        [TestMethod]
+        public void TestCapNhatQuanLy()
+        {
+            Assert.IsTrue(KhachHang.ThemQuanLy("admin1", "admin1"));
+        }
+
+        [TestMethod]
+        public void TestCapNhatQuanLyKhongTonTai()
+        {
+            Assert.IsFalse(KhachHang.ThemQuanLy("minh1234567", "minh1234567"));
+        }
+
+        //Test class san pham
+
     }
 }

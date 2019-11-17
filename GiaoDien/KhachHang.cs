@@ -65,16 +65,28 @@ namespace GiaoDien
             try
             {
                 KetNoi ketnoi = new KetNoi();
-                string danhsachcot = "TenDangNhap, MatKhau, DiaChi, HoTen, SDT, Email";
-                string danhsachthamso = ("\"" + this.TenDangNhap() + "\"" + ", " +
-                                         "\"" + this.MatKhau() + "\"" + ", " +
-                                         "\"" + this.Ten() + "\"" + ", " +
-                                         "\"" + this.DiaChi() + "\"" + ", " +
-                                         "\"" + this.SDT() + "\"" + ", " +
-                                         "\"" + this.Email() + "\"");
-                string Select = "insert into KhachHang " + "(" + danhsachcot + ") values(" + danhsachthamso + ")";
-                ketnoi.Load_Data(Select);
-                return true;
+                ketnoi.setConnect(@"C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien" + @"\CuaHangMayAnh.mdb");
+                if (this.tenDangNhap.Length < 6 || this.matKhau.Length < 6 || ThaoTac.KTSDT(this.sDT) == false)
+                    return false;
+                else
+                {
+                    if(ThaoTac.KTTonTai("KhachHang", "TenDangNhap", this.tenDangNhap))
+                        return false;
+                    else
+                    {
+                        
+                        string danhsachcot = "TenDangNhap, MatKhau, DiaChi, HoTen, SDT, Email";
+                        string danhsachthamso = ("\"" + this.TenDangNhap() + "\"" + ", " +
+                                                 "\"" + this.MatKhau() + "\"" + ", " +
+                                                 "\"" + this.Ten() + "\"" + ", " +
+                                                 "\"" + this.DiaChi() + "\"" + ", " +
+                                                 "\"" + this.SDT() + "\"" + ", " +
+                                                 "\"" + this.Email() + "\"");
+                        string Select = "insert into KhachHang " + "(" + danhsachcot + ") values(" + danhsachthamso + ")";
+                        ketnoi.Load_Data(Select);
+                        return true;
+                    }
+                }
             }
             catch (Exception)
             {
@@ -96,24 +108,29 @@ namespace GiaoDien
         {
             try
             {
-                if (ThaoTac.KTTonTai("KhachHang", "TenDangNhap", this.TenDangNhap()))
-                {
-                    MessageBox.Show("Tên đăng nhập đã tồn tại", "Lỗi", MessageBoxButtons.OK);
+                if (this.tenDangNhap.Length < 6 || this.matKhau.Length < 6 || ThaoTac.KTSDT(this.sDT) == false)
                     return false;
-                }
                 else
                 {
-                    KetNoi ketnoi = new KetNoi();
-                    string danhsachcot = "TenDangNhap, MatKhau, DiaChi, HoTen, SDT, Email, QuanLy";
-                    string danhsachthamso = ("\"" + this.TenDangNhap() + "\"" + ", " +
-                                             "\"" + this.MatKhau() + "\"" + ", " +
-                                             "\"" + this.Ten() + "\"" + ", " +
-                                             "\"" + this.DiaChi() + "\"" + ", " +
-                                             "\"" + this.SDT() + "\"" + ", " +
-                                             "\"" + this.Email() + "\"" + ", " + "True");
-                    string Select = "insert into KhachHang " + "(" + danhsachcot + ") values(" + danhsachthamso + ")";
-                    ketnoi.Load_Data(Select);
-                    return true;
+                    if (ThaoTac.KTTonTai("KhachHang", "TenDangNhap", this.TenDangNhap()))
+                    {
+                        MessageBox.Show("Tên đăng nhập đã tồn tại", "Lỗi", MessageBoxButtons.OK);
+                        return false;
+                    }
+                    else
+                    {
+                        KetNoi ketnoi = new KetNoi();
+                        string danhsachcot = "TenDangNhap, MatKhau, DiaChi, HoTen, SDT, Email, QuanLy";
+                        string danhsachthamso = ("\"" + this.TenDangNhap() + "\"" + ", " +
+                                                 "\"" + this.MatKhau() + "\"" + ", " +
+                                                 "\"" + this.Ten() + "\"" + ", " +
+                                                 "\"" + this.DiaChi() + "\"" + ", " +
+                                                 "\"" + this.SDT() + "\"" + ", " +
+                                                 "\"" + this.Email() + "\"" + ", " + "True");
+                        string Select = "insert into KhachHang " + "(" + danhsachcot + ") values(" + danhsachthamso + ")";
+                        ketnoi.Load_Data(Select);
+                        return true;
+                    }
                 }
             }
             catch (Exception)
@@ -132,6 +149,7 @@ namespace GiaoDien
             if (ThaoTac.KTMatKhau(TenDangNhap, MatKhau))
             {
                 KetNoi ketnoi = new KetNoi();
+                ketnoi.setConnect(@"C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien" + @"\CuaHangMayAnh.mdb");
                 string Update = "Update KhachHang set QuanLy = True Where KhachHang.TenDangNhap = \"" + TenDangNhap + "\"";
                 ketnoi.Load_Data(Update);
                 return true;
@@ -153,6 +171,6 @@ namespace GiaoDien
         public string Email() { return this.email; }
         public void Email(string value) { this.email = value; }
         public bool ChucVu() { return this.chucVu; }
-        public void TenDangNhap(bool value) { this.chucVu = value; }
+        public void ChucVu (bool value) { this.chucVu = value; }
     }
 }

@@ -25,22 +25,9 @@ namespace GiaoDien
             }
             else
             {
-                string sdt = txtSDT.Text;
-                bool isSDT = true;
-                if (sdt.Length == 10)
-                {
-                    for (int i = 0; i < 10; i++)
-                        if (!char.IsDigit(sdt[i]))
-                        {
-                            isSDT = false;
-                            break;
-                        }
-                }
-                else
-                    isSDT = false;
+                bool isSDT = ThaoTac.KTSDT(txtSDT.Text);
                 if (isSDT)
                 {
-                    //bool isQuanLy = chbQuanLy.Checked;
                     KhachHang KH = new KhachHang(txtTK.Text, txtMK.Text, txtTen.Text, txtDiaChi.Text, txtSDT.Text, txtEmail.Text, isQuanLy);
                     if (!isQuanLy)
                         if (KH.ThemKhachHang())
