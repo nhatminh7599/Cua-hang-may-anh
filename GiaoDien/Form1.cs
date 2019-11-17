@@ -24,7 +24,7 @@ namespace GiaoDien
 
         public static int maHoaDon = 1;
         public static string tenTaiKhoan;
-        KhachHang KH;
+        public static KhachHang KH = new KhachHang();
         public static bool isQuanLy = false;
         public static bool isDangNhap = false;
         private void lbdangnhap_Click(object sender, EventArgs e)

@@ -23,6 +23,7 @@ namespace GiaoDien
             int i = t.LastIndexOf('\\') - 3;
             t = t.Substring(0, i) + "CuaHangMayAnh.mdb";
             string connect = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + t;
+            this.connect = connect;
         }
         public void setConnect(string value)
         {

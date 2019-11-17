@@ -94,105 +94,11 @@ namespace GiaoDien
             }
         }
 
-        /// <summary>
-        /// Thêm 1 khách hàng vào hệ thống
-        /// Mặc định là khách hàng (Quản lý = false)
-        /// </summary>
-        /// <param name="TenDangNhap">Tên đăng nhập</param>
-        /// <param name="MatKhau">Mật khẩu</param>
-        /// <param name="HoTen">Họ tên</param>
-        /// <param name="DiaChi">Địa chỉ</param>
-        /// <param name="SDT">SDT</param>
-        /// <param name="Email">Email</param>
-        /// <returns></returns>
-        public static bool ThemKhachHang(string TenDangNhap, string MatKhau, string HoTen, string DiaChi, string SDT, string Email)
-        {
-            try
-            {
-                KetNoi ketnoi = new KetNoi();
-                DataSet ds = new DataSet();
-                string danhsachcot = "TenDangNhap, MatKhau, DiaChi, HoTen, SDT, Email";
-                string danhsachthamso = ("\"" + TenDangNhap + "\"" + ", " +
-                                         "\"" + MatKhau + "\"" + ", " +
-                                         "\"" + HoTen + "\"" + ", " +
-                                         "\"" + DiaChi + "\"" + ", " +
-                                         "\"" + SDT + "\"" + ", " +
-                                         "\"" + Email + "\"");
-                string Select = "insert into KhachHang " + "(" + danhsachcot + ") values(" + danhsachthamso + ")";
-                ketnoi.Load_Data(Select);
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
+        
 
-        /// <summary>
-        /// Thêm quản lý mới (tài khoản chưa tồn tại trên hệ thống)
-        /// </summary>
-        /// <param name="TenDangNhap">Tên đăng nhập</param>
-        /// <param name="MatKhau">Mật khẩu</param>
-        /// <param name="HoTen">Họ tên</param>
-        /// <param name="DiaChi">Địa chỉ</param>
-        /// <param name="SDT">SDT</param>
-        /// <param name="Email">Email</param>
-        /// <returns></returns>
-        public static bool ThemQuanLy(string TenDangNhap, string MatKhau, string HoTen, string DiaChi, string SDT, string Email)
-        {
-            try
-            {
-                if (ThaoTac.KTTonTai("KhachHang", "TenDangNhap", TenDangNhap))
-                {
-                    MessageBox.Show("Tên đăng nhập đã tồn tại", "Lỗi", MessageBoxButtons.OK);
-                    return false;
-                }
-                else
-                {
-                    KetNoi ketnoi = new KetNoi();
-                    string danhsachcot = "TenDangNhap, MatKhau, DiaChi, HoTen, SDT, Email, QuanLy";
-                    string danhsachthamso = ("\"" + TenDangNhap + "\"" + ", " +
-                                             "\"" + MatKhau + "\"" + ", " +
-                                             "\"" + HoTen + "\"" + ", " +
-                                             "\"" + DiaChi + "\"" + ", " +
-                                             "\"" + SDT + "\"" + ", " +
-                                             "\"" + Email + "\"" + ", " + "True");
-                    string Select = "insert into KhachHang " + "(" + danhsachcot + ") values(" + danhsachthamso + ")";
-                    ketnoi.Load_Data(Select);
-                    return true;
-                }
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
+        
 
-        /// <summary>
-        /// Cập nhật tài khoản thành quản lý
-        /// </summary>
-        /// <param name="TenDangNhap">Tên tài khoản</param>
-        /// <returns></returns>
-        public static bool ThemQuanLy(string TenDangNhap)
-        {
-            if (ThaoTac.KTTonTai("KhachHang", "TenDangNhap", TenDangNhap))
-            {
-                KetNoi ketnoi = new KetNoi();
-                string Update = "Update KhachHang set QuanLy = True Where KhachHang.TenDangNhap = \"" + TenDangNhap + "\"";
-                ketnoi.Load_Data(Update);
-                return true;
-            }
-            else
-                try
-                {
-                    MessageBox.Show("Tài khoản không tồn tại", "Lỗi", MessageBoxButtons.OK);
-                    return false; 
-                }
-                catch (Exception)
-                {
-                    return false;
-                }
-        }
+        
 
         public static bool KTHoaDon(int MaHD, int MaSP)
         {

@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace GiaoDien
 {
@@ -31,6 +36,108 @@ namespace GiaoDien
             this.sDT = SDT;
             this.email = Email;
             this.chucVu = ChucVu;
+        }
+        public KhachHang(string TenDangNhap, string MatKhau, string Ten, string DiaChi, string SDT, string Email, bool ChucVu)
+        {
+            this.maKhachHang = 0;
+            this.tenDangNhap = TenDangNhap;
+            this.matKhau = MatKhau;
+            this.ten = Ten;
+            this.diaChi = DiaChi;
+            this.sDT = SDT;
+            this.email = Email;
+            this.chucVu = ChucVu;
+        }
+
+        /// <summary>
+        /// Thêm 1 khách hàng vào hệ thống
+        /// Mặc định là khách hàng (Quản lý = false)
+        /// </summary>
+        /// <param name="TenDangNhap">Tên đăng nhập</param>
+        /// <param name="MatKhau">Mật khẩu</param>
+        /// <param name="HoTen">Họ tên</param>
+        /// <param name="DiaChi">Địa chỉ</param>
+        /// <param name="SDT">SDT</param>
+        /// <param name="Email">Email</param>
+        /// <returns></returns>
+        public bool ThemKhachHang()
+        {
+            try
+            {
+                KetNoi ketnoi = new KetNoi();
+                string danhsachcot = "TenDangNhap, MatKhau, DiaChi, HoTen, SDT, Email";
+                string danhsachthamso = ("\"" + this.TenDangNhap() + "\"" + ", " +
+                                         "\"" + this.MatKhau() + "\"" + ", " +
+                                         "\"" + this.Ten() + "\"" + ", " +
+                                         "\"" + this.DiaChi() + "\"" + ", " +
+                                         "\"" + this.SDT() + "\"" + ", " +
+                                         "\"" + this.Email() + "\"");
+                string Select = "insert into KhachHang " + "(" + danhsachcot + ") values(" + danhsachthamso + ")";
+                ketnoi.Load_Data(Select);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Thêm quản lý mới (tài khoản chưa tồn tại trên hệ thống)
+        /// </summary>
+        /// <param name="TenDangNhap">Tên đăng nhập</param>
+        /// <param name="MatKhau">Mật khẩu</param>
+        /// <param name="HoTen">Họ tên</param>
+        /// <param name="DiaChi">Địa chỉ</param>
+        /// <param name="SDT">SDT</param>
+        /// <param name="Email">Email</param>
+        /// <returns></returns>
+        public bool ThemQuanLy()
+        {
+            try
+            {
+                if (ThaoTac.KTTonTai("KhachHang", "TenDangNhap", this.TenDangNhap()))
+                {
+                    MessageBox.Show("Tên đăng nhập đã tồn tại", "Lỗi", MessageBoxButtons.OK);
+                    return false;
+                }
+                else
+                {
+                    KetNoi ketnoi = new KetNoi();
+                    string danhsachcot = "TenDangNhap, MatKhau, DiaChi, HoTen, SDT, Email, QuanLy";
+                    string danhsachthamso = ("\"" + this.TenDangNhap() + "\"" + ", " +
+                                             "\"" + this.MatKhau() + "\"" + ", " +
+                                             "\"" + this.Ten() + "\"" + ", " +
+                                             "\"" + this.DiaChi() + "\"" + ", " +
+                                             "\"" + this.SDT() + "\"" + ", " +
+                                             "\"" + this.Email() + "\"" + ", " + "True");
+                    string Select = "insert into KhachHang " + "(" + danhsachcot + ") values(" + danhsachthamso + ")";
+                    ketnoi.Load_Data(Select);
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Cập nhật tài khoản thành quản lý
+        /// </summary>
+        /// <param name="TenDangNhap">Tên tài khoản</param>
+        /// <returns></returns>
+        public static bool ThemQuanLy(string TenDangNhap, string MatKhau)
+        {
+            if (ThaoTac.KTMatKhau(TenDangNhap, MatKhau))
+            {
+                KetNoi ketnoi = new KetNoi();
+                string Update = "Update KhachHang set QuanLy = True Where KhachHang.TenDangNhap = \"" + TenDangNhap + "\"";
+                ketnoi.Load_Data(Update);
+                return true;
+            }
+            else
+                return false;
         }
 
         public string TenDangNhap() { return this.tenDangNhap; }

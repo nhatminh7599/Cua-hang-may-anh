@@ -17,13 +17,11 @@ namespace GiaoDien
             InitializeComponent();
         }
 
+        KetNoi ketnoi = new KetNoi();
         private void btCapNhat_Click(object sender, EventArgs e)
         {
-            if (ThaoTac.KTMatKhau(txtTK.Text, txtMK.Text))
-            {
-                ThaoTac.ThemQuanLy(txtTK.Text);
+            if (KhachHang.ThemQuanLy(txtTK.Text, txtMK.Text))
                 MessageBox.Show("Cập nhật thành công", "Thông báo");
-            }
             else MessageBox.Show("Sai tên tài khoản hoặc mật khẩu", "Lỗi");
         }
     }

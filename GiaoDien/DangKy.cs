@@ -40,8 +40,10 @@ namespace GiaoDien
                     isSDT = false;
                 if (isSDT)
                 {
+                    //bool isQuanLy = chbQuanLy.Checked;
+                    KhachHang KH = new KhachHang(txtTK.Text, txtMK.Text, txtTen.Text, txtDiaChi.Text, txtSDT.Text, txtEmail.Text, isQuanLy);
                     if (!isQuanLy)
-                        if (ThaoTac.ThemKhachHang(txtTK.Text, txtMK.Text, txtDiaChi.Text, txtTen.Text, txtEmail.Text, txtSDT.Text))
+                        if (KH.ThemKhachHang())
                         {
                             MessageBox.Show("Đăng ký thành công", "Thông báo");
                             this.Close();
@@ -49,7 +51,7 @@ namespace GiaoDien
                         else MessageBox.Show("Đăng ký thất bại", "Thông báo");
                     else
                     {
-                        if (ThaoTac.ThemQuanLy(txtTK.Text, txtMK.Text, txtDiaChi.Text, txtTen.Text, txtSDT.Text, txtEmail.Text))
+                        if (KH.ThemQuanLy())
                         {
                             MessageBox.Show("Đăng ký thành công", "Thông báo");
                             this.Close();

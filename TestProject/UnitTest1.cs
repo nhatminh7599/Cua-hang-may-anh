@@ -25,6 +25,8 @@ namespace TestProject
             connect = @"C:\Users\NhatMinh\Desktop\Cua-hang-may-anh\GiaoDien" + @"\CuaHangMayAnh.mdb";
             ketnoi.setConnect(connect);
         }
+
+        //Test class KetNoi
         [TestMethod]
         public void TestOpenAccess()
         {
@@ -41,16 +43,14 @@ namespace TestProject
             ketnoi.adaShowData.Fill(ds);
             ketnoi.Close_Connect();
             testds = ketnoi.Load_Data("Select MaKH from KhachHang", "KhachHang");
-            string[] expect = new string[ds.Tables[0].Rows.Count];
-            string[] actual = new string[testds.Tables[0].Rows.Count];
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 string s = ds.Tables[0].Rows[i][0].ToString();
-                expect[i] = s;
                 string r = testds.Tables[0].Rows[i][0].ToString();
-                actual[i] = r;
+                Assert.AreEqual(s, r);
             }
-            Assert.Equals(expect, actual);
         }
+
+        //Test class KhachHang
     }
 }
